@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ../../modules/nvidia.nix
     ];
 
   # Bootloader.
@@ -118,23 +119,6 @@
       "danielgu" = import ./home.nix;
     };
   };
-
-  # hardware.opengl = {
-  #   enable = true;
-  #   driSupport = true;
-  #   driSupport32Bit = true;
-  # };
-
-  # services.xserver.videoDrivers = ["nvidia"];
-
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = false;
-  #   powerManagement.finegrained = false;
-  #   open = false;
-  #   nvidiaSettings = true;
-  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-  # };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
