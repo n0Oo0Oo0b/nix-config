@@ -9,7 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/nvidia.nix
+      # # Breaks VSC for some reason
+      # ../../modules/nvidia.nix
     ];
 
   # Bootloader.
@@ -94,21 +95,20 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      #obsidian
+      obsidian
       #blender
       #zotero
       #zoom-us
 
-      #opentabletdriver
+      opentabletdriver
       #openrgb-with-all-plugins
 
-      #vscode
-      #jetbrains.pycharm-professional
-      #jetbrains.idea-ultimate
-      #jetbrains.clion
+      jetbrains.pycharm-professional
+      jetbrains.idea-ultimate
+      jetbrains.clion
 
-      #discord
-      #steam
+      discord
+      steam
     #  thunderbird
     ];
   };
