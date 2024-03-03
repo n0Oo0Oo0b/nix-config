@@ -109,6 +109,7 @@
 
       discord
       steam
+      ferdium
     #  thunderbird
     ];
   };
