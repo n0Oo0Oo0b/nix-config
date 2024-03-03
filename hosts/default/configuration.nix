@@ -100,6 +100,7 @@
       #zotero
       #zoom-us
 
+      porsmo
       ffmpeg
       opentabletdriver
       #openrgb-with-all-plugins
@@ -130,7 +131,8 @@
 
     python311
     python312
-    rustup
+    cargo
+    rustc
 
     inter
   ];
