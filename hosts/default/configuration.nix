@@ -100,6 +100,7 @@
       #zotero
       #zoom-us
 
+      ffmpeg
       opentabletdriver
       #openrgb-with-all-plugins
 
@@ -109,7 +110,7 @@
 
       discord
       steam
-      ferdium
+      #ferdium
     #  thunderbird
     ];
   };
