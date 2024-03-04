@@ -103,7 +103,6 @@
 
       porsmo
       ffmpeg
-      opentabletdriver
       #openrgb-with-all-plugins
 
       jetbrains.pycharm-professional
@@ -123,6 +122,9 @@
       "danielgu" = import ./home.nix;
     };
   };
+
+  hardware.opentabletdriver.enable = true;
+  services.udev.extraRules = "";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
