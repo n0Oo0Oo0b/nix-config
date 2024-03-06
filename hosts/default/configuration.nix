@@ -123,8 +123,8 @@
     };
   };
 
-  hardware.opentabletdriver.enable = true;
-  services.udev.extraRules = "";
+  #hardware.opentabletdriver.enable = true;
+  #services.udev.extraRules = "";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
