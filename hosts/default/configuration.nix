@@ -140,8 +140,7 @@
 
     python311
     python312
-    cargo
-    rustc
+    rustup
 
     inter
   ];
