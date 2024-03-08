@@ -13,9 +13,9 @@
       # ../../modules/nvidia.nix
     ];
 
-  # Allow unfree packages
+# Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -104,7 +104,7 @@
       obsidian
       #blender
       #zotero
-      #zoom-us
+      zoom-us
       libreoffice
 
       porsmo
@@ -144,11 +144,6 @@
 
     inter
   ];
-
-  # # For obsidian; what could go wrong :clueless:
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-25.9.0"
-  # ];
 
   programs.steam = {
     enable = true;
