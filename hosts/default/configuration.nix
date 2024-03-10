@@ -63,9 +63,17 @@
     variant = "";
   };
 
-  fonts.fontconfig.defaultFonts = {
-    monospace = [ "JetBrainsMono Nerd Font" ];
-    sansSerif = [ "Inter" ];
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+    ];
+    fontconfig.defaultFonts = {
+      monospace = [ "JetBrainsMono Nerd Font" ];
+      sansSerif = [ "Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" ];
+      serif = [ "DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" ];
+    };
   };
 
   # Enable CUPS to print documents.
@@ -111,6 +119,7 @@
       porsmo
       ffmpeg
       #openrgb-with-all-plugins
+      font-manager
 
       jetbrains.pycharm-professional
       jetbrains.idea-ultimate
