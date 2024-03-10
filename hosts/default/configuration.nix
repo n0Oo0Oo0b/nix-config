@@ -106,6 +106,7 @@
       #zotero
       zoom-us
       libreoffice
+      anki-bin
 
       porsmo
       ffmpeg
