@@ -112,7 +112,7 @@
       firefox
       obsidian
       #blender
-      #zotero
+      zotero
       zoom-us
       libreoffice
       anki-bin
