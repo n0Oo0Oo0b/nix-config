@@ -117,6 +117,7 @@
       libreoffice
       anki-bin
       porsmo
+      youtube-music
 
       ffmpeg
       #openrgb-with-all-plugins
