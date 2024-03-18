@@ -9,11 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      # # Breaks VSC for some reason
-      # ../../modules/nvidia.nix
     ];
 
-# Allow unfree packages
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
   # Bootloader.
@@ -71,13 +69,13 @@
     ];
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono Nerd Font" ];
-      sansSerif = [ "Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" ];
-      serif = [ "DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" ];
+      sansSerif = [ "Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP" ];
+      serif = [ "DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP" ];
     };
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -157,11 +155,11 @@
     inter
   ];
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true;
+  #   dedicatedServer.openFirewall = true;
+  # };
 
 
   # Some programs need SUID wrappers, can be configured further or are
