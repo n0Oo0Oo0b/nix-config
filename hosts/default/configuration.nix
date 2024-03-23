@@ -157,8 +157,6 @@
     wget
     gcc13
 
-    python311
-    python312
     rustup
 
     inter

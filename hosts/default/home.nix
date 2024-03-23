@@ -19,10 +19,11 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    pkgs.texliveFull
+    texliveFull
+    python311
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
