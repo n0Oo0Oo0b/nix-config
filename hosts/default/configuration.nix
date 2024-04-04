@@ -119,25 +119,24 @@
     packages = with pkgs; [
       firefox
       obsidian
-      #blender
+      # blender
       zotero
       zoom-us
       libreoffice
       anki-bin
-      porsmo
       youtube-music
+      discord
+      obs-studio
 
-      ffmpeg
-      #openrgb-with-all-plugins
+      # openrgb-with-all-plugins
+      porsmo
       font-manager
+      ffmpeg
+      alejandra
 
       jetbrains.pycharm-professional
       jetbrains.idea-ultimate
       jetbrains.clion
-
-      discord
-      #ferdium
-    #  thunderbird
     ];
   };
 
