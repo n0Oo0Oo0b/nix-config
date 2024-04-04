@@ -11,9 +11,9 @@ if git diff --quiet '*.nix'; then
     exit 0
 fi
 
-# # Reformat
-# alejandra . &>/dev/null \
-#   || ( alejandra . ; echo "formatting failed!" && exit 1)
+# Reformat
+alejandra . &>/dev/null \
+  || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Display changes
 git diff -U0 '*.nix'
