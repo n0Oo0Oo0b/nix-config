@@ -136,7 +136,6 @@
       jetbrains.clion
 
       discord
-      steam
       #ferdium
     #  thunderbird
     ];
