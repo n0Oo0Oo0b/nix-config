@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "danielgu";
@@ -15,12 +17,12 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  nixpkgs.config.allowUnfree = true;  
+  nixpkgs.config.allowUnfree = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
 
     texliveFull
     python311

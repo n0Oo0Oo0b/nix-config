@@ -1,19 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -21,7 +23,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -57,7 +59,6 @@
     ];
   };
 
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -78,9 +79,9 @@
       noto-fonts-cjk-serif
     ];
     fontconfig.defaultFonts = {
-      monospace = [ "JetBrainsMono Nerd Font" ];
-      sansSerif = [ "Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP" ];
-      serif = [ "DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP" ];
+      monospace = ["JetBrainsMono Nerd Font"];
+      sansSerif = ["Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP"];
+      serif = ["DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP"];
     };
   };
 
@@ -115,7 +116,7 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
       obsidian
@@ -141,7 +142,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
       "danielgu" = import ./home.nix;
     };
@@ -166,7 +167,6 @@
   #   remotePlay.openFirewall = true;
   #   dedicatedServer.openFirewall = true;
   # };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
