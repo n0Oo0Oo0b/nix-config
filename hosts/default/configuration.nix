@@ -120,7 +120,6 @@
       discord
       obs-studio
 
-      # openrgb-with-all-plugins
       porsmo
       font-manager
       ffmpeg
@@ -170,6 +169,8 @@
   # List services that you want to enable:
 
   services.openssh.enable = true;
+
+  services.hardware.openrgb.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
