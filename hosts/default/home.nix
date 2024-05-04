@@ -46,6 +46,7 @@
 
   programs.vscode = {
     enable = true;
+    package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       james-yu.latex-workshop
       ms-python.python
