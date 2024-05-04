@@ -50,6 +50,7 @@
       james-yu.latex-workshop
       ms-python.python
       ms-python.vscode-pylance
+      asvetliakov.vscode-neovim
     ];
   };
 
