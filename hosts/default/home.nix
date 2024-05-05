@@ -57,6 +57,15 @@
 
       ms-python.vscode-pylance
     ];
+    userSettings = {
+      "files.autoSave" = "onFocusChange";
+      "editor.lineNumbers" = "relative";
+
+      # Make nvim work
+      "extensions.experimental.affinity" = {
+        "asvetliakov.vscode-neovim" = 1;
+      };
+    };
   };
 
   programs.neovim = {
@@ -97,7 +106,7 @@
   #  /etc/profiles/per-user/danielgu/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
