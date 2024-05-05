@@ -22,8 +22,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-
     texliveFull
     python311
 
@@ -60,6 +58,7 @@
     userSettings = {
       "files.autoSave" = "onFocusChange";
       "editor.lineNumbers" = "relative";
+      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace', monospace";
 
       # Make nvim work
       "extensions.experimental.affinity" = {
