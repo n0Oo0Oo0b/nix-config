@@ -56,7 +56,7 @@
       ms-python.vscode-pylance
     ];
     userSettings = {
-      "files.autoSave" = "onFocusChange";
+      "files.autoSave" = "off";
       "editor.lineNumbers" = "relative";
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace', monospace";
       "editor.fontLigatures" = true;
