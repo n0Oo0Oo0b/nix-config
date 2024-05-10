@@ -11,5 +11,6 @@
       Option       "AllowIndirectGLXProtocol" "off"
       Option       "TripleBuffer" "on"
     '';
+    exportConfiguration = true;
   };
 }
