@@ -72,6 +72,11 @@
 
   # GNOME
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.setupCommands = ''
+    LEFT='DP-2'
+    CENTER='DP-4'
+    ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --pos 1080x240 --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
+  '';
   services.xserver.desktopManager.gnome.enable = true;
 
   fonts = {
