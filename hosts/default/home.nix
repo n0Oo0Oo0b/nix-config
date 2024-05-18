@@ -76,6 +76,7 @@
       nmap L $
       nmap <C-Space> i
       imap <C-Space> <Right><Esc>
+      imap  <Esc>bcw
     '';
   };
 
