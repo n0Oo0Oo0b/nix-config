@@ -72,8 +72,10 @@
     enable = true;
     extraConfig = ''
       set number relativenumber
-      nnoremap <C-Space> i
-      inoremap <C-Space> <Right><Esc>
+      nmap H ^
+      nmap L $
+      nmap <C-Space> i
+      imap <C-Space> <Right><Esc>
     '';
   };
 
