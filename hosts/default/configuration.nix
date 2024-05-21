@@ -67,7 +67,7 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-    options = "caps:ctrl_modifier";
+    options = "ctrl:swapcaps";
   };
 
   # GNOME
