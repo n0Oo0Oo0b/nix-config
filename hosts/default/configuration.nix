@@ -138,6 +138,7 @@
       font-manager
       ffmpeg
       alejandra
+      xclip
 
       jetbrains.pycharm-professional
       jetbrains.idea-ultimate
