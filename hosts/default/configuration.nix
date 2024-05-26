@@ -132,7 +132,6 @@
       libreoffice
       anki-bin
       youtube-music
-      discord
       obs-studio
 
       porsmo
