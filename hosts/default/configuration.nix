@@ -137,6 +137,7 @@
       porsmo
       font-manager
       ffmpeg
+      pandoc
       alejandra
       xclip
 
