@@ -126,6 +126,7 @@
     packages = with pkgs; [
       firefox
       obsidian
+      slack
       # blender
       zotero
       zoom-us
