@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+  imports = [
+    "../../modules/home-manager/vscode.nix"
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "danielgu";
@@ -42,32 +45,6 @@
     };
   };
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
-      asvetliakov.vscode-neovim
-
-      bbenoist.nix
-
-      james-yu.latex-workshop
-      ms-python.python
-
-      ms-python.vscode-pylance
-    ];
-    userSettings = {
-      "files.autoSave" = "off";
-      "editor.lineNumbers" = "relative";
-      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace', monospace";
-      "editor.fontLigatures" = true;
-
-      # Make nvim work
-      "extensions.experimental.affinity" = {
-        "asvetliakov.vscode-neovim" = 1;
-      };
-    };
-  };
-
   programs.neovim = {
     enable = true;
     extraConfig = ''
@@ -83,6 +60,20 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".ideavimrc".text = ''
+      imap <C-Space> <Right><Esc>
+      vmap <C-Space> <Esc>
+
+      nmap H ^
+      nmap L $
+
+      imap <C-l> <Right><BS>
+
+      nmap g<CR> :action ShowIntentionActions<CR>
+      :command! R action Run
+      :command! RC action RunClass
+      :command! Fmt action ShowReformatFileDialog
+    '';
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
