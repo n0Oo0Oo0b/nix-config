@@ -163,6 +163,7 @@
   environment.systemPackages = with pkgs; [
     wget
     gcc13
+    gtk3
 
     rustup
 
