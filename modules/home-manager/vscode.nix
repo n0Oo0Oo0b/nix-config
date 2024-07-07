@@ -17,6 +17,7 @@
       "editor.lineNumbers" = "relative";
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace', monospace";
       "editor.fontLigatures" = true;
+      "explorer.confirmDelete" = false;
 
       # Make nvim work
       "extensions.experimental.affinity" = {
