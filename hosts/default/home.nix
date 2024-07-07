@@ -73,6 +73,8 @@
       :command! R action Run
       :command! RC action RunClass
       :command! Fmt action ShowReformatFileDialog
+
+      set ideajoin
     '';
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a

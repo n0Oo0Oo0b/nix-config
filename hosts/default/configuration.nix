@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
+    ../../modules/docker.nix
     inputs.home-manager.nixosModules.default
   ];
 
