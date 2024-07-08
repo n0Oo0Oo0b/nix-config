@@ -9,8 +9,9 @@
 
       james-yu.latex-workshop
       ms-python.python
-
       ms-python.vscode-pylance
+
+      ms-vsliveshare.vsliveshare
     ];
     userSettings = {
       "files.autoSave" = "off";
