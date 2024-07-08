@@ -12,6 +12,7 @@
       ms-python.vscode-pylance
 
       ms-vsliveshare.vsliveshare
+      github.codespaces
     ];
     userSettings = {
       "files.autoSave" = "off";
