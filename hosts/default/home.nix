@@ -30,10 +30,6 @@
     sioyek
     (pkgs.discord.override {withTTS = true;})
     neovide
-
-    (pkgs.writeShellScriptBin "nvide" ''
-      neovide -- -u ~/nixos/temp/init.lua
-    '')
   ];
 
   programs.git = {
@@ -47,14 +43,6 @@
 
   programs.neovim = {
     enable = true;
-    extraConfig = ''
-      set number relativenumber
-      nmap H ^
-      nmap L $
-      nmap <C-Space> i
-      imap <C-Space> <Right><Esc>
-      imap  <C-w>
-    '';
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -76,6 +64,12 @@
 
       set ideajoin
     '';
+
+    "${config.xdg.configHome}/nvim" = {
+      source = ../../extras/nvim;
+      recursive = true;
+    };
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
