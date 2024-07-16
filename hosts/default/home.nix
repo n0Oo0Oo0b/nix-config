@@ -29,7 +29,8 @@
     python311
     sioyek
     (pkgs.discord.override {withTTS = true;})
-    neovide
+    # neovide
+    zellij
   ];
 
   programs.git = {

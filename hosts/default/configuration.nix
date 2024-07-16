@@ -165,6 +165,7 @@
     wget
     gcc13
     gtk3
+    unzip
 
     rustup
 
