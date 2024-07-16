@@ -142,6 +142,7 @@
       pandoc
       alejandra
       xclip
+      ripgrep
 
       jetbrains.pycharm-professional
       jetbrains.idea-ultimate
@@ -166,6 +167,8 @@
     gcc13
     gtk3
     unzip
+    stdenv.cc.cc.lib
+    pam
 
     rustup
 
