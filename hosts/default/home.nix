@@ -31,20 +31,27 @@
     sioyek
 
     # Dev
-    zellij
     python311
     # neovide
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.clion
 
-    # Commandline / misc
-    font-manager
+    # Commandline
+    zellij
     porsmo
+    ripgrep
+    eza
+    du-dust
+    bat
+    mprocs
+    gitui
+
+    # Misc
+    ffmpeg
+    font-manager
     pandoc
     texliveFull
-    ripgrep
-    ffmpeg
     alejandra
   ];
 
