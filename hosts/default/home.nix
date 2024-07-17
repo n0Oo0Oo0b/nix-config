@@ -88,6 +88,10 @@
       source = ../../extras/nvim;
       recursive = true;
     };
+
+    ".bashrc".text = ''
+      eval "$(starship init bash)"
+    '';
   };
 
   home.sessionVariables = {
