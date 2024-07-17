@@ -59,6 +59,12 @@
     enable = true;
   };
 
+  programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {};
+  };
+
   # Dotfiles
   home.file = {
     ".ideavimrc".text = ''
