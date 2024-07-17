@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -9,8 +6,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nvidia.nix
-    ../../modules/docker.nix
+    ../../modules/nixos/nvidia.nix
+    ../../modules/nixos/docker.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -27,15 +24,14 @@
     options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
   '';
 
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  networking.hostName = "nixos";
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
@@ -63,25 +59,27 @@
     ];
   };
 
-  # X11
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # X11/GNOME
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
 
-  # GNOME
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.setupCommands = ''
-    LEFT='DP-2'
-    CENTER='DP-4'
-    ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --pos 1080x240 --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
-  '';
-  services.xserver.desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+    displayManager.setupCommands = ''
+      LEFT='DP-2'
+      CENTER='DP-4'
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --pos 1080x240 --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
+    '';
+    desktopManager.gnome.enable = true;
+  };
 
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      inter
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -124,30 +122,6 @@
     isNormalUser = true;
     description = "Daniel Gu";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      firefox
-      obsidian
-      slack
-      # blender
-      zotero
-      zoom-us
-      libreoffice
-      anki-bin
-      youtube-music
-      obs-studio
-
-      porsmo
-      font-manager
-      ffmpeg
-      pandoc
-      alejandra
-      xclip
-      ripgrep
-
-      jetbrains.pycharm-professional
-      jetbrains.idea-ultimate
-      jetbrains.clion
-    ];
   };
 
   home-manager = {
@@ -164,15 +138,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
+    unzip
+    xclip
     gcc13
     gtk3
-    unzip
-    stdenv.cc.cc.lib
-    pam
 
     rustup
-
-    inter
   ];
 
   # Required for egui to work?? idk

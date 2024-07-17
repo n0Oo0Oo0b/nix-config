@@ -232,9 +232,9 @@ return {
       })
     end,
   },
-  { -- Show inlay hints at the end
-    "chrisgrieser/nvim-lsp-endhints",
-    event = "LspAttach",
-    opts = {},
-  },
+  -- { -- Show inlay hints at the end
+  --   "chrisgrieser/nvim-lsp-endhints",
+  --   event = "LspAttach",
+  --   opts = {},
+  -- },
 }

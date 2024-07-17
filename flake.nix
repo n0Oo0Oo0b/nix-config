@@ -25,13 +25,5 @@
         inputs.home-manager.nixosModules.default
       ];
     };
-    nixosConfigurations.with_nvidia = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/default/configuration.nix
-        ./modules/nvidia.nix
-        inputs.home-manager.nixosModules.default
-      ];
-    };
   };
 }
