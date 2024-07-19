@@ -85,7 +85,7 @@
       noto-fonts-cjk-serif
     ];
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono Nerd Font Mono"];
+      monospace = ["JetBrainsMono Nerd Font Mono Regular"];
       sansSerif = ["Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP"];
       serif = ["DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP"];
     };
