@@ -85,10 +85,11 @@
       noto-fonts-cjk-serif
     ];
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono Nerd Font"];
+      monospace = ["JetBrainsMNF"];
       sansSerif = ["Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP"];
       serif = ["DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP"];
     };
+    fontDir.enable = true;
   };
 
   # Enable CUPS to print documents.
