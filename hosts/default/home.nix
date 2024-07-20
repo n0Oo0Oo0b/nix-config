@@ -89,6 +89,8 @@
       recursive = true;
     };
 
+    "${config.xdg.configHome}/zellij/config.kdl".source = ../../extras/zellij.kdl;
+
     ".bashrc".text = ''
       eval "$(starship init bash)"
     '';
