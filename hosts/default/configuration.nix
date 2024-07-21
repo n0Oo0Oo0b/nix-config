@@ -97,6 +97,10 @@
     enable = true;
     drivers = with pkgs; [epson-escpr];
   };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   # Pipewire sound
   sound.enable = true;
