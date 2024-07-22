@@ -71,8 +71,11 @@
     displayManager.gdm.enable = true;
     displayManager.setupCommands = ''
       LEFT='DP-2'
-      CENTER='DP-4'
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --pos 1080x240 --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
+      RIGHT='DP-3'
+
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --primary --right-of $LEFT --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
+
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 1080x240
     '';
     desktopManager.gnome.enable = true;
   };
