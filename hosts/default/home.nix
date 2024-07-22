@@ -36,6 +36,7 @@
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.clion
+    zed-editor
 
     # Commandline
     zellij
