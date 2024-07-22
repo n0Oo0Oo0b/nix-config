@@ -153,6 +153,9 @@
 
     rustup
   ];
+  environment.variables = {
+    MOZ_ENABLE_WAYLAND = 0;
+  };
 
   # Required for egui to work?? idk
   programs.nix-ld.enable = true;
