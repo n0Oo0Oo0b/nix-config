@@ -120,7 +120,7 @@
   programs.noisetorch.enable = true;
 
   hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
+  # hardware.graphics.enable32Bit = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.danielgu = {
