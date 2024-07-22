@@ -21,8 +21,8 @@
     obsidian
     youtube-music
     libreoffice
-    (pkgs.discord.override {withTTS = true;})
     slack
+    (pkgs.discord.override {withTTS = true;})
     # blender
     zoom-us
     zotero
