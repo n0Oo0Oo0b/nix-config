@@ -67,6 +67,7 @@
       layout = "us";
       variant = "";
     };
+    wacom.enable = true;
 
     displayManager.gdm.enable = true;
     displayManager.setupCommands = ''
