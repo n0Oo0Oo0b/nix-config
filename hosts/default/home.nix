@@ -85,6 +85,10 @@
       set ideajoin
     '';
 
+    ".bashrc".text = ''
+      eval "$(starship init bash)"
+    '';
+
     "${config.xdg.configHome}/nvim" = {
       source = ../../extras/nvim;
       recursive = true;
@@ -92,9 +96,7 @@
 
     "${config.xdg.configHome}/zellij/config.kdl".source = ../../extras/zellij.kdl;
 
-    ".bashrc".text = ''
-      eval "$(starship init bash)"
-    '';
+    "${config.xdg.configHome}/zoomus.conf".source = ../../extras/zoomus.conf;
   };
 
   home.sessionVariables = {
