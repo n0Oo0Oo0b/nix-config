@@ -132,7 +132,7 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "audio"];
   };
 
   home-manager = {
