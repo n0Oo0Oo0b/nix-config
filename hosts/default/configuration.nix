@@ -21,8 +21,9 @@
     "snd-aloop"
   ];
   boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+    options v4l2loopback devices=1 video_nr=1 card_label="OBS VCam" exclusive_caps=1
   '';
+  security.polkit.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

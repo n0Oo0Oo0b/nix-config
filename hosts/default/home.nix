@@ -27,7 +27,6 @@
     zoom-us
     zotero
     anki-bin
-    obs-studio
     sioyek
 
     # Dev
@@ -62,8 +61,16 @@
 
   programs.starship = {
     enable = true;
-    # Configuration written to ~/.config/starship.toml
     settings = {};
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+    ];
   };
 
   # Dotfiles
