@@ -53,6 +53,7 @@
     pandoc
     texliveFull
     alejandra
+    cachix
   ];
 
   programs.neovim = {
