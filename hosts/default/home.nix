@@ -23,7 +23,6 @@
     libreoffice
     slack
     (pkgs.discord.override {withTTS = true;})
-    blender
     zoom-us
     zotero
     anki-bin
