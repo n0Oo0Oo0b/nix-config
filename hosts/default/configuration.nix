@@ -135,6 +135,7 @@
     #media-session.enable = true;
   };
   programs.noisetorch.enable = true;
+  programs.dconf.enable = true;
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
