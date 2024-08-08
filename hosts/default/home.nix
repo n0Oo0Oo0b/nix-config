@@ -4,8 +4,9 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/vscode.nix
-    ../../modules/home-manager/git.nix
+    ../../home/vscode.nix
+    ../../home/git.nix
+    ../../home/i3
   ];
 
   home.username = "danielgu";

@@ -6,8 +6,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos/nvidia.nix
-    ../../modules/nixos/docker.nix
+    ../../modules/nvidia.nix
+    ../../modules/docker.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -81,7 +81,7 @@
     wacom.enable = true;
 
     displayManager.gdm.enable = true;
-    displayManager.setupCommands = ''
+    displayManager.sessionCommands = ''
       LEFT='DP-2'
       RIGHT='DP-3'
       ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --primary --right-of $LEFT --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
