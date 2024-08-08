@@ -56,8 +56,11 @@
   ];
 
   gtk.theme = {
-    name = "catppuccin-mocha";
-    package = pkgs.catppuccin-gtk;
+    name = "catppuccin";
+    package = pkgs.catppuccin;
+  };
+  gtk.cursorTheme = {
+    size = 10;
   };
 
   programs.kitty = {
