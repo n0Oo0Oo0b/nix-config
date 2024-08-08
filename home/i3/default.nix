@@ -22,4 +22,11 @@
       ${pkgs.openrgb}/bin/openrgb -p default
     '';
   };
+
+  services.picom = {
+    enable = true;
+
+    activeOpacity = 0.8;
+    inactiveOpacity = 0.8;
+  };
 }
