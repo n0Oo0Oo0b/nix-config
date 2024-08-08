@@ -138,7 +138,7 @@
 
     "${config.xdg.configHome}/zoomus.conf".source = ../../extras/zoomus.conf;
 
-    ".background-image".source = ../../extras/bsod.png;
+    ".background-image".source = ../../extras/nixos.png;
   };
 
   home.sessionVariables = {
