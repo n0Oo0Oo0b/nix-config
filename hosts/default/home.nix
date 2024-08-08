@@ -57,11 +57,18 @@
 
   gtk.enable = true;
   gtk.theme = {
-    name = "Adwaita:dark";
+    name = "Adwaita-Dark";
+    package = pkgs.gnome.gnome-themes-extra;
   };
   gtk.cursorTheme = {
     name = "Adwaita";
     size = 10;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   programs.kitty = {
