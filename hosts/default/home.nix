@@ -137,6 +137,8 @@
     "${config.xdg.configHome}/zellij/config.kdl".source = ../../extras/zellij.kdl;
 
     "${config.xdg.configHome}/zoomus.conf".source = ../../extras/zoomus.conf;
+
+    ".background_image".source = ../../extras/bsod.png;
   };
 
   home.sessionVariables = {
