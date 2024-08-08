@@ -57,8 +57,7 @@
 
   gtk.enable = true;
   gtk.theme = {
-    name = "catppuccin-mocha";
-    package = pkgs.catppuccin-gtk;
+    name = "Adwaita:dark";
   };
   gtk.cursorTheme = {
     name = "Adwaita";
