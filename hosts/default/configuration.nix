@@ -80,19 +80,14 @@
     };
     wacom.enable = true;
 
-    displayManager.gdm.enable = true;
-    displayManager.sessionCommands = ''
-      LEFT='DP-2'
-      RIGHT='DP-3'
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --primary --right-of $LEFT --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
-      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 1080x240
-
-      ${pkgs.noisetorch}/bin/noisetorch -i
-
-      ${pkgs.openrgb}/bin/openrgb -p default
-    '';
     desktopManager.gnome.enable = true;
+    desktopManager.xterm.enable = true;
+
+    displayManager.gdm.enable = true;
+
+    windowManager.i3.enable = true;
   };
+  services.displayManager.defaultSession = "none+i3";
 
   fonts = {
     packages = with pkgs; [
