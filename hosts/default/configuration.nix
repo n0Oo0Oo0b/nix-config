@@ -84,11 +84,11 @@
       accelProfile = "flat";
     };
 
-    # desktopManager.gnome.enable = true;
+    desktopManager.gnome.enable = true;
 
     displayManager.gdm.enable = true;
   };
-  # services.displayManager.defaultSession = "GNOME on Xorg";
+  services.displayManager.defaultSession = "gnome-xorg";
 
   fonts = {
     packages = with pkgs; [
