@@ -11,7 +11,7 @@
       gaps.outer = 10;
     };
     windowManager.i3.extraConfig = ''
-      exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-scale $HOME/.background-image
+      exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-fill $HOME/.background-image
       exec --no-startup-id ${pkgs.picom}/bin/picom -b
     '';
 
@@ -30,7 +30,8 @@
   services.picom = {
     enable = true;
 
-    activeOpacity = 0.9;
-    inactiveOpacity = 0.8;
+    activeOpacity = 0.95;
+    inactiveOpacity = 0.9;
+    menuOpacity = 0.9;
   };
 }
