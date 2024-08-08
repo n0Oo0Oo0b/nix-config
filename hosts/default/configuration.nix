@@ -80,6 +80,10 @@
     };
     wacom.enable = true;
 
+    libinput.mouse = {
+      accelProfile = "flat";
+    };
+
     desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = true;
 
@@ -166,16 +170,6 @@
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
   };
-
-  # Required for egui to work?? idk
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libxcb
-    xorg.libXi
-    libxkbcommon
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -55,6 +55,11 @@
     alejandra
   ];
 
+  gtk.theme = {
+    name = "catppuccin-mocha";
+    package = pkgs.catppuccin-gtk;
+  };
+
   programs.kitty = {
     enable = true;
     font = {
