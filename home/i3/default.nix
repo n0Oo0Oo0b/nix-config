@@ -6,9 +6,13 @@
       modifier = "Mod4";
       fonts = ["JetBrains Mono Nerd Font 11.0"];
       terminal = "kitty";
+
+      gaps.inner = 5;
+      gaps.outer = 10;
     };
     windowManager.i3.extraConfig = ''
       exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-scale $HOME/.background-image
+      exec --no-startup-id ${pkgs.picom}/bin/picom
     '';
 
     initExtra = ''
@@ -26,7 +30,7 @@
   services.picom = {
     enable = true;
 
-    activeOpacity = 0.8;
-    inactiveOpacity = 0.8;
+    activeOpacity = 0.95;
+    inactiveOpacity = 0.9;
   };
 }
