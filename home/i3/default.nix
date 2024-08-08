@@ -7,8 +7,11 @@
       fonts = ["JetBrains Mono Nerd Font 11.0"];
       terminal = "kitty";
     };
+
+    initExtra = ''
+      . ~/.screenlayout/monitor.sh
+    '';
     profileExtra = ''
-      bash ~/.screenlayout/monitor.sh
       noisetorch -i
       openrgb -p default
     '';
