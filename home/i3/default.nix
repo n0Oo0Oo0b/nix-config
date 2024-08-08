@@ -7,6 +7,9 @@
       fonts = ["JetBrains Mono Nerd Font 11.0"];
       terminal = "kitty";
     };
+    windowManager.i3.extraConfig = ''
+      exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-scale $HOME/.background-image
+    '';
 
     initExtra = ''
       LEFT='DP-2'
