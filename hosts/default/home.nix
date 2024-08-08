@@ -55,11 +55,13 @@
     alejandra
   ];
 
+  gtk.enable = true;
   gtk.theme = {
-    name = "catppuccin";
-    package = pkgs.catppuccin;
+    name = "catppuccin-mocha";
+    package = pkgs.catppuccin-gtk;
   };
   gtk.cursorTheme = {
+    name = "Adwaita";
     size = 10;
   };
 
