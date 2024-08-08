@@ -109,8 +109,6 @@
       recursive = true;
     };
 
-    # "${config.xdg.configHome}/kitty/kitty.conf".source = ../../extras/kitty.conf;
-
     "${config.xdg.configHome}/zellij/config.kdl".source = ../../extras/zellij.kdl;
 
     "${config.xdg.configHome}/zoomus.conf".source = ../../extras/zoomus.conf;
@@ -118,7 +116,7 @@
     ".screenlayout/monitor.sh".text = ''
       #!/bin/sh
       LEFT='DP-2'
-      RIGHT='DP-3'
+      RIGHT='DP-4'
       xrandr --output $RIGHT --primary --right-of $LEFT --mode 2560x1440 --rate 144 --output $LEFT --mode 1920x1080 --rate 75 --rotate left
       xrandr --output $RIGHT --pos 1080x240
     '';
