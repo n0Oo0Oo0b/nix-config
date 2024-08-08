@@ -55,14 +55,23 @@
     alejandra
   ];
 
-  gtk.enable = true;
-  gtk.theme = {
-    name = "Adwaita-Dark";
-    package = pkgs.gnome.gnome-themes-extra;
-  };
-  gtk.cursorTheme = {
-    name = "Adwaita";
-    size = 10;
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-Dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+    cursorTheme = {
+      name = "Adwaita";
+      size = 10;
+    };
+
+    gtk2 = {
+      extraConfig = "gtk-application-prefer-dark-theme=true";
+      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    };
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   dconf.settings = {
