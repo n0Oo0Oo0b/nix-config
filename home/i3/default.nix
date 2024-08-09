@@ -8,7 +8,11 @@
     windowManager.i3.enable = true;
     windowManager.i3.config = {
       modifier = "Mod4";
-      fonts = ["JetBrains Mono Nerd Font 11.0"];
+      fonts = {
+        names = ["JetBrains Mono Nerd Font"];
+        style = "Regular";
+        size = 11.0;
+      };
       terminal = "kitty";
 
       gaps.inner = 10;
@@ -46,7 +50,7 @@
     '';
   };
 
-  programs.i3status-rust.enable = true;
+  # programs.i3status-rust.enable = true;
   # programs.i3status-rust.bars = [];
 
   services.picom = {
