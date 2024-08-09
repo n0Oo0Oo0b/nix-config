@@ -78,7 +78,12 @@
   programs.eza.enable = true;
   programs.gitui.enable = true;
   programs.sioyek.enable = true;
-  programs.zellij.enable = true;
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
+  };
 
   programs.obs-studio = {
     enable = true;
