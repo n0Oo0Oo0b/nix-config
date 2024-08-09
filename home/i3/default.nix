@@ -84,33 +84,38 @@
           interval = 60;
           warning = 20.0;
           alert = 10.0;
+          alert_unit = "GB";
         }
         {
           block = "memory";
-          format_mem = " $icon $mem_used_percents ";
-          format_swap = " $icon $swap_used_percents ";
+          format = " $icon $mem_used.eng(prefix:G)/$mem_total.eng(prefix:G) ";
+          warning_mem = 70.0;
+          critical_mem = 90.0;
         }
         {
           block = "cpu";
           interval = 1;
+          format = " $icon $barchart ";
         }
         {
-          block = "load";
-          interval = 1;
-          format = " $icon $1m ";
+          block = "temperature";
+          interval = 10;
+          format = " $icon $max ";
         }
-        {block = "sound";}
+        {
+          block = "sound";
+          driver = "pulseaudio";
+        }
         {
           block = "time";
           interval = 1;
-          format = " $timestamp.datetime(f:'%a %Y-%m-%d %H:%M:%S') ";
+          format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
         }
       ];
       theme = "ctp-mocha";
       icons = "material-nf";
     };
   };
-  # programs.i3status-rust.bars = [];
 
   services.picom = {
     enable = true;
