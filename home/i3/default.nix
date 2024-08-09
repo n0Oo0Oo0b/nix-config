@@ -45,6 +45,13 @@
             "${mod}+l" = "focus right";
             "${mod}+shift+l" = "move right";
           };
+
+        bars = [
+          {
+            position = "bottom";
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+          }
+        ];
       };
 
       extraConfig = ''
