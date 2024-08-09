@@ -26,6 +26,7 @@
   security.polkit.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
   nix.settings.substituters = [
     "https://cache.nixos.org"
     "https://nix-community.cachix.org"
@@ -80,15 +81,15 @@
     };
     wacom.enable = true;
 
-    libinput.mouse = {
-      accelProfile = "flat";
-    };
-
     desktopManager.gnome.enable = true;
-
     displayManager.gdm.enable = true;
   };
+
   services.displayManager.defaultSession = "gnome-xorg";
+
+  services.libinput = {
+    mouse.accelProfile = "flat";
+  };
 
   fonts = {
     packages = with pkgs; [
@@ -153,15 +154,10 @@
   #hardware.opentabletdriver.enable = true;
   #services.udev.extraRules = "";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
     unzip
     xclip
-    gcc13
-    gtk3
-
     rustup
   ];
   environment.variables = {
@@ -176,17 +172,12 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
   services.openssh.enable = true;
 
   services.hardware.openrgb.enable = true;
 
-  # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -58,8 +58,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita-Dark";
-      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     cursorTheme = {
       name = "Adwaita";
@@ -129,16 +129,18 @@
       eval "$(starship init bash)"
     '';
 
-    "${config.xdg.configHome}/nvim" = {
+    ".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
+  };
+
+  xdg.configFile = {
+    "nvim" = {
       source = ../../extras/nvim;
       recursive = true;
     };
 
-    "${config.xdg.configHome}/zellij/config.kdl".source = ../../extras/zellij.kdl;
+    "zellij/config.kdl".source = ../../extras/zellij.kdl;
 
-    "${config.xdg.configHome}/zoomus.conf".source = ../../extras/zoomus.conf;
-
-    ".background-image".source = ../../extras/nixos.png;
+    "zoomus.conf".source = ../../extras/zoomus.conf;
   };
 
   home.sessionVariables = {
