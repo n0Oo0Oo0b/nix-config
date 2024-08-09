@@ -33,9 +33,11 @@
           "XF86AudioPrev" = "exec ${playerctl} previous";
         };
     };
+
     windowManager.i3.extraConfig = ''
       exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-fill $HOME/.background-image
       exec --no-startup-id ${pkgs.picom}/bin/picom -b
+      exec --no-startup-id ${pkgs.flameshot}/bin/flameshot
     '';
 
     initExtra = ''
@@ -59,4 +61,6 @@
     inactiveOpacity = 0.9;
     menuOpacity = 0.9;
   };
+
+  services.flameshot.enable = true;
 }
