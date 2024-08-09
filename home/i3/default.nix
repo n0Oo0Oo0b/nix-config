@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   xsession = {
@@ -21,6 +22,7 @@
       keybindings = let
         pactl = "${pkgs.pulseaudio}/bin/pactl";
         playerctl = "${pkgs.playerctl}/bin/playerctl";
+        mod = config.xsession.windowManager.i3.config.modifier;
       in
         lib.mkOptionDefault {
           "XF86AudioRaiseVolume" = "exec --no-startup-id ${pactl} set-sink-volume 0 +5%";
@@ -31,6 +33,15 @@
           "XF86AudioPause" = "exec ${playerctl} pause";
           "XF86AudioNext" = "exec ${playerctl} next";
           "XF86AudioPrev" = "exec ${playerctl} previous";
+
+          "${mod}+i" = "focus up";
+          "${mod}+shift+i" = "move up";
+          "${mod}+j" = "focus left";
+          "${mod}+shift+j" = "move left";
+          "${mod}+k" = "focus down";
+          "${mod}+shift+k" = "move down";
+          "${mod}+l" = "focus right";
+          "${mod}+shift+l" = "move right";
         };
     };
 
