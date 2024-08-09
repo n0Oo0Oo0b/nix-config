@@ -33,7 +33,6 @@
     zoom-us
     zotero
     anki-bin
-    sioyek
 
     # Dev
     python311
@@ -44,18 +43,13 @@
     zed-editor
 
     # Commandline
-    zellij
     porsmo
     ripgrep
-    eza
     du-dust
-    bat
     mprocs
-    gitui
 
     # Misc
     ffmpeg
-    font-manager
     pandoc
     texliveFull
     alejandra
@@ -63,19 +57,9 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    cursorTheme = {
-      name = "Adwaita";
-      size = 10;
-    };
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
-    gtk2 = {
-      extraConfig = "gtk-application-prefer-dark-theme=true";
-      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    };
+    gtk2.extraConfig = "gtk-application-prefer-dark-theme=true";
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
@@ -89,8 +73,12 @@
   };
 
   programs.btop.enable = true;
-
   programs.starship.enable = true;
+  programs.bat.enable = true;
+  programs.eza.enable = true;
+  programs.gitui.enable = true;
+  programs.sioyek.enable = true;
+  programs.zellij.enable = true;
 
   programs.obs-studio = {
     enable = true;
