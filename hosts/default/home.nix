@@ -15,6 +15,8 @@
   home.username = "danielgu";
   home.homeDirectory = "/home/danielgu";
 
+  i18n.inputMethod.fcitx5.catppuccin.apply = true;
+
   # NOTE:: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
