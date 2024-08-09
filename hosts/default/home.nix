@@ -141,6 +141,13 @@
     EDITOR = "nvim";
   };
 
+  home.shellAliases = {
+    "ls" = "eza";
+    "cat" = "bat";
+
+    "glo" = "git log --oneline";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
