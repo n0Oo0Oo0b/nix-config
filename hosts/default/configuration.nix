@@ -8,7 +8,6 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     ../../modules/docker.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;

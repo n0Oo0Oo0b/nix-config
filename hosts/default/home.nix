@@ -1,12 +1,15 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     ../../home/vscode.nix
     ../../home/git.nix
     ../../home/i3
+    ../../home/nvim
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   home.username = "danielgu";
@@ -14,6 +17,9 @@
 
   # NOTE:: Check home-manager release notes before changing
   home.stateVersion = "23.11";
+
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
@@ -74,12 +80,6 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
   programs.kitty = {
     enable = true;
     font = {
@@ -88,14 +88,9 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-  };
+  programs.btop.enable = true;
 
-  programs.starship = {
-    enable = true;
-    settings = {};
-  };
+  programs.starship.enable = true;
 
   programs.obs-studio = {
     enable = true;
