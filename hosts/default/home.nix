@@ -15,7 +15,7 @@
   home.username = "danielgu";
   home.homeDirectory = "/home/danielgu";
 
-  i18n.inputMethod.fcitx5.catppuccin.apply = true;
+  # i18n.inputMethod.fcitx5.catppuccin.apply = true;
 
   # NOTE:: Check home-manager release notes before changing
   home.stateVersion = "23.11";
@@ -76,6 +76,9 @@
       name = "JetBrains Mono Nerd Font";
       size = 12;
     };
+    settings = {
+      disable_ligatures = "cursor";
+    };
   };
 
   programs.btop.enable = true;
@@ -97,6 +100,7 @@
       wlrobs
       obs-backgroundremoval
       obs-pipewire-audio-capture
+      input-overlay
     ];
   };
 
