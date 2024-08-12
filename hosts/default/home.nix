@@ -81,6 +81,7 @@
     };
   };
 
+  programs.watson.enable = true;
   programs.btop.enable = true;
   programs.starship.enable = true;
   programs.bat.enable = true;

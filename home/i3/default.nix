@@ -4,6 +4,10 @@
   config,
   ...
 }: {
+  imports = [
+    ./i3status-rust.nix
+  ];
+
   xsession = {
     enable = true;
 
@@ -72,50 +76,6 @@
       ${pkgs.noisetorch}/bin/noisetorch -i
       ${pkgs.openrgb}/bin/openrgb -p default
     '';
-  };
-
-  programs.i3status-rust = {
-    enable = true;
-    bars.bottom = {
-      blocks = [
-        {
-          block = "disk_space";
-          path = "/";
-          info_type = "available";
-          interval = 60;
-          warning = 20.0;
-          alert = 10.0;
-          alert_unit = "GB";
-        }
-        {
-          block = "memory";
-          format = " $icon $mem_used.eng(prefix:G)/$mem_total.eng(prefix:G) ";
-          warning_mem = 70.0;
-          critical_mem = 90.0;
-        }
-        {
-          block = "cpu";
-          interval = 1;
-          format = " $icon $barchart ";
-        }
-        {
-          block = "temperature";
-          interval = 10;
-          format = " $icon $max ";
-        }
-        {
-          block = "sound";
-          driver = "pulseaudio";
-        }
-        {
-          block = "time";
-          interval = 1;
-          format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
-        }
-      ];
-      theme = "ctp-mocha";
-      icons = "material-nf";
-    };
   };
 
   services.picom = {
