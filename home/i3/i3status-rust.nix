@@ -38,7 +38,7 @@
           interval = 5;
           good = 45;
           format = " $max ";
-          format_alt = " $min | $average | $max ";
+          format_alt = " $min - $average - $max ";
         }
 
         {
@@ -48,8 +48,9 @@
 
         {
           block = "net";
-          format_alt = " $icon ^icon_net_down $graph_down ^icon_net_up $graph_up ";
-          theme_overrides = replace_idle_with "good";
+          format = " ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) ";
+          format_alt = " ^icon_net_down $graph_down ^icon_net_up $graph_up ";
+          theme_overrides = replace_idle_with "info";
         }
 
         {
@@ -62,13 +63,13 @@
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
             "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
           };
-          theme_overrides = replace_idle_with "warning";
         }
 
         {
           block = "time";
           interval = 1;
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
+          format_alt = " $icon $timestamp.datetime(f:'%R') ";
           theme_overrides = replace_idle_with "info";
         }
 
