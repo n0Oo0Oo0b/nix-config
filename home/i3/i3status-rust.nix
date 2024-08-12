@@ -49,7 +49,7 @@
         {
           block = "net";
           format_alt = " $icon ^icon_net_down $graph_down ^icon_net_up $graph_up ";
-          overrides = replace_idle_with "good";
+          theme_overrides = replace_idle_with "good";
         }
 
         {
@@ -62,14 +62,14 @@
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
             "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
           };
-          overrides = replace_idle_with "warning";
+          theme_overrides = replace_idle_with "warning";
         }
 
         {
           block = "time";
           interval = 1;
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
-          overrides = replace_idle_with "info";
+          theme_overrides = replace_idle_with "info";
         }
 
         {block = "watson";}
@@ -93,7 +93,7 @@
               confirm_msg = "Confirm reboot";
             }
           ];
-          overrides = replace_idle_with "critical";
+          theme_overrides = replace_idle_with "critical";
         }
       ];
       theme = "ctp-mocha";
