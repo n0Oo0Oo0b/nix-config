@@ -65,15 +65,14 @@
           };
         }
 
+        {block = "watson";}
+
         {
           block = "time";
           interval = 1;
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
-          format_alt = " $icon $timestamp.datetime(f:'%R') ";
           theme_overrides = replace_idle_with "info";
         }
-
-        {block = "watson";}
 
         {
           block = "menu"; # System menu
