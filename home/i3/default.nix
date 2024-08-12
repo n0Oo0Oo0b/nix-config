@@ -59,6 +59,9 @@
       };
 
       extraConfig = ''
+        for_window [title="^zoom\s?$"] kill
+        for_window [title="^join\?action=join.*$"] kill
+
         exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-fill $HOME/.background-image
         exec --no-startup-id ${pkgs.picom}/bin/picom -b
         exec --no-startup-id ${pkgs.flameshot}/bin/flameshot

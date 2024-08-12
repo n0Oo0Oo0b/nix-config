@@ -44,10 +44,11 @@
         {
           block = "sound";
           driver = "pulseaudio";
-          format = " $icon $output_name{ $volume|} ";
+          format = " $icon $output_description{ $volume|} ";
+          max_vol = 200;
           mappings = {
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
-            "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.3" = "HDMI";
+            "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
           };
         }
 
@@ -61,7 +62,7 @@
 
         {
           block = "menu"; # System menu
-          text = "\\uf011";
+          text = " hi ";
           items = [
             {
               display = " Sleep ";
