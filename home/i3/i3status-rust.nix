@@ -2,7 +2,12 @@
   programs.i3status-rust = {
     enable = true;
     bars.bottom = {
-      blocks = [
+      blocks = let
+        replace_idle_with = to: {
+          idle_fg = {link = "${to}_fg";};
+          idle_bg = {link = "${to}_bg";};
+        };
+      in [
         {
           block = "disk_space";
           path = "/";
@@ -30,8 +35,10 @@
 
         {
           block = "temperature";
-          interval = 10;
-          format = " $icon $max ";
+          interval = 5;
+          good = 45;
+          format = " $max ";
+          format_alt = " $min | $average | $max ";
         }
 
         {
@@ -39,7 +46,11 @@
           format = " $icon $utilization $temperature ";
         }
 
-        {block = "net";}
+        {
+          block = "net";
+          format_alt = " $icon ^icon_net_down $graph_down ^icon_net_up $graph_up ";
+          overrides = replace_idle_with "good";
+        }
 
         {
           block = "sound";
@@ -51,12 +62,14 @@
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
             "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
           };
+          overrides = replace_idle_with "warning";
         }
 
         {
           block = "time";
           interval = 1;
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
+          overrides = replace_idle_with "info";
         }
 
         {block = "watson";}
@@ -80,6 +93,7 @@
               confirm_msg = "Confirm reboot";
             }
           ];
+          overrides = replace_idle_with "critical";
         }
       ];
       theme = "ctp-mocha";
