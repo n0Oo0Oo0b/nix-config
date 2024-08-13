@@ -63,9 +63,16 @@
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
             "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
           };
+          theme_overrides = replace_idle_with "info";
         }
 
         {block = "watson";}
+
+        {
+          block = "pomodoro";
+          message = "Work over!";
+          break_message = "Break over!";
+        }
 
         {
           block = "time";
