@@ -79,6 +79,7 @@
           mantle = "#181825";
           base = "#1e1e2e";
           surface0 = "#313244";
+          overlay0 = "#6c7086";
           text = "#cdd6f4";
           blue = "#89b4fa";
           lavender = "#b4befe";
@@ -92,7 +93,7 @@
         in {
           background = mantle;
           focusedWorkspace = bg-border-text blue blue crust;
-          activeWorkspace = bg-border-text surface0 blue text;
+          activeWorkspace = bg-border-text overlay0 blue text;
           inactiveWorkspace = bg-border-text surface0 surface0 text;
           urgentWorkspace = bg-border-text red red crust;
         };
