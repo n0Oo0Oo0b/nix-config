@@ -84,17 +84,17 @@
           lavender = "#b4befe";
           red = "#f38ba8";
 
-          bg-text = bg: text: {
+          bg-border-text = bg: border: text: {
             background = bg;
-            border = bg;
+            border = border;
             text = text;
           };
         in {
           background = mantle;
-          focusedWorkspace = bg-text blue text;
-          activeWorkspace = (bg-text surface0 crust) // {border = blue;};
-          inactiveWorkspace = bg-text surface0 text;
-          urgentWorkspace = bg-text red crust;
+          focusedWorkspace = bg-border-text blue blue crust;
+          activeWorkspace = bg-border-text surface0 blue text;
+          inactiveWorkspace = bg-border-text surface0 surface0 text;
+          urgentWorkspace = bg-border-text red red crust;
         };
       }
     ];
