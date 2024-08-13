@@ -81,6 +81,7 @@
           surface0 = "#313244";
           text = "#cdd6f4";
           blue = "#89b4fa";
+          lavender = "#b4befe";
           red = "#f38ba8";
 
           bg-text = bg: text: {
@@ -90,9 +91,9 @@
           };
         in {
           background = mantle;
-          activeWorkspace = bg-text blue crust;
-          focusedWorkspace = bg-text surface0 text;
-          inactiveWorkspace = bg-text base text;
+          focusedWorkspace = bg-text blue text;
+          activeWorkspace = (bg-text surface0 crust) // {border = blue;};
+          inactiveWorkspace = bg-text surface0 text;
           urgentWorkspace = bg-text red crust;
         };
       }
