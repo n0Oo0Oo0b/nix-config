@@ -104,20 +104,20 @@
       left = "DP-2";
       right = "DP-4";
       ws = n: output: {
-        workspace = "workspace number ${toString n}";
+        workspace = n;
         output = output;
       };
     in [
-      (ws 1 left)
-      (ws 2 right)
-      (ws 3 left)
-      (ws 4 right)
-      (ws 5 left)
-      (ws 6 right)
-      (ws 7 left)
-      (ws 8 right)
-      (ws 9 left)
-      (ws 10 right)
+      (ws "1" left)
+      (ws "2" right)
+      (ws "3" left)
+      (ws "4" right)
+      (ws "5" left)
+      (ws "6" right)
+      (ws "7" left)
+      (ws "8" right)
+      (ws "9" left)
+      (ws "10" right)
     ];
   };
   xsession.windowManager.i3.extraConfig = ''
