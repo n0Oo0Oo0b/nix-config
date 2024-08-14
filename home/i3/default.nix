@@ -101,8 +101,8 @@
     ];
 
     workspaceOutputAssign = let
-      left = "DP-2";
-      right = "DP-4";
+      left = "DP-4";
+      right = "DP-2";
       ws = n: output: {
         workspace = n;
         output = output;
@@ -120,6 +120,7 @@
       (ws "10" right)
     ];
   };
+
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^zoom\s?$"] kill
     for_window [title="^join\?action=join.*$"] kill
