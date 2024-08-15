@@ -3,9 +3,9 @@
     enable = true;
     bars.bottom = {
       blocks = let
-        replace_idle_with = to: {
-          idle_fg = {link = "${to}_fg";};
-          idle_bg = {link = "${to}_bg";};
+        replace_color = from: to: {
+          "${from}_fg" = {link = "${to}_fg";};
+          "${from}_bg" = {link = "${to}_bg";};
         };
       in [
         {
@@ -31,6 +31,7 @@
           format = " $icon $utilization ";
           format_alt = " $icon $barchart ";
           interval = 1;
+          theme_overrides = (replace_color "idle" "info") // (replace_color "info" "good");
         }
 
         {
@@ -39,6 +40,7 @@
           good = 45;
           format = " $max ";
           format_alt = " $min - $average - $max ";
+          theme_overrides = (replace_color "good" "info") // (replace_color "info" "good");
         }
 
         {
@@ -50,7 +52,7 @@
           block = "net";
           format = " ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) ";
           format_alt = " ^icon_net_down $graph_down ^icon_net_up $graph_up ";
-          theme_overrides = replace_idle_with "info";
+          theme_overrides = replace_color "idle" "info";
         }
 
         {
@@ -64,7 +66,7 @@
             "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
             "alsa_output.platform-snd_aloop.0.analog-stereo" = "Loopback";
           };
-          theme_overrides = replace_idle_with "info";
+          theme_overrides = replace_color "idle" "info";
         }
 
         {block = "watson";}
@@ -79,7 +81,7 @@
           block = "time";
           interval = 1;
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %T') ";
-          theme_overrides = replace_idle_with "info";
+          theme_overrides = replace_color "idle" "info";
         }
 
         {
@@ -87,21 +89,21 @@
           text = " hi ";
           items = [
             {
-              display = " Sleep ";
+              display = " [Sleep]  Power   Reboot  ";
               cmd = "systemctl suspend";
             }
             {
-              display = " Power off ";
+              display = "  Sleep  [Power]  Reboot  ";
               cmd = "poweroff";
               confirm_msg = "Confirm poweroff";
             }
             {
-              display = " Reboot ";
+              display = "  Sleep   Power  [Reboot] ";
               cmd = "reboot";
               confirm_msg = "Confirm reboot";
             }
           ];
-          theme_overrides = replace_idle_with "critical";
+          theme_overrides = replace_color "idle" "critical";
         }
       ];
       theme = "ctp-mocha";
