@@ -37,7 +37,10 @@
         {
           block = "temperature";
           interval = 5;
-          good = 45;
+          good = 40;
+          idle = 40; # never
+          info = 50;
+          warning = 60;
           format = " $max ";
           format_alt = " $min - $average - $max ";
           theme_overrides = (replace_color "good" "info") // (replace_color "info" "good");
