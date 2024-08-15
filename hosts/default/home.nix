@@ -126,6 +126,10 @@
 
     ".bashrc".text = ''
       eval "$(starship init bash)"
+
+      alias ls=eza
+      alias cat=bat
+      alias glo="git log --oneline"
     '';
 
     ".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
@@ -146,12 +150,12 @@
     EDITOR = "nvim";
   };
 
-  home.shellAliases = {
-    "ls" = "eza";
-    "cat" = "bat";
-
-    "glo" = "git log --oneline";
-  };
+  # home.shellAliases = {
+  #   "ls" = "eza";
+  #   "cat" = "bat";
+  #
+  #   "glo" = "git log --oneline";
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
