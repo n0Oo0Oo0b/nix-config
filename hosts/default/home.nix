@@ -39,9 +39,6 @@
     # Dev
     python311
     # neovide
-    jetbrains.pycharm-professional
-    jetbrains.idea-ultimate
-    jetbrains.clion
     zed-editor
 
     # Commandline
