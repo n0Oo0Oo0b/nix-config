@@ -56,6 +56,17 @@
     texliveFull
     alejandra
     pulseaudio
+
+    # Scripts
+    (writeShellScriptBin "set-sink" ''
+      OUTPUT=$(pactl list short sinks | rg -S $1 | head -n1 | awk '{print $2}')
+      if [ -n "$OUTPUT" ]; then
+        pactl set-default-sink $OUTPUT
+        echo "Default sink set to '$OUTPUT'"
+      else
+        echo "Sink not found"
+      fi
+    '')
   ];
 
   gtk = {
