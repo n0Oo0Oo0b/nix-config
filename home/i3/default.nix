@@ -124,9 +124,10 @@
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^zoom\s?$"] kill
     for_window [title="^join\?action=join.*$"] kill
-
     no_focus [title="^zoom\s?$"]
     no_focus [title="^join\?action=join.*$"]
+
+    for_window [title="^Meeting chat$"] floating enable
   '';
 
   services.picom = {
