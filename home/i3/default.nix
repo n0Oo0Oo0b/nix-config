@@ -132,7 +132,7 @@
 
   services.picom = {
     enable = true;
-    activeOpacity = 0.95;
+    activeOpacity = 1;
     inactiveOpacity = 0.9;
     menuOpacity = 0.9;
   };
