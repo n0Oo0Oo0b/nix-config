@@ -144,10 +144,10 @@
   };
 
   xdg.configFile = {
-    "nvim" = {
-      source = ../../extras/nvim;
-      recursive = true;
-    };
+    # "nvim" = {
+    #   source = ../../extras/nvim;
+    #   recursive = true;
+    # };
 
     "zellij/config.kdl".source = ../../extras/zellij.kdl;
 
