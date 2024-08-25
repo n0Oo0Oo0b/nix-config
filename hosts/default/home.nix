@@ -7,6 +7,7 @@
   imports = [
     ../../home/vscode.nix
     ../../home/git.nix
+    ../../home/ranger.nix
     ../../home/i3
     # ../../home/nvim
     inputs.catppuccin.homeManagerModules.catppuccin
