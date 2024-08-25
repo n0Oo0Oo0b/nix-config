@@ -8,7 +8,7 @@
     ../../home/vscode.nix
     ../../home/git.nix
     ../../home/i3
-    ../../home/nvim
+    # ../../home/nvim
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
@@ -17,7 +17,7 @@
 
   # i18n.inputMethod.fcitx5.catppuccin.apply = true;
 
-  # NOTE:: Check home-manager release notes before changing
+  # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
   catppuccin.enable = true;
@@ -53,10 +53,14 @@
     texliveFull
     alejandra
     pulseaudio
+    neovim
 
     # Scripts
     (writeShellScriptBin "set-sink" ''
-      OUTPUT=$(pactl list short sinks | rg -S $1 | head -n1 | awk '{print $2}')
+      NAME=$1
+      $${NAME:="hdmi"}
+
+      OUTPUT=$(pactl list short sinks | rg -S "$NAME" | head -n1 | awk '{print $2}')
       if [ -n "$OUTPUT" ]; then
         pactl set-default-sink $OUTPUT
         echo "Default sink set to '$OUTPUT'"

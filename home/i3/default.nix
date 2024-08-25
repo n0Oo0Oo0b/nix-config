@@ -44,14 +44,18 @@
         "XF86AudioNext" = "exec ${playerctl} next";
         "XF86AudioPrev" = "exec ${playerctl} previous";
 
-        "${mod}+i" = "focus up";
-        "${mod}+shift+i" = "move up";
-        "${mod}+j" = "focus left";
-        "${mod}+shift+j" = "move left";
-        "${mod}+k" = "focus down";
-        "${mod}+shift+k" = "move down";
+        "${mod}+c" = "split horizontal";
+
+        "${mod}+k" = "focus up";
+        "${mod}+shift+k" = "move up";
+        "${mod}+h" = "focus left";
+        "${mod}+shift+h" = "move left";
+        "${mod}+j" = "focus down";
+        "${mod}+shift+j" = "move down";
         "${mod}+l" = "focus right";
         "${mod}+shift+l" = "move right";
+
+        "${mod}+shift+s" = "exec flameshot gui";
       };
 
     startup = let
