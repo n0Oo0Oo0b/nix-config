@@ -66,7 +66,7 @@
           mappings_use_regex = true;
           mappings = {
             "alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_305075A7C4D0022000-00.analog-stereo" = "Speaker";
-            "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.[0-9]+" = "Monitor";
+            "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1(.[0-9]+)?" = "Monitor";
             "alsa_output.platform-snd_aloop.0.analog-stereo" = "Loopback";
           };
           theme_overrides = replace_color "idle" "info";
