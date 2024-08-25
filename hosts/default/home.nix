@@ -55,6 +55,7 @@
     alejandra
     pulseaudio
     neovim
+    osu-lazer-bin
 
     # Scripts
     (writeShellScriptBin "set-sink" ''
