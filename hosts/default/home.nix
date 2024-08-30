@@ -60,7 +60,7 @@
     # Scripts
     (writeShellScriptBin "set-sink" ''
       NAME=$1
-      $${NAME:="hdmi"}
+      ''${NAME:="hdmi"}
 
       OUTPUT=$(pactl list short sinks | rg -S "$NAME" | head -n1 | awk '{print $2}')
       if [ -n "$OUTPUT" ]; then
