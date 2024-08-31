@@ -44,11 +44,11 @@
         "XF86AudioNext" = "exec ${playerctl} next";
         "XF86AudioPrev" = "exec ${playerctl} previous";
 
-        "${mod}+f1" = "exec firefox";
-        "${mod}+f2" = "exec obsidian";
-        "${mod}+f3" = "exec discord";
-        "${mod}+f11" = "exec set-sink hdmi-stereo";
-        "${mod}+f12" = "exec set-sink Jabra_SPEAK_510";
+        "${mod}+F1" = "exec firefox";
+        "${mod}+F2" = "exec obsidian";
+        "${mod}+F3" = "exec discord";
+        "${mod}+F11" = "exec set-sink hdmi-stereo";
+        "${mod}+F12" = "exec set-sink Jabra_SPEAK_510";
 
         "${mod}+c" = "split horizontal";
 
@@ -137,7 +137,7 @@
     no_focus [title="^zoom\s?$"]
     no_focus [title="^join\?action=join.*$"]
 
-    for_window [title="^Meeting chat$"] floating enable
+    no_focus [class="flameshot"]
   '';
 
   services.picom = {
