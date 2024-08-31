@@ -139,8 +139,7 @@
     '';
 
     ".bashrc".text = ''
-      eval $(ssh-agent)
-      ssh-add ~/.ssh/id_ed25519
+      eval $(ssh-agent) &>/dev/null
 
       eval "$(starship init bash)"
 
