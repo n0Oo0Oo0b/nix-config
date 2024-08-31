@@ -139,6 +139,9 @@
     '';
 
     ".bashrc".text = ''
+      eval $(ssh-agent)
+      ssh-add ~/.ssh/id_ed25519
+
       eval "$(starship init bash)"
 
       alias ls=eza
