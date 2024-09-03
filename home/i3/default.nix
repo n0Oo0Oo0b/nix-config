@@ -138,8 +138,6 @@
     no_focus [title="^join\?action=join.*$"]
     no_focus [title="^Zoom Workplace$"]
 
-    for_window [floating_from="auto" title="^Zoom Workplace$"] kill
-
     no_focus [class="flameshot"]
   '';
 
