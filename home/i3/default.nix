@@ -134,6 +134,7 @@
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^zoom\s?$"] kill
     for_window [title="^join\?action=join.*$"] kill
+    for_window [title="^Zoom Workplace$" tiling] kill
     no_focus [title="^zoom\s?$"]
     no_focus [title="^join\?action=join.*$"]
 
