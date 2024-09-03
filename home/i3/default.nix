@@ -134,10 +134,8 @@
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^zoom\s?$"] kill
     for_window [title="^join\?action=join.*$"] kill
-    for_window [tiling_from="auto" title="^Zoom Workplace$"] kill
-    no_focus [title="^zoom\s?$"]
+    no_focus [title=".*zoom.*"]
     no_focus [title="^join\?action=join.*$"]
-    no_focus [title="^Zoom Workplace$"]
 
 
     no_focus [class="flameshot"]
