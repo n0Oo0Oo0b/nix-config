@@ -136,7 +136,10 @@
     for_window [title="^join\?action=join.*$"] kill
     no_focus [title="^zoom\s?$"]
     no_focus [title="^join\?action=join.*$"]
-    no_focus [tiling title="^Zoom Workplace$"]
+    no_focus [title="^Zoom Workplace$"]
+
+    for_window [id=0x5c0004c] kill
+    for_window [id=0x5c0001f] kill
 
     no_focus [class="flameshot"]
   '';
