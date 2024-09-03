@@ -138,6 +138,8 @@
     no_focus [title="^join\?action=join.*$"]
     no_focus [title="^Zoom Workplace$"]
 
+    for_window [tiling_from="auto" title="^Zoom Workplace$"] border pixel 10
+
     no_focus [class="flameshot"]
   '';
 
