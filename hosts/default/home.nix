@@ -95,13 +95,14 @@
     };
   };
 
-  programs.watson.enable = true;
-  programs.btop.enable = true;
-  programs.starship.enable = true;
   programs.bat.enable = true;
+  programs.btop.enable = true;
   programs.eza.enable = true;
   programs.gitui.enable = true;
   programs.sioyek.enable = true;
+  programs.starship.enable = true;
+  programs.starship.settings = builtins.fromTOML (builtins.readFile ../../extras/starship-nerdfont.toml);
+  programs.watson.enable = true;
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;

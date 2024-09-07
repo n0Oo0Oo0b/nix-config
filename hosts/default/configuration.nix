@@ -173,6 +173,11 @@
 
   programs.nix-ld.enable = true;
 
+  services.jack = {
+    jackd.enable = true;
+    alsa.enable = true;
+  };
+
   services.openssh.enable = true;
 
   services.hardware.openrgb.enable = true;
