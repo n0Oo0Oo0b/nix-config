@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -101,9 +102,10 @@
   programs.gitui.enable = true;
   programs.sioyek.enable = true;
   programs.starship.enable = true;
-  programs.starship.settings =
-    (builtins.fromTOML (builtins.readFile ../../extras/starship-nerdfont.toml))
-    // {
+  programs.starship.settings = let
+    nerdfont = builtins.fromTOML (builtins.readFile ../../extras/starship-nerdfont.toml);
+  in
+    lib.recursiveUpdate nerdfont {
       os.disabled = false;
     };
   programs.watson.enable = true;
