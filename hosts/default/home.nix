@@ -26,6 +26,13 @@
   catppuccin.flavor = "mocha";
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.cudaSupport = true;
+  nixpkgs.overlays = [
+    (final: prev: {
+      opencv = prev.opencv.override {enableCuda = false;};
+    })
+  ];
+
   home.packages = with pkgs; [
     # General use
     firefox
