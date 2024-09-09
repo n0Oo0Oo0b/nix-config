@@ -98,12 +98,12 @@
             {
               display = "  Sleep  [Power]  Reboot  ";
               cmd = "poweroff";
-              confirm_msg = "Confirm poweroff";
+              confirm_msg = " Confirm power ";
             }
             {
               display = "  Sleep   Power  [Reboot] ";
               cmd = "reboot";
-              confirm_msg = "Confirm reboot";
+              confirm_msg = " Confirm reboot ";
             }
           ];
           theme_overrides = replace_color "idle" "critical";
