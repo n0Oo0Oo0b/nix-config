@@ -9,6 +9,7 @@
     ../../home/vscode.nix
     ../../home/git.nix
     ../../home/ranger.nix
+    ../../home/zed.nix
     ../../home/i3
     # ../../home/nvim
     inputs.catppuccin.homeManagerModules.catppuccin
@@ -41,7 +42,7 @@
     youtube-music
     libreoffice
     slack
-    (pkgs.discord.override {withTTS = true;})
+    (discord.override {withTTS = true;})
     zoom-us
     zotero
     anki-bin
@@ -49,7 +50,6 @@
     # Dev
     python311
     # neovide
-    zed-editor
 
     # Commandline
     porsmo
@@ -65,6 +65,7 @@
     alejandra
     pulseaudio
     osu-lazer-bin
+    (blender.override {cudaSupport = true;})
 
     # Scripts
     (writeShellScriptBin "set-sink" ''

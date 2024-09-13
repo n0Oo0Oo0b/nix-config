@@ -44,9 +44,9 @@
         "XF86AudioNext" = "exec ${playerctl} next";
         "XF86AudioPrev" = "exec ${playerctl} previous";
 
-        "${mod}+F1" = "exec firefox";
-        "${mod}+F2" = "exec obsidian";
-        "${mod}+F3" = "exec discord";
+        "${mod}+shift+f" = "exec firefox";
+        "${mod}+shift+o" = "exec obsidian";
+        "${mod}+shift+d" = "exec discord";
         "${mod}+F11" = "exec set-sink hdmi-stereo";
         "${mod}+F12" = "exec set-sink Jabra_SPEAK_510";
 
