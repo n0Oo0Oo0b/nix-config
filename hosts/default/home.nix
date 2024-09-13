@@ -162,23 +162,13 @@
       export NIXPKGS_ALLOW_UNFREE=1
 
       eval "$(starship init bash)"
-
-      alias ls=eza
-      alias cat=bat
-      alias glo="git log --oneline"
     '';
 
     ".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
   };
 
   xdg.configFile = {
-    # "nvim" = {
-    #   source = ../../extras/nvim;
-    #   recursive = true;
-    # };
-
     "zellij/config.kdl".source = ../../extras/zellij.kdl;
-
     "zoomus.conf".source = ../../extras/zoomus.conf;
   };
 
@@ -186,12 +176,11 @@
     EDITOR = "nvim";
   };
 
-  # home.shellAliases = {
-  #   "ls" = "eza";
-  #   "cat" = "bat";
-  #
-  #   "glo" = "git log --oneline";
-  # };
+  home.shellAliases = {
+    ls = "eza";
+    cat = "bat";
+    glo = "git log --oneline";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
