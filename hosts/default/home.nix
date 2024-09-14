@@ -42,7 +42,6 @@
     youtube-music
     libreoffice
     slack
-    zoom-us
     zotero
     anki-bin
 

@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     ../../modules/docker.nix
+    ../../modules/kanata.nix
   ];
 
   nix.settings = {
