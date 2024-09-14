@@ -2,13 +2,13 @@
   config,
   pkgs,
   inputs,
-  lib,
   ...
 }: {
   imports = [
+    ../../home/firefox.nix
     ../../home/vscode.nix
     ../../home/git.nix
-    ../../home/ranger.nix
+    ../../home/terminal.nix
     ../../home/zed.nix
     ../../home/i3
     # ../../home/nvim
@@ -37,19 +37,14 @@
 
   home.packages = with pkgs; [
     # General use
-    firefox
     obsidian
     youtube-music
     libreoffice
     slack
-    (discord.override {withTTS = true;})
+    (discord.override {withVencord = true;})
     zoom-us
     zotero
     anki-bin
-
-    # Dev
-    python311
-    # neovide
 
     # Commandline
     porsmo
@@ -60,8 +55,6 @@
 
     # Misc
     ffmpeg
-    pandoc
-    texliveFull
     alejandra
     pulseaudio
     osu-lazer-bin
@@ -97,6 +90,9 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
+  programs.pandoc.enable = true;
+  programs.texlive.enable = true;
+
   programs.kitty = {
     enable = true;
     font = {
@@ -106,26 +102,6 @@
     settings = {
       disable_ligatures = "cursor";
     };
-  };
-
-  programs.bat.enable = true;
-  programs.btop.enable = true;
-  programs.eza.enable = true;
-  programs.gitui.enable = true;
-  programs.sioyek.enable = true;
-  programs.starship.enable = true;
-  programs.starship.settings = let
-    nerdfont = builtins.fromTOML (builtins.readFile ../../extras/starship-nerdfont.toml);
-  in
-    lib.recursiveUpdate nerdfont {
-      os.disabled = false;
-    };
-  programs.watson.enable = true;
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-    enableFishIntegration = true;
-    enableBashIntegration = true;
   };
 
   programs.obs-studio = {
