@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ../../home/discord.nix
     ../../home/firefox.nix
     ../../home/vscode.nix
     ../../home/git.nix
@@ -41,7 +42,6 @@
     youtube-music
     libreoffice
     slack
-    (discord.override {withVencord = true;})
     zoom-us
     zotero
     anki-bin
