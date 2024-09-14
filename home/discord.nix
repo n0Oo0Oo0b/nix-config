@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   home.packages = [
-    (pkgs.discord.override {withVencord = true;})
+    (pkgs.discord.override {
+      withTTS = true;
+      withVencord = true;
+    })
   ];
 
   xdg.configFile = {
