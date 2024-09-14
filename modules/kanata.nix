@@ -9,14 +9,14 @@
           f2 (layer-switch strata)
         '';
       in ''
-        (defsrc f1 f2 caps c)
+        (defsrc f1 f2 caps v)
 
         (deflayermap (base-layer)
           ${common}
         )
         (deflayermap (strata)
           ${common}
-          c spc
+          v spc
         )
       '';
 
