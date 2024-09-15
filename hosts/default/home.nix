@@ -89,9 +89,6 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  programs.pandoc.enable = true;
-  programs.texlive.enable = true;
-
   programs.kitty = {
     enable = true;
     font = {
@@ -111,6 +108,12 @@
       obs-pipewire-audio-capture
       input-overlay
     ];
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
   };
 
   # Dotfiles
