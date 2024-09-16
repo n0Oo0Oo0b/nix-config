@@ -153,7 +153,8 @@
     };
   };
 
-  #hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.daemon.enable = true;
   #services.udev.extraRules = "";
 
   environment.systemPackages = with pkgs; [
