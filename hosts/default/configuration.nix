@@ -81,7 +81,7 @@
       layout = "us";
       variant = "";
     };
-    wacom.enable = true;
+    #wacom.enable = true;
 
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
@@ -160,7 +160,6 @@
     wget
     unzip
     xclip
-    rustup
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
