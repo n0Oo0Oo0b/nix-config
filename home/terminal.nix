@@ -3,16 +3,15 @@
   lib,
   ...
 }: let
-  withIntegration = {
-    enable = true;
-    enableBashIntegration = true;
-  };
+  withIntegration = other:
+    {
+      enable = true;
+      enableBashIntegration = true;
+    }
+    // other;
 in {
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-  };
-
+  # Base
+  programs.bash.enable = true;
   programs.kitty = {
     enable = true;
     font = {
@@ -24,23 +23,6 @@ in {
     };
   };
 
-  programs.ranger.enable = true;
-  programs.bat.enable = true;
-  programs.btop.enable = true;
-  programs.eza = withIntegration;
-  programs.gitui.enable = true;
-  programs.sioyek.enable = true;
-  programs.watson.enable = true;
-  programs.keychain = withIntegration;
-  programs.starship = withIntegration;
-  programs.zellij = withIntegration;
-
-  # programs.starship.settings =
-  #   lib.recursiveUpdate
-  #   (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-  #     os.disabled = false;
-  #   };
-
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = 1;
@@ -50,4 +32,24 @@ in {
     cat = "bat";
     glo = "git log --oneline";
   };
+
+  # Terminal programs
+  programs.bat.enable = true;
+  programs.btop.enable = true;
+  programs.eza = withIntegration {};
+  programs.gitui.enable = true;
+  programs.keychain = withIntegration {keys = ["id_ed25519"];};
+  programs.nix-index = withIntegration {};
+  programs.ranger.enable = true;
+  programs.sioyek.enable = true;
+  programs.starship = withIntegration {
+    settings =
+      lib.recursiveUpdate
+      (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
+        os.disabled = false;
+      };
+  };
+  programs.watson.enable = true;
+  programs.zellij = withIntegration {};
+  programs.zoxide = withIntegration {};
 }
