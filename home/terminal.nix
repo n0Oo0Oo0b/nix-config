@@ -2,15 +2,15 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  withIntegration = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+in {
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    profileExtra = ''
-      eval $(ssh-agent) &>/dev/null
-      export NIXPKGS_ALLOW_UNFREE=1
-      eval "$(starship init bash)"
-    '';
   };
 
   programs.kitty = {
@@ -27,33 +27,26 @@
   programs.ranger.enable = true;
   programs.bat.enable = true;
   programs.btop.enable = true;
-  programs.eza.enable = true;
+  programs.eza = withIntegration;
   programs.gitui.enable = true;
   programs.sioyek.enable = true;
   programs.watson.enable = true;
+  programs.keychain = withIntegration;
+  programs.starship = withIntegration;
+  programs.zellij = withIntegration;
 
-  programs.starship = {
-    enable = true;
-    settings =
-      lib.recursiveUpdate
-      (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-        os.disabled = false;
-      };
-  };
-
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-    enableFishIntegration = true;
-    enableBashIntegration = true;
-  };
+  # programs.starship.settings =
+  #   lib.recursiveUpdate
+  #   (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
+  #     os.disabled = false;
+  #   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
 
   home.shellAliases = {
-    ls = "eza";
     cat = "bat";
     glo = "git log --oneline";
   };
