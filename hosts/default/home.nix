@@ -32,6 +32,7 @@
   nixpkgs.config.cudaSupport = true;
   nixpkgs.overlays = [
     (final: prev: {
+      # Requires an old version of Nvidia something or something
       opencv = prev.opencv.override {enableCuda = false;};
     })
   ];
@@ -89,17 +90,6 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "JetBrains Mono Nerd Font";
-      size = 12;
-    };
-    settings = {
-      disable_ligatures = "cursor";
-    };
-  };
-
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
@@ -135,29 +125,12 @@
       set ideajoin
     '';
 
-    ".bashrc".text = ''
-      eval $(ssh-agent) &>/dev/null
-      export NIXPKGS_ALLOW_UNFREE=1
-
-      eval "$(starship init bash)"
-    '';
-
     ".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
   };
 
   xdg.configFile = {
     "zellij/config.kdl".source = ../../extras/zellij.kdl;
     "zoomus.conf".source = ../../extras/zoomus.conf;
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  home.shellAliases = {
-    ls = "eza";
-    cat = "bat";
-    glo = "git log --oneline";
   };
 
   # Let Home Manager install and manage itself.
