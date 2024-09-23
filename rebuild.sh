@@ -4,13 +4,6 @@ set -e
 
 pushd ~/nixos
 
-# Exit if no changes
-if git diff --quiet '*.nix'; then
-    echo "No changes detected, exiting."
-    popd
-    exit 0
-fi
-
 # Reformat
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
