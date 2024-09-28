@@ -5,18 +5,19 @@
       config = let
         common = ''
           caps (tap-hold 100 100 esc lctl)
-          f1 (layer-switch base-layer)
-          f2 (layer-switch strata)
+          f1 (layer-switch default)
+          f2 (layer-switch games)
         '';
       in ''
         (defsrc f1 f2 caps v)
 
-        (deflayermap (base-layer)
+        (deflayermap (default)
           ${common}
         )
-        (deflayermap (strata)
+        (deflayermap (games)
           ${common}
           v spc
+          ;; keypad_0 (multi (layer-switch default) M-1)
         )
       '';
 
