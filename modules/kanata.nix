@@ -9,7 +9,7 @@
           f2 (layer-switch games)
         '';
       in ''
-        (defsrc f1 f2 caps v)
+        (defsrc f1 f2 caps v kp0)
 
         (deflayermap (default)
           ${common}
@@ -17,7 +17,7 @@
         (deflayermap (games)
           ${common}
           v spc
-          ;; keypad_0 (multi (layer-switch default) M-1)
+          kp0 (multi (layer-switch default) M-1)
         )
       '';
 
