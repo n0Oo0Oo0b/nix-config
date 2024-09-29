@@ -61,6 +61,10 @@ in rec {
   # Nushell config
   programs.nushell = {
     enable = true;
+    extraConfig = builtins.readFile ../extras/config.nu;
+    loginFile.text = ''
+      echo "login"
+    '';
     # Manual shell stuff
     shellAliases = home.shellAliases;
     extraEnv = builtins.concatStringsSep "\n" (
@@ -68,25 +72,5 @@ in rec {
       (name: value: "$env.${name} = \"${toString value}\"")
       home.sessionVariables
     );
-
-    extraConfig = ''
-      def start_zellij [] {
-        if 'ZELLIJ' not-in ($env | columns) {
-          if 'ZELLIJ_AUTO_ATTACH' in ($env | columns) and $env.ZELLIJ_AUTO_ATTACH == 'true' {
-            zellij attach -c
-          } else {
-            zellij
-          }
-          if 'ZELLIJ_AUTO_EXIT' in ($env | columns) and $env.ZELLIJ_AUTO_EXIT == 'true' {
-            exit
-          }
-        }
-      }
-      $env.config.show_banner = false
-    '';
-
-    loginFile.text = ''
-      start_zellij
-    '';
   };
 }
