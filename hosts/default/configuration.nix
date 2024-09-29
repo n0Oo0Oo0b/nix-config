@@ -165,6 +165,7 @@
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
   };
+  environment.shells = [pkgs.nushell];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
