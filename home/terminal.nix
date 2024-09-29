@@ -25,6 +25,7 @@ in rec {
 
   programs.nushell = {
     enable = true;
+    # Manual shell stuff
     shellAliases = home.shellAliases;
     extraEnv = builtins.concatStringsSep "\n" (
       lib.attrsets.mapAttrsToList
@@ -38,7 +39,7 @@ in rec {
     NIXPKGS_ALLOW_UNFREE = 1;
     ZELLIJ_AUTO_ATTACH = "true";
     ZELLIJ_AUTO_EXIT = "true";
-    SHELL = "nu";
+    SHELL = "${pkgs.nushell}";
   };
 
   home.shellAliases = {
