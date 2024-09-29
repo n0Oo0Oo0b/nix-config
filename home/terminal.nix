@@ -32,6 +32,11 @@ in rec {
       (name: value: "$env.${name} = \"${toString value}\"")
       home.sessionVariables
     );
+    # Hardcoded zellij integration
+    loginFile.text = ''
+      zellij attach -c
+      exit
+    '';
   };
 
   home.sessionVariables = {
@@ -39,7 +44,7 @@ in rec {
     NIXPKGS_ALLOW_UNFREE = 1;
     ZELLIJ_AUTO_ATTACH = "true";
     ZELLIJ_AUTO_EXIT = "true";
-    SHELL = "${pkgs.nushell}";
+    SHELL = "nu";
   };
 
   home.shellAliases = {
