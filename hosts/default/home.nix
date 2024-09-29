@@ -40,7 +40,7 @@
   home.packages = with pkgs; [
     # General use
     obsidian
-    youtube-music
+    ytmdesktop
     libreoffice
     slack
     zotero
