@@ -6,12 +6,12 @@
   withIntegration = other:
     {
       enable = true;
-      enableBashIntegration = true;
+      enableNushellIntegration = true;
     }
     // other;
 in {
   # Base
-  programs.bash.enable = true;
+  programs.nushell.enable = true;
   programs.kitty = {
     enable = true;
     font = {
@@ -26,11 +26,13 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = 1;
+    ZELLIJ_AUTO_ATTACH = "true";
+    ZELLIJ_AUTO_EXIT = "true";
   };
 
   home.shellAliases = {
-    cat = "bat";
     glo = "git log --oneline";
+    gs = "git status";
   };
 
   # Terminal programs
@@ -39,7 +41,7 @@ in {
   programs.eza = withIntegration {};
   programs.gitui.enable = true;
   programs.keychain = withIntegration {keys = ["id_ed25519"];};
-  programs.nix-index = withIntegration {};
+  programs.nix-index.enable = true;
   programs.ranger.enable = true;
   programs.sioyek.enable = true;
   programs.starship = withIntegration {
@@ -50,6 +52,6 @@ in {
       };
   };
   programs.watson.enable = true;
-  programs.zellij = withIntegration {};
+  programs.zellij.enable = true;
   programs.zoxide = withIntegration {};
 }
