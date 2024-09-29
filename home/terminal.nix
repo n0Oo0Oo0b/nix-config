@@ -9,9 +9,8 @@
       enableNushellIntegration = true;
     }
     // other;
-in {
+in rec {
   # Base
-  programs.nushell.enable = true;
   programs.kitty = {
     enable = true;
     font = {
@@ -22,6 +21,16 @@ in {
       disable_ligatures = "cursor";
       shell = "nu";
     };
+  };
+
+  programs.nushell = {
+    enable = true;
+    shellAliases = home.shellAliases;
+    extraEnv = builtins.concatStringsSep "\n" (
+      lib.attrsets.mapAttrsToList
+      (name: value: "$env.${name}=${toString value}")
+      home.sessionVariables
+    );
   };
 
   home.sessionVariables = {
