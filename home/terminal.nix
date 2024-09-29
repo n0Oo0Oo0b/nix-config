@@ -23,34 +23,6 @@ in rec {
     };
   };
 
-  programs.nushell = {
-    enable = true;
-    # Manual shell stuff
-    shellAliases = home.shellAliases;
-    extraEnv = builtins.concatStringsSep "\n" (
-      lib.attrsets.mapAttrsToList
-      (name: value: "$env.${name} = \"${toString value}\"")
-      home.sessionVariables
-    );
-    extraConfig = ''
-      def start_zellij [] {
-        if 'ZELLIJ' not-in ($env | columns) {
-          if 'ZELLIJ_AUTO_ATTACH' in ($env | columns) and $env.ZELLIJ_AUTO_ATTACH == 'true' {
-            zellij attach -c
-          } else {
-            zellij
-          }
-          if 'ZELLIJ_AUTO_EXIT' in ($env | columns) and $env.ZELLIJ_AUTO_EXIT == 'true' {
-            exit
-          }
-        }
-      }
-    '';
-    loginFile.text = ''
-      start_zellij
-    '';
-  };
-
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = 1;
@@ -85,4 +57,36 @@ in rec {
   programs.watson.enable = true;
   programs.zellij.enable = true;
   programs.zoxide = withIntegration {};
+
+  # Nushell config
+  programs.nushell = {
+    enable = true;
+    # Manual shell stuff
+    shellAliases = home.shellAliases;
+    extraEnv = builtins.concatStringsSep "\n" (
+      lib.attrsets.mapAttrsToList
+      (name: value: "$env.${name} = \"${toString value}\"")
+      home.sessionVariables
+    );
+
+    extraConfig = ''
+      def start_zellij [] {
+        if 'ZELLIJ' not-in ($env | columns) {
+          if 'ZELLIJ_AUTO_ATTACH' in ($env | columns) and $env.ZELLIJ_AUTO_ATTACH == 'true' {
+            zellij attach -c
+          } else {
+            zellij
+          }
+          if 'ZELLIJ_AUTO_EXIT' in ($env | columns) and $env.ZELLIJ_AUTO_EXIT == 'true' {
+            exit
+          }
+        }
+      }
+      $env.config.show_banner = false
+    '';
+
+    loginFile.text = ''
+      start_zellij
+    '';
+  };
 }
