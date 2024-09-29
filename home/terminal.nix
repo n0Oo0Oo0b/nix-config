@@ -28,7 +28,7 @@ in rec {
     shellAliases = home.shellAliases;
     extraEnv = builtins.concatStringsSep "\n" (
       lib.attrsets.mapAttrsToList
-      (name: value: "$env.${name}=${toString value}")
+      (name: value: "$env.${name} = \"${toString value}\"")
       home.sessionVariables
     );
   };
