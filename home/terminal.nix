@@ -64,7 +64,7 @@ in rec {
     enable = true;
     extraConfig = builtins.readFile ../extras/config.nu;
     loginFile.text = ''
-      echo "login"
+      start_zellij
     '';
     # Manual shell stuff
     shellAliases = home.shellAliases;
