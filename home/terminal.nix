@@ -20,6 +20,7 @@ in rec {
     settings = {
       disable_ligatures = "cursor";
       cursor_shape = "beam";
+      shell = "nu -i -l";
     };
   };
 
