@@ -19,7 +19,6 @@ in rec {
     };
     settings = {
       disable_ligatures = "cursor";
-      shell = "nu";
     };
   };
 
