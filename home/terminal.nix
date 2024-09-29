@@ -34,7 +34,7 @@ in rec {
     );
     # Hardcoded zellij integration
     loginFile.text = ''
-      zellij attach -c
+      zellij attach -c main
       exit
     '';
   };
