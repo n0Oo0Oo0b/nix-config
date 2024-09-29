@@ -165,6 +165,7 @@
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
+    SHELL = "nu";
   };
   environment.shells = [pkgs.nushell];
 
