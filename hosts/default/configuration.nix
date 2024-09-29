@@ -143,6 +143,7 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
+    shell = pkgs.nushell;
     extraGroups = ["networkmanager" "wheel" "audio"];
   };
 
