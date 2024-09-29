@@ -100,12 +100,6 @@
     ];
   };
 
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
-  };
-
   # Dotfiles
   home.file = {
     ".ideavimrc".text = ''

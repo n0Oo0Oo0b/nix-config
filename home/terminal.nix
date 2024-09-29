@@ -38,6 +38,7 @@ in {
   # Terminal programs
   programs.bat.enable = true;
   programs.btop.enable = true;
+  programs.direnv = withIntegration {nix-direnv.enable = true;};
   programs.eza = withIntegration {};
   programs.gitui.enable = true;
   programs.keychain = withIntegration {keys = ["id_ed25519"];};
