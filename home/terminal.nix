@@ -19,6 +19,7 @@ in rec {
     };
     settings = {
       disable_ligatures = "cursor";
+      cursor_shape = "beam";
     };
   };
 
@@ -39,7 +40,6 @@ in rec {
           } else {
             zellij
           }
-
           if 'ZELLIJ_AUTO_EXIT' in ($env | columns) and $env.ZELLIJ_AUTO_EXIT == 'true' {
             exit
           }
