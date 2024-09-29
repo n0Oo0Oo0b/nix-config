@@ -143,7 +143,6 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    shell = pkgs.nushell;
     extraGroups = ["networkmanager" "wheel" "audio"];
   };
 
@@ -165,9 +164,7 @@
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
-    SHELL = "nu";
   };
-  environment.shells = [pkgs.nushell];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

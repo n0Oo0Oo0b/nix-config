@@ -20,6 +20,7 @@ in {
     };
     settings = {
       disable_ligatures = "cursor";
+      shell = "nu";
     };
   };
 
