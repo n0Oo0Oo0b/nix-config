@@ -40,7 +40,6 @@
   home.packages = with pkgs; [
     # General use
     obsidian
-    ytmdesktop
     libreoffice
     slack
     zotero
