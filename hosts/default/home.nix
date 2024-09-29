@@ -125,6 +125,7 @@
   xdg.configFile = {
     "zellij/config.kdl".source = ../../extras/zellij.kdl;
     "zoomus.conf".source = ../../extras/zoomus.conf;
+    "ytmdesktop/style.css".source = ../../extras/ytmdesktop-ctp.css;
   };
 
   # Let Home Manager install and manage itself.
