@@ -72,10 +72,10 @@
     in [
       (no-notif "${pkgs.picom}/bin/picom -b")
       (no-notif "${pkgs.flameshot}/bin/flameshot")
-      (no-notif "fxitc5 -d")
       (no-notif "${pkgs.feh}/bin/feh --bg-fill $HOME/.background-image" // {always = true;})
       (no-notif "${pkgs.noisetorch}/bin/noisetorch -i")
       (no-notif "${pkgs.openrgb}/bin/openrgb -p default")
+      # (no-notif "fxitc5 -d")
     ];
 
     bars = [
