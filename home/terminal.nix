@@ -62,9 +62,6 @@ in rec {
   programs.nushell = {
     enable = true;
     extraConfig = builtins.readFile ../extras/config.nu;
-    loginFile.text = ''
-      start_zellij
-    '';
     # Manual shell stuff
     shellAliases = home.shellAliases;
     extraEnv = builtins.concatStringsSep "\n" (
