@@ -144,6 +144,7 @@
     isNormalUser = true;
     description = "Daniel Gu";
     extraGroups = ["networkmanager" "wheel" "audio"];
+    shell = pkgs.nushell;
   };
 
   home-manager = {
@@ -161,13 +162,16 @@
     wget
     unzip
     xclip
+    pkgs.nushell
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
     # https://github.com/Martichou/rquickshare/issues/158
     WEBKIT_DISABLE_COMPOSITING_MODE = 1;
   };
-  environment.shells = [pkgs.nushell];
+  environment.shells = [
+    "${pkgs.nushell}/bin/nu"
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
