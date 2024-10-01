@@ -17,7 +17,9 @@
   '';
 
   xsession.windowManager.i3.enable = true;
-  xsession.windowManager.i3.config = {
+  xsession.windowManager.i3.config = let
+    rofi = "${config.programs.rofi.finalPackage}/bin/rofi";
+  in {
     modifier = "Mod4";
     fonts = {
       names = ["JetBrains Mono Nerd Font"];
@@ -29,7 +31,7 @@
     gaps.inner = 10;
     gaps.outer = 5;
 
-    menu = "${pkgs.rofi}/bin/rofi -show drun";
+    menu = "${rofi} -show drun";
 
     keybindings = let
       pactl = "${pkgs.pulseaudio}/bin/pactl";
@@ -64,6 +66,8 @@
         "${mod}+shift+l" = "move right";
 
         "${mod}+shift+s" = "exec flameshot gui";
+
+        "${mod}+space" = "exec ${rofi} -show calc";
       };
 
     startup = let
@@ -139,9 +143,13 @@
     no_focus [title=".*[zZ]oom.*"]
     no_focus [title="^join\?action=join.*$"]
 
-
     no_focus [class="flameshot"]
   '';
+
+  programs.rofi = {
+    enable = true;
+    plugins = [pkgs.rofi-calc];
+  };
 
   services.picom = {
     enable = true;
