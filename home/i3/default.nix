@@ -148,7 +148,13 @@
 
   programs.rofi = {
     enable = true;
+    terminal = "kitty";
     plugins = [pkgs.rofi-calc];
+    theme = {
+      "*".width = "800px";
+      "*".font = "monospace 12";
+      window.height = "480px";
+    };
   };
 
   services.picom = {
