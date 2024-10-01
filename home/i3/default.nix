@@ -75,7 +75,7 @@
       (no-notif "${pkgs.feh}/bin/feh --bg-fill $HOME/.background-image" // {always = true;})
       (no-notif "${pkgs.noisetorch}/bin/noisetorch -i")
       (no-notif "${pkgs.openrgb}/bin/openrgb -p default")
-      # (no-notif "fxitc5 -d")
+      (no-notif "/run/current-system/sw/bin/fcitx5")
     ];
 
     bars = [

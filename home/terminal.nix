@@ -35,7 +35,7 @@ in rec {
     gs = "git status";
   };
 
-  # Terminal programs
+  # CLI programs
   programs.bat.enable = true;
   programs.btop.enable = true;
   programs.carapace = withIntegration {};
@@ -68,5 +68,8 @@ in rec {
       (name: value: "$env.${name} = \"${toString value}\"")
       home.sessionVariables
     );
+    # loginFile.text = ''
+    #   start_zellij
+    # '';
   };
 }
