@@ -58,6 +58,7 @@
     pulseaudio
     osu-lazer-bin
     (blender.override {cudaSupport = true;})
+    rquickshare
 
     # Scripts
     (writeShellScriptBin "set-sink" ''

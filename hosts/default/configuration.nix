@@ -164,6 +164,8 @@
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
+    # https://github.com/Martichou/rquickshare/issues/158
+    WEBKIT_DISABLE_COMPOSITING_MODE = 1;
   };
   environment.shells = [pkgs.nushell];
 
