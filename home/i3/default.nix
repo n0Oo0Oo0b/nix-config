@@ -155,9 +155,9 @@
     plugins = [pkgs.rofi-calc];
     catppuccin.flavor = "macchiato";
     theme = {
-      "*".width = "800px";
+      "*".width = "600px";
       "*".font = "monospace 12";
-      window.height = "480px";
+      window.height = "720px";
     };
   };
 
