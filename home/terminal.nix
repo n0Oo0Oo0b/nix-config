@@ -28,7 +28,6 @@ in rec {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = 1;
     ZELLIJ_AUTO_EXIT = "true";
-    SHELL = "nu";
   };
 
   home.shellAliases = {

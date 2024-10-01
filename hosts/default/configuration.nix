@@ -170,6 +170,7 @@
     WEBKIT_DISABLE_COMPOSITING_MODE = 1;
   };
   environment.shells = [
+    "/run/current-system/sw/bin/nu"
     "${pkgs.nushell}/bin/nu"
   ];
 
