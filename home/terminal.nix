@@ -68,8 +68,8 @@ in rec {
       (name: value: "$env.${name} = \"${toString value}\"")
       home.sessionVariables
     );
-    # loginFile.text = ''
-    #   start_zellij
-    # '';
+    loginFile.text = ''
+      start_zellij
+    '';
   };
 }
