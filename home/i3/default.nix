@@ -29,6 +29,8 @@
     gaps.inner = 10;
     gaps.outer = 5;
 
+    menu = "${pkgs.rofi}/bin/rofi";
+
     keybindings = let
       pactl = "${pkgs.pulseaudio}/bin/pactl";
       playerctl = "${pkgs.playerctl}/bin/playerctl";
