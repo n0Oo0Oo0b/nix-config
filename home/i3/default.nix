@@ -29,7 +29,7 @@
     gaps.inner = 10;
     gaps.outer = 5;
 
-    menu = "${pkgs.rofi}/bin/rofi";
+    menu = "${pkgs.rofi}/bin/rofi -show drun";
 
     keybindings = let
       pactl = "${pkgs.pulseaudio}/bin/pactl";
