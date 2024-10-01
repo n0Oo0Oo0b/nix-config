@@ -17,9 +17,7 @@
   '';
 
   xsession.windowManager.i3.enable = true;
-  xsession.windowManager.i3.config = let
-    rofi = "${config.programs.rofi.finalPackage}/bin/rofi";
-  in {
+  xsession.windowManager.i3.config = {
     modifier = "Mod4";
     fonts = {
       names = ["JetBrains Mono Nerd Font"];
@@ -31,12 +29,11 @@
     gaps.inner = 10;
     gaps.outer = 5;
 
-    menu = "${rofi} -show drun";
-
     keybindings = let
       pactl = "${pkgs.pulseaudio}/bin/pactl";
       playerctl = "${pkgs.playerctl}/bin/playerctl";
       mod = config.xsession.windowManager.i3.config.modifier;
+      rofi = "${config.programs.rofi.finalPackage}/bin/rofi";
     in
       lib.mkOptionDefault {
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${pactl} set-sink-volume 0 +5%";
@@ -69,7 +66,8 @@
 
         "${mod}+shift+s" = "exec flameshot gui";
 
-        "${mod}+space" = "exec ${rofi} -modi filebrowser -show filebrowser";
+        "${mod}+d" = null;
+        "${mod}+space" = "exec ${rofi} -modi combi -show combi -combi-modes \"filebrowser,drun\"";
         "${mod}+c" = "exec ${rofi} -modi calc -show calc -no-show-match -no-sort";
       };
 
