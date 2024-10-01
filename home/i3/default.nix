@@ -67,7 +67,7 @@
         "${mod}+shift+s" = "exec flameshot gui";
 
         "${mod}+d" = null;
-        "${mod}+space" = "exec ${rofi} -modi combi -show combi -combi-modes \"filebrowser,drun\"";
+        "${mod}+space" = "exec ${rofi} drun";
         "${mod}+c" = "exec ${rofi} -modi calc -show calc -no-show-match -no-sort";
       };
 
