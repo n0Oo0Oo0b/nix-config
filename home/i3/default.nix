@@ -54,7 +54,9 @@
         "${mod}+F11" = "exec set-sink hdmi-stereo";
         "${mod}+F12" = "exec set-sink Jabra_SPEAK_510";
 
-        "${mod}+c" = "split horizontal";
+        "${mod}+v" = null;
+        "${mod}+bracketleft" = "split horizontal";
+        "${mod}+bracketright" = "split vertical";
 
         "${mod}+k" = "focus up";
         "${mod}+shift+k" = "move up";
@@ -67,7 +69,8 @@
 
         "${mod}+shift+s" = "exec flameshot gui";
 
-        "${mod}+space" = "exec ${rofi} -show calc";
+        "${mod}+space" = "exec ${rofi} -modi filebrowser -show filebrowser";
+        "${mod}+c" = "exec ${rofi} -modi calc -show calc -no-show-match -no-sort";
       };
 
     startup = let
@@ -150,6 +153,7 @@
     enable = true;
     terminal = "kitty";
     plugins = [pkgs.rofi-calc];
+    catppuccin.flavor = "macchiato";
     theme = {
       "*".width = "800px";
       "*".font = "monospace 12";
