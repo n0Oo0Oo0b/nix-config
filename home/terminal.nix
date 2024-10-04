@@ -50,7 +50,8 @@ in rec {
     settings =
       lib.recursiveUpdate
       (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-        os.disabled = false;
+        character.disabled = true; # Nushell's prompt works with vi mode
+        status.disabled = false;
       };
   };
   programs.watson.enable = true;
