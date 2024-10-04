@@ -50,7 +50,7 @@ in rec {
     settings =
       lib.recursiveUpdate
       (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-        character.format = ""; # Nushell's prompt works with vi mode
+        character.format = "\n"; # Nushell's prompt works with vi mode
       };
   };
   programs.watson.enable = true;
