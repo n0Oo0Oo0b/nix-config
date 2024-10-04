@@ -50,8 +50,9 @@ in rec {
     settings =
       lib.recursiveUpdate
       (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
+        # use nushell's vi-mode aware prompts
         character = {
-          # use nushell's vi-mode aware prompts
+          format = "$symbol";
           success_symbol = "";
           error_symbol = "";
         };
