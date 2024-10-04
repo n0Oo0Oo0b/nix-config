@@ -52,7 +52,6 @@ in rec {
       (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
         # use nushell's vi-mode aware prompts
         character.disabled = true;
-        line_break.disabled = false;
       };
   };
   programs.watson.enable = true;
