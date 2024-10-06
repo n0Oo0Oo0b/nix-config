@@ -11,8 +11,8 @@ def start_zellij [] {
   }
 }
 
-$env.PROMPT_INDICATOR_VI_NORMAL = " \n❮ "
-$env.PROMPT_INDICATOR_VI_INSERT = " \n❯ "
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
 $env.config = {

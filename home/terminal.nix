@@ -49,8 +49,6 @@ in rec {
     settings =
       lib.recursiveUpdate
       (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-        # use nushell's vi-mode aware prompts
-        character.disabled = true;
         continuation_prompt = "┆ ";
       };
   };
