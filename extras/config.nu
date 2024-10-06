@@ -16,6 +16,10 @@ $env.PROMPT_INDICATOR_VI_INSERT = " \n❯ "
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
 $env.config = {
-  show_banner: false,
-  edit_mode: vi,
+  show_banner: false
+  cursor_shape: {
+    vi_insert: line
+    vi_normal: block
+  }
+  edit_mode: vi
 }
