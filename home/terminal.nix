@@ -68,7 +68,6 @@ in rec {
       home.sessionVariables
     );
     loginFile.text = ''
-      start_zellij
     '';
   };
 }
