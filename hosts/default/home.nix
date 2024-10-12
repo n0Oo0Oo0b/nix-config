@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-sm,
   inputs,
   ...
 }: {
@@ -56,7 +57,6 @@
     ffmpeg
     alejandra
     pulseaudio
-    osu-lazer-bin
     (blender.override {cudaSupport = true;})
     rquickshare
 

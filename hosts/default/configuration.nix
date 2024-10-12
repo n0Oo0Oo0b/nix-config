@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-sm,
   inputs,
   ...
 }: {
@@ -148,7 +149,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs pkgs-sm;};
     users = {
       "danielgu" = import ./home.nix;
     };

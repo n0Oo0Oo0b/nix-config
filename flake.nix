@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
     catppuccin.url = "github:catppuccin/nix";
 
@@ -15,13 +16,18 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-small,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    pkgs-sm = import nixpkgs-small {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs pkgs-sm;};
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default

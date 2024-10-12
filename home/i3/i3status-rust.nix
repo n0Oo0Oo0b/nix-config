@@ -28,8 +28,8 @@
 
         {
           block = "cpu";
-          format = " $icon $utilization ";
-          format_alt = " $icon $barchart ";
+          format = " $icon $utilization";
+          format_alt = " $icon $barchart";
           interval = 1;
           theme_overrides = (replace_color "idle" "info") // (replace_color "info" "good");
         }
@@ -41,8 +41,8 @@
           idle = 40; # never
           info = 50;
           warning = 60;
-          format = " $max ";
-          format_alt = " $min - $average - $max ";
+          format = "$max ";
+          format_alt = "$min - $average - $max ";
           theme_overrides = (replace_color "good" "info") // (replace_color "info" "good");
         }
 
