@@ -39,7 +39,7 @@ in rec {
   programs.btop.enable = true;
   programs.carapace = withIntegration {};
   programs.direnv = withIntegration {nix-direnv.enable = true;};
-  # programs.eza = withIntegration {};
+  programs.eza.enable = true;
   programs.gitui.enable = true;
   programs.keychain = withIntegration {keys = ["id_ed25519"];};
   programs.nix-index.enable = true;
