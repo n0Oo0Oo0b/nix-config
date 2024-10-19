@@ -25,10 +25,6 @@
   # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
-  nix.settings = {
-    keep-outputs = true;
-  };
-
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.cudaSupport = true;
   nixpkgs.overlays = [
