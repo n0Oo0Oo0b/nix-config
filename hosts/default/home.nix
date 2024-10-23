@@ -54,6 +54,7 @@
     alejandra
     pulseaudio
     (blender.override {cudaSupport = true;})
+    osu-lazer-bin
     rquickshare
 
     # Scripts
