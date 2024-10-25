@@ -13,7 +13,7 @@
         ];
         common = ''
           comp rmet
-          caps (tap-hold 100 100 esc lctl)
+          caps (multi f24 (tap-hold-press 200 100 esc lctl))
           f1 (layer-switch default)
           f2 (layer-switch games)
         '';
