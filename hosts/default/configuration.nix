@@ -1,14 +1,13 @@
 {
   config,
   pkgs,
-  pkgs-sm,
   inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
-    ../../modules/docker.nix
+    # ../../modules/docker.nix
     ../../modules/kanata.nix
   ];
 
@@ -140,7 +139,6 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
@@ -149,7 +147,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs pkgs-sm;};
+    extraSpecialArgs = {inherit inputs;};
     users = {
       "danielgu" = import ./home.nix;
     };
@@ -163,7 +161,7 @@
     wget
     unzip
     xclip
-    pkgs.nushell
+    nushell
   ];
   environment.variables = {
     MOZ_ENABLE_WAYLAND = 0;
@@ -185,10 +183,10 @@
 
   programs.nix-ld.enable = true;
 
-  services.jack = {
-    jackd.enable = true;
-    alsa.enable = true;
-  };
+  # services.jack = {
+  #   jackd.enable = true;
+  #   alsa.enable = true;
+  # };
 
   services.openssh.enable = true;
 
