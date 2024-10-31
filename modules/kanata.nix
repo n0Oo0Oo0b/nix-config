@@ -14,7 +14,7 @@
         common = ''
           comp rmet
           caps (multi f24 (tap-hold-press 300 100 esc lctl))
-          lctl (multi ctl (layer-while-held ctl))
+          ctl (multi ctl (layer-while-held ctrl))
         '';
       in ''
         (defsrc ${lib.strings.concatStringsSep " " src})
@@ -28,7 +28,7 @@
           kp0 (multi (layer-switch default) M-1)
         )
 
-        (deflayermap (ctl)
+        (deflayermap (ctrl)
           f1 (layer-switch default)
           f2 (layer-switch games)
         )
