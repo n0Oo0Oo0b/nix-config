@@ -14,7 +14,7 @@
         common = ''
           comp rmet
           caps (multi f24 (tap-hold-press 300 100 esc lctl))
-          lctl (layer-while-held ctl)
+          lctl (multi ctl (layer-while-held ctl))
         '';
       in ''
         (defsrc ${lib.strings.concatStringsSep " " src})
