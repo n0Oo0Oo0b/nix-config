@@ -14,8 +14,7 @@
         common = ''
           comp rmet
           caps (multi f24 (tap-hold-press 300 100 esc lctl))
-          f1 (layer-switch default)
-          f2 (layer-switch games)
+          lctl (layer-while-held ctl)
         '';
       in ''
         (defsrc ${lib.strings.concatStringsSep " " src})
@@ -27,6 +26,11 @@
           ${common}
           v spc
           kp0 (multi (layer-switch default) M-1)
+        )
+
+        (deflayermap (ctl)
+          f1 (layer-switch default)
+          f2 (layer-switch games)
         )
       '';
       extraDefCfg = ''
