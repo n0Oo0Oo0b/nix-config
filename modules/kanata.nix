@@ -10,11 +10,14 @@
           "v"
           "kp0"
           "comp"
+          "lctl"
+          "rctl"
         ];
         common = ''
           comp rmet
           caps (multi f24 (tap-hold-press 300 100 esc lctl))
-          ctl (multi ctl (layer-while-held ctrl))
+          lctl (multi ctl (layer-while-held ctrl))
+          rctl (multi ctl (layer-while-held ctrl))
         '';
       in ''
         (defsrc ${lib.strings.concatStringsSep " " src})
