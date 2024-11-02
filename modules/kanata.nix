@@ -15,7 +15,7 @@
         ];
         common = ''
           comp rmet
-          caps (multi f24 (tap-hold-press 300 100 esc lctl))
+          caps (multi f24 (tap-hold-press 0 200 esc lctl))
           lctl (multi ctl (layer-while-held ctrl))
           rctl (multi ctl (layer-while-held ctrl))
         '';
