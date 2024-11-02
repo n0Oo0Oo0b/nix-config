@@ -4,7 +4,7 @@
     keyboards.drunkdeer = {
       config = ''
         (defsrc
-          caps scrlck
+          caps nlck
           i j k l
           w a s d q e r f
         )
@@ -24,7 +24,7 @@
         )
 
         (deflayermap (default)
-          scrlck (layer-switch nav)
+          nlck (layer-switch nav)
           caps (multi f24 (tap-hold-press 0 200 esc lctl))
         )
 
