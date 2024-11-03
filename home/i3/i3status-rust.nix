@@ -84,7 +84,6 @@
           block = "custom";
           command = "nc 127.0.0.1 60001 | ${pkgs.jq}/bin/jq .LayerChange.new";
           persistent = true;
-          icon = "\uf11c";
         }
 
         {
