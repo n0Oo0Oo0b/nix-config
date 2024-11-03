@@ -11,7 +11,7 @@
 
         (defvar
           ;; Values
-          mouse-speed 2
+          mouse-speed 1
           scroll-rate 50
         )
         (defalias
