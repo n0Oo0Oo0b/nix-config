@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.i3status-rust = {
     enable = true;
     bars.bottom = {
@@ -78,6 +78,13 @@
           block = "pomodoro";
           message = "Work over!";
           break_message = "Break over!";
+        }
+
+        {
+          block = "custom";
+          command = "nc 127.0.0.1 | ${pkgs.jq} .LayerChange.new";
+          persistent = true;
+          icon = "\uf11c";
         }
 
         {
