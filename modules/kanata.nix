@@ -4,7 +4,7 @@
     keyboards.drunkdeer = {
       config = ''
         (defsrc
-          caps
+          caps esc
           ro nlck spc
           i j k l
           w a s d q e r f
@@ -41,7 +41,9 @@
           ;; fn
           1 f1 2 f2 3 f3 4 f4 5 f5 6 f6
           7 f7 8 f8 9 f9 0 f10 min f11 eql f12
-
+          ;; Other
+          esc grv
+          ;; Layers
           ret (layer-switch default)
           spc (layer-switch default)
         )
