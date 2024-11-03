@@ -2,6 +2,11 @@
   services.kanata = {
     enable = true;
     keyboards.drunkdeer = {
+      devices = [
+        "/dev/input/by-id/usb-Drunkdeer_Drunkdeer_G60_ANSI_RYMicro-event-kbd"
+        "/dev/input/by-id/usb-Drunkdeer_Drunkdeer_G60_ANSI_RYMicro-if01-event-kbd"
+      ];
+      port = 60001;
       config = ''
         (defsrc
           caps esc
