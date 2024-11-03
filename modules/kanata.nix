@@ -7,6 +7,7 @@
           caps nlck spc
           i j k l
           w a s d q e r f
+          1 2 3 4 5 6 7 8 9 0 min eql
         )
 
         (defvar
@@ -30,15 +31,14 @@
 
         (deflayermap (nav)
           ;; Arrow keys
-          i up
-          j left
-          k down
-          l right
+          i up j left k down l right
           ;; Mouse
-          q mlft
-          e mrgt
+          q mlft e mrgt
           w @msu a @msl s @msd d @msr
           r @mwu f @mwd
+          ;; fn
+          1 f1 2 f2 3 f3 4 f4 5 f5 6 f6
+          7 f7 8 f8 9 f9 0 f10 min f11 eql f12
 
           ret (layer-switch default)
           spc (layer-switch default)
