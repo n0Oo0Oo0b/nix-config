@@ -10,9 +10,10 @@
       config = ''
         (defsrc
           caps esc
-          ro nlck spc
-          i j k l
-          w a s d q e r f
+          ro nlck bspc
+          w a s d
+          i j k l u o y h
+          r f
           1 2 3 4 5 6 7 8 9 0 min eql
         )
 
@@ -34,20 +35,23 @@
           ro (layer-while-held nav)
           nlck (layer-switch nav)
           caps (multi f24 (tap-hold-press 0 200 esc lctl))
+          esc grv
         )
 
         (deflayermap (nav)
           ;; Arrow keys
-          i up j left k down l right
+          w up a left s down d right
           ;; Mouse
-          q mlft e mrgt
-          w @msu a @msl s @msd d @msr
-          r @mwu f @mwd
+          u mlft o mrgt
+          i @msu j @msl k @msd l @msr
+          y @mwu h @mwd
           ;; fn
           1 f1 2 f2 3 f3 4 f4 5 f5 6 f6
           7 f7 8 f8 9 f9 0 f10 min f11 eql f12
           ;; Other
-          esc grv
+          esc esc
+          bspc caps
+          r volu f vold
           ;; Layers
           ret (layer-switch default)
           spc (layer-switch default)

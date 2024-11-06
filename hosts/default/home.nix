@@ -52,7 +52,7 @@
     ffmpeg
     alejandra
     pulseaudio
-    (blender.override {cudaSupport = true;})
+    #(blender.override {cudaSupport = true;})
     osu-lazer-bin
     rquickshare
 
