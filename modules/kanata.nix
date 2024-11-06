@@ -13,7 +13,7 @@
           ro nlck bspc
           w a s d
           i j k l u o y h
-          r f
+          z x c r f
           1 2 3 4 5 6 7 8 9 0 min eql
         )
 
@@ -48,10 +48,11 @@
           ;; fn
           1 f1 2 f2 3 f3 4 f4 5 f5 6 f6
           7 f7 8 f8 9 f9 0 f10 min f11 eql f12
+          ;; Sound
+          z prev x pp c next r volu f vold
           ;; Other
           esc esc
           bspc caps
-          r volu f vold
           ;; Layers
           ret (layer-switch default)
           spc (layer-switch default)
