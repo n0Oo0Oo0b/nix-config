@@ -82,7 +82,7 @@
 
         {
           block = "custom";
-          command = "nc 127.0.0.1 60001 | ${pkgs.jq}/bin/jq .LayerChange.new";
+          command = "nc 127.0.0.1 60001 | lines | each {|x| $x | from json | get LayerChange.new -i } | each {|x| print $x}";
           persistent = true;
           interval = "once";
         }
