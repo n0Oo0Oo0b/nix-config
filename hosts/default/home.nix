@@ -54,6 +54,7 @@
     pulseaudio
     #(blender.override {cudaSupport = true;})
     osu-lazer-bin
+    prismlauncher
     rquickshare
   ];
 
