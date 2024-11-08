@@ -55,20 +55,6 @@
     #(blender.override {cudaSupport = true;})
     osu-lazer-bin
     rquickshare
-
-    # Scripts
-    (writeShellScriptBin "set-sink" ''
-      NAME=$1
-      ''${NAME:="hdmi"}
-
-      OUTPUT=$(pactl list short sinks | rg -S "$NAME" | head -n1 | awk '{print $2}')
-      if [ -n "$OUTPUT" ]; then
-        pactl set-default-sink $OUTPUT
-        echo "Default sink set to '$OUTPUT'"
-      else
-        echo "Sink not found"
-      fi
-    '')
   ];
 
   catppuccin.enable = true;

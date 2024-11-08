@@ -11,6 +11,17 @@ def start_zellij [] {
   }
 }
 
+def set_sink [name?: string] (
+  let search = $name
+    | default (if "Jabra" in (pactl get-default-sink) {"hdmi"} else {"Jabra"});
+  let new_sink = pactl list short sinks
+    | lines
+    | split column -r \s+ id desc
+    | where desc =~ $search
+    | first 1
+    | each {pactl set-default-sink $in.id}
+)
+
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
