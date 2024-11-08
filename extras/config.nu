@@ -19,7 +19,7 @@ def set_sink [name?: string] (
     | split column -r \s+ id desc
     | where desc =~ $search
     | first 1
-    | each {pactl set-default-sink $in.id}
+    | each {|x| pactl set-default-sink $x.id}
 )
 
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
