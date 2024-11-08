@@ -11,17 +11,17 @@ def start_zellij [] {
   }
 }
 
-def set_sink [name?: string] {
+def set-sink [name?: string] {
   let search = $name
     | default (if "Jabra" in (pactl get-default-sink) {"hdmi"} else {"Jabra"});
   let new_sink = pactl list short sinks
     | lines
     | split column -r \s+ id desc
     | where desc =~ $search
-    | get 0?;
+    | get 0?.desc;
   if $new_sink != null {
-    pactl set-default-sink $new_sink.id;
-    $new_sink.desc
+    pactl set-default-sink $new_sink;
+    $new_sink
   }
 }
 
