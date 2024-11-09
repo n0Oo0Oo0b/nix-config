@@ -144,6 +144,8 @@
     no_focus [title=".*[zZ]oom.*"]
     no_focus [title="^join\?action=join.*$"]
 
+    for_window [title="^Minecraft .*$"] floating enable
+
     no_focus [class="flameshot"]
   '';
 
