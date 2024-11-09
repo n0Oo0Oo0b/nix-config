@@ -45,8 +45,11 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
+  networking.hosts = {
+    "10.10.10.1" = ["router"];
+    "10.10.10.200" = ["pzn"];
+  };
 
   time.timeZone = "Asia/Shanghai";
   time.hardwareClockInLocalTime = true;
@@ -182,6 +185,15 @@
   # };
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libGL
+    libxkbcommon
+    wayland
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXrandr
+  ];
 
   # services.jack = {
   #   jackd.enable = true;
