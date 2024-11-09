@@ -47,8 +47,9 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "10.10.10.1" = ["router"];
-    "10.10.10.200" = ["pzn"];
+    "10.10.10.1" = ["router" "router.local"];
+    "10.10.10.200" = ["pzn" "pzn.local"];
+    "223.166.245.143" = ["home"];
   };
 
   time.timeZone = "Asia/Shanghai";
