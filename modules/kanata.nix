@@ -11,9 +11,9 @@
         (defsrc
           caps esc
           ro nlck bspc
-          w a s d
-          i j k l u o y h
-          z x c r f
+          q w e r t y u i o p
+          a s d f g h j k l
+          z x c v b n m
           1 2 3 4 5 6 7 8 9 0 min eql
         )
 
@@ -33,7 +33,7 @@
 
         (deflayermap (default)
           ro (layer-while-held nav)
-          nlck (layer-switch nav)
+          nlck (layer-switch vim)
           caps (multi f24 (tap-hold-press 0 200 esc lctl))
           esc grv
         )
@@ -56,6 +56,13 @@
           ;; Layers
           ret (layer-switch default)
           spc (layer-switch default)
+        )
+
+        (deflayermap (vim)
+          i (layer-switch default) a (multi right (layer-switch default))
+          h left j down k up l right
+          ;; H home L end C-h bspc C-l del C-w C-bspc
+          w C-right e C-right b C-left
         )
       '';
       extraDefCfg = ''
