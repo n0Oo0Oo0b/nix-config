@@ -145,6 +145,7 @@
     no_focus [title="^join\?action=join.*$"]
 
     for_window [title="^Minecraft .*$"] floating enable
+    for_window [title="^Mapadoodledoo$"] floating enable
 
     no_focus [class="flameshot"]
   '';
