@@ -56,12 +56,10 @@ in rec {
   programs.zellij.enable = true;
   programs.zoxide = withIntegration {};
 
-  programs.sioyek.config.bindings = ''
-    screen_up u
-    screen_up <c-u>
-    screen_down d
-    screen_down <c-d>
-  '';
+  programs.sioyek.bindings = {
+    "screen_down" = ["d" "<c-d>"];
+    "screen_up" = ["u" "<c-u>"];
+  };
 
   # Nushell config
   programs.nushell = {
