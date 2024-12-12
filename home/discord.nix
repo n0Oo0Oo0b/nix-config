@@ -2,7 +2,7 @@
   home.packages = [
     (pkgs.discord.override {
       withTTS = true;
-      withVencord = false;
+      withVencord = true;
     })
   ];
 
