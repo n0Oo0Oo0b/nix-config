@@ -163,7 +163,7 @@
             "enabled": false
         },
         "DisableCallIdle": {
-            "enabled": true
+            "enabled": false
         },
         "DontRoundMyTimestamps": {
             "enabled": true
@@ -403,7 +403,7 @@
             "enabled": false
         },
         "NoTypingAnimation": {
-            "enabled": true
+            "enabled": false
         },
         "NoUnblockToJump": {
             "enabled": false
@@ -597,7 +597,7 @@
             "autoDisable": true
         },
         "SilentTyping": {
-            "enabled": true,
+            "enabled": false,
             "showIcon": true,
             "contextMenu": false,
             "isEnabled": false
