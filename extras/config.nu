@@ -1,4 +1,4 @@
-def start_zellij [] {
+def start-zellij [] {
   if 'ZELLIJ' not-in ($env | columns) {
     if 'ZELLIJ_AUTO_ATTACH' in ($env | columns) and $env.ZELLIJ_AUTO_ATTACH == 'true' {
       zellij attach -c
@@ -13,16 +13,17 @@ def start_zellij [] {
 
 def set-sink [name?: string] {
   let search = $name
-    | default (if "Jabra" in (pactl get-default-sink) {"hdmi"} else {"Jabra"});
-  let new_sink = pactl list short sinks
+    | default (if "Jabra" in (pactl get-default-sink) {"hdmi"} else {"Jabra"})
+  pactl list short sinks
     | lines
     | split column -r \s+ id desc
     | where desc =~ $search
-    | get 0?.desc;
-  if $new_sink != null {
-    pactl set-default-sink $new_sink;
-    $new_sink
-  }
+    | try { pactl set-default-sink $in.0.desc } catch { print "Sink not found" }
+}
+
+def --env zf [query: string] {
+  let matches = zoxide query --list | fzf -f $query | lines
+  try { cd $matches.0 } catch { print "Not found" }
 }
 
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
