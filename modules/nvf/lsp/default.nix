@@ -18,7 +18,6 @@
     # Other plugins
     lspSignature.enable = true;
     lsplines.enable = true;
-    lspsaga.enable = true;
     otter-nvim.enable = true;
   };
 }

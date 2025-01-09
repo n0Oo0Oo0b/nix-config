@@ -17,6 +17,7 @@
     terminal.toggleterm.enable = true;
     theme.enable = true;
     treesitter.enable = true;
+    visuals.indent-blankline.enable = true;
 
     # Config
     autopairs.nvim-autopairs.setupOpts = {
@@ -28,6 +29,9 @@
     }];
     dashboard.startify.changeToVCRoot = true;
     git.gitsigns.codeActions.enable = true;
-    theme = {name = "catppuccin"; style = "mocha";};
+    theme = {
+      name = "catppuccin";
+      style = "mocha";
+    };
   };
 }
