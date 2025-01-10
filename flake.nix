@@ -27,7 +27,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     neovim = nvf.lib.neovimConfiguration {
       inherit pkgs;
-      modules = [ (import ./modules/nvf) ];
+      modules = [(import ./modules/nvf)];
     };
   in {
     packages.${system}.neovim = neovim.neovim;

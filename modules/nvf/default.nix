@@ -24,9 +24,11 @@
       map_c_h = true;
       map_c_w = true;
     };
-    dashboard.startify.bookmarks = [{
-      n = "~/nixos";
-    }];
+    dashboard.startify.bookmarks = [
+      {
+        n = "~/nixos";
+      }
+    ];
     dashboard.startify.changeToVCRoot = true;
     git.gitsigns.codeActions.enable = true;
     theme = {

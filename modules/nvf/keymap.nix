@@ -4,8 +4,11 @@
     # comments.comment-nvim.mappings = {};
     # git.gitsigns.mappings = {};
     keymaps = let
-      set = mode: key: action: { inherit mode key action; };
-      set-lua = mode: key: action: { inherit mode key action; lua = true; };
+      set = mode: key: action: {inherit mode key action;};
+      set-lua = mode: key: action: {
+        inherit mode key action;
+        lua = true;
+      };
     in [
       # Misc
       (set "" "H" "^")
@@ -23,5 +26,4 @@
       (set-lua "n" "<leader>q" "vim.diagnostic.setloclist")
     ];
   };
-
 }
