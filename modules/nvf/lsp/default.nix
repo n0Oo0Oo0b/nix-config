@@ -3,12 +3,14 @@
     enableLSP = true;
 
     clang.enable = true;
+    lua.enable = true;
     markdown.enable = true;
     nix.enable = true;
     nu.enable = true;
     python.enable = true;
     rust.enable = true;
   };
+
   vim.lsp = {
     enable = true;
 

@@ -1,7 +1,9 @@
 {
-  imports = [./keymap.nix ./vim_opts.nix ./lsp];
+  imports = [ ./keymap.nix ./vim_opts.nix ./lsp ];
 
   vim = {
+    extraLuaFiles = [ ./autocmds.lua ];
+
     # Enable/disable
     autocomplete.nvim-cmp.enable = true;
     autopairs.nvim-autopairs.enable = true;
@@ -25,9 +27,13 @@
       map_c_w = true;
     };
     dashboard.startify.bookmarks = [
-      {
-        n = "~/nixos";
-      }
+      { n = "~/nixos"; }
+    ];
+    dashboard.startify.lists = [
+      { type = "dir"; header = [ "MRU" ]; }
+      { type = "sessions"; header = [ "Sessions" ]; }
+      { type = "bookmarks"; header = [ "Bookmarks" ]; }
+      { type = "commands"; header = [ "Commands" ]; }
     ];
     dashboard.startify.changeToVCRoot = true;
     git.gitsigns.codeActions.enable = true;
@@ -35,5 +41,7 @@
       name = "catppuccin";
       style = "mocha";
     };
+    statusline.lualine.globalStatus = false;
+    statusline.lualine.refresh.statusline = 2000;
   };
 }

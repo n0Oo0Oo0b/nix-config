@@ -4,11 +4,13 @@
   };
   vim.options = {
     cursorline = true;
-    list = true;
-    # listchars = {
-    #   tab = "» "; trail = "·"; nbsp = "␣";
-    # };
-    scrolloff = 8;
+    expandtab = true;
+    inccommand = "split";
     lazyredraw = true;
+    list = true;
+    listchars = "tab:» ,trail:·,nbsp:␣";
+    scrolloff = 8;
+    shiftwidth = 4;
+    tabstop = 4;
   };
 }
