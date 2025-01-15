@@ -1,8 +1,8 @@
 {
-  imports = [ ./keymap.nix ./vim_opts.nix ./lsp ];
+  imports = [./keymap.nix ./vim_opts.nix ./lsp];
 
   vim = {
-    extraLuaFiles = [ ./autocmds.lua ];
+    extraLuaFiles = [./autocmds.lua];
 
     # Enable/disable
     autocomplete.nvim-cmp.enable = true;
@@ -27,13 +27,25 @@
       map_c_w = true;
     };
     dashboard.startify.bookmarks = [
-      { n = "~/nixos"; }
+      {n = "~/nixos";}
     ];
     dashboard.startify.lists = [
-      { type = "dir"; header = [ "MRU" ]; }
-      { type = "sessions"; header = [ "Sessions" ]; }
-      { type = "bookmarks"; header = [ "Bookmarks" ]; }
-      { type = "commands"; header = [ "Commands" ]; }
+      {
+        type = "dir";
+        header = ["MRU"];
+      }
+      {
+        type = "sessions";
+        header = ["Sessions"];
+      }
+      {
+        type = "bookmarks";
+        header = ["Bookmarks"];
+      }
+      {
+        type = "commands";
+        header = ["Commands"];
+      }
     ];
     dashboard.startify.changeToVCRoot = true;
     git.gitsigns.codeActions.enable = true;
