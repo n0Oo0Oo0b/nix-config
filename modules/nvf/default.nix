@@ -1,3 +1,4 @@
+{system, ...}:
 {
   imports = [./keymap.nix ./vim_opts.nix ./lsp];
 
@@ -26,9 +27,14 @@
       map_c_h = true;
       map_c_w = true;
     };
-    dashboard.startify.bookmarks = [
-      {n = "~/nixos";}
-    ];
+    dashboard.startify.bookmarks = let
+      bms = if system == "x86_64-linux" then {
+        n = "~/nixos";
+      } else {
+        n = "~/nix-config/";
+      };
+    in [ bms ];
+    dashboard.startify.changeToVCRoot = true;
     dashboard.startify.lists = [
       {
         type = "dir";
@@ -47,7 +53,6 @@
         header = ["Commands"];
       }
     ];
-    dashboard.startify.changeToVCRoot = true;
     git.gitsigns.codeActions.enable = true;
     theme = {
       name = "catppuccin";

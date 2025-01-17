@@ -23,14 +23,19 @@
     nvf,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    neovim = nvf.lib.neovimConfiguration {
-      inherit pkgs;
-      modules = [(import ./modules/nvf)];
-    };
+    systems = ["x86_64-linux" "aarch64-darwin"];
+    eachSystem = func: (nixpkgs.lib.attrsets.genAttrs systems func);
   in {
-    packages.${system}.neovim = neovim.neovim;
+    packages = eachSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      neovim = nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit system;};
+        modules = [(import ./modules/nvf)];
+      };
+    in {
+      neovim = neovim.neovim;
+    });
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
