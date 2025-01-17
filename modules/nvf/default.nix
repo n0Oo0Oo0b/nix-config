@@ -1,5 +1,4 @@
-{system, ...}:
-{
+{system, ...}: {
   imports = [./keymap.nix ./vim_opts.nix ./lsp];
 
   vim = {
@@ -28,12 +27,15 @@
       map_c_w = true;
     };
     dashboard.startify.bookmarks = let
-      bms = if system == "x86_64-linux" then {
-        n = "~/nixos";
-      } else {
-        n = "~/nix-config/";
-      };
-    in [ bms ];
+      bms =
+        if system == "x86_64-linux"
+        then {
+          n = "~/nixos";
+        }
+        else {
+          n = "~/nix-config/";
+        };
+    in [bms];
     dashboard.startify.changeToVCRoot = true;
     dashboard.startify.lists = [
       {

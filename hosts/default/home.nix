@@ -7,11 +7,12 @@
   imports = [
     ../../home/discord.nix
     ../../home/firefox.nix
-    ../../home/vscode.nix
+    ../../home/godot.nix
     ../../home/git.nix
-    ../../home/terminal.nix
-    ../../home/zed.nix
     ../../home/i3
+    ../../home/terminal.nix
+    ../../home/vscode.nix
+    ../../home/zed.nix
     # ../../home/nvim
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
@@ -40,6 +41,8 @@
     slack
     zotero
     anki-bin
+    # FIXME: Don't hardcode system
+    inputs.zen-browser.packages.x86_64-linux.default
 
     # Commandline
     porsmo

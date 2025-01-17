@@ -15,12 +15,15 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = {
     self,
     nixpkgs,
     nvf,
+    zen-browser,
     ...
   } @ inputs: let
     systems = ["x86_64-linux" "aarch64-darwin"];
