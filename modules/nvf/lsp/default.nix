@@ -1,6 +1,7 @@
 {
   vim.languages = {
     enableLSP = true;
+    enableTreesitter = true;
 
     clang.enable = true;
     lua.enable = true;
@@ -9,6 +10,7 @@
     nu.enable = true;
     python.enable = true;
     rust.enable = true;
+    wgsl.enable = true;
   };
 
   vim.lsp = {

@@ -26,16 +26,14 @@
       map_c_h = true;
       map_c_w = true;
     };
-    dashboard.startify.bookmarks = let
-      bms =
+    dashboard.startify.bookmarks = 
         if system == "x86_64-linux"
-        then {
+        then [{
           n = "~/nixos";
-        }
-        else {
+        }]
+        else [{
           n = "~/nix-config/";
-        };
-    in [bms];
+        }];
     dashboard.startify.changeToVCRoot = true;
     dashboard.startify.lists = [
       {

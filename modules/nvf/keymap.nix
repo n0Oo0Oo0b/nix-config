@@ -32,6 +32,7 @@
       (set "n" "<C-l>" "<C-w><C-l>")
 
       # Diagnostics
+      (set-lua "n" "gd" "vim.lsp.buf.definition")
       (set-lua "n" "[d" "vim.diagnostic.goto_prev")
       (set-lua "n" "]d" "vim.diagnostic.goto_next")
       (set-lua "n" "<leader>e" "vim.diagnostic.open_float")
