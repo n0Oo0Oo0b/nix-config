@@ -38,7 +38,15 @@
   '';
   security.polkit.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    auto-optimise-store = true;
+  };
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -207,6 +215,9 @@
 
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
+
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.dates = "daily";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
