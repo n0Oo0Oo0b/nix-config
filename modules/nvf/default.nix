@@ -19,6 +19,7 @@
     terminal.toggleterm.enable = true;
     theme.enable = true;
     treesitter.enable = true;
+    utility.surround.enable = true;
     visuals.indent-blankline.enable = true;
 
     # Config

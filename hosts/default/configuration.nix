@@ -57,7 +57,7 @@
   networking.hosts = {
     "10.10.10.1" = ["router" "router.local"];
     "10.10.10.200" = ["pzn" "pzn.local"];
-    "223.166.245.143" = ["home"];
+    "223.167.244.104" = ["home"];
   };
 
   time.timeZone = "Asia/Shanghai";
