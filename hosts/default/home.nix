@@ -54,6 +54,7 @@
     # Misc
     ffmpeg
     alejandra
+    davinci-resolve
     pulseaudio
     (blender.override {cudaSupport = true;})
     osu-lazer-bin
