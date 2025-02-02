@@ -4,6 +4,7 @@
     enableTreesitter = true;
 
     clang.enable = true;
+    clang.cHeader = true;
     lua.enable = true;
     markdown.enable = true;
     nix.enable = true;
