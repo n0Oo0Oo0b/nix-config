@@ -56,8 +56,8 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "10.10.10.1" = ["router" "router.local"];
-    "10.10.10.200" = ["pzn" "pzn.local"];
+    "192.168.2.1" = ["router" "router.local"];
+    "192.168.2.201" = ["pzn" "pzn.local"];
     "223.167.244.104" = ["home"];
   };
 
