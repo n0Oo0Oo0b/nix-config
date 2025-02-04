@@ -13,7 +13,6 @@
 
   nix.settings = {
     substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
       "https://cuda-maintainers.cachix.org"
