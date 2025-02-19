@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     # ../../modules/docker.nix
-    ../../modules/kanata.nix
+    #../../modules/kanata.nix
   ];
 
   nix.settings = {
@@ -24,7 +24,7 @@
     ];
     builders-use-substitutes = true;
 
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = ["nix-command" "flakes" "pipe-operators"];
     auto-optimise-store = true;
   };
 
