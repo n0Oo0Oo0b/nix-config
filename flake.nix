@@ -38,6 +38,34 @@
       };
     in {
       neovim = neovim.neovim;
+
+      rebuild =
+        if system == "x86_64-linux"
+        then
+          pkgs.writeShellApplication {
+            name = "nixos-rebuild";
+            runtimeInputs = [pkgs.git];
+            text = ''
+              set -e
+              pushd ~/nixos
+
+              echo "Rebuilding..."
+              sudo nixos-rebuild switch --flake .#default --show-trace
+              echo "Rebuild OK!"
+
+              current=$(nixos-rebuild list-generations | grep current)
+              msg=$(read -p "Commit message: " -r)
+              git commit -am "$msg [$current]"
+
+              read -p "Push? " -n 1 -r; echo
+              if [[ $REPLY =~ ^[Yy]$ ]]; then
+                git push
+              fi
+
+              popd
+            '';
+          }
+        else null;
     });
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {

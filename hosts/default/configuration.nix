@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     # ../../modules/docker.nix
-    #../../modules/kanata.nix
+    ../../modules/kanata.nix
   ];
 
   nix.settings = {
@@ -101,8 +101,10 @@
 
   services.displayManager.defaultSession = "gnome-xorg";
 
-  services.libinput = {
-    mouse.accelProfile = "flat";
+  services.libinput.mouse = {
+    accelProfile = "flat";
+    middleEmulation = false;
+    scrollButton = 3;
   };
 
   fonts = {
@@ -132,8 +134,8 @@
   };
 
   # Pipewire sound
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;

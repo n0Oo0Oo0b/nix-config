@@ -6,7 +6,7 @@ pushd ~/nixos
 
 # Reformat
 alejandra . &>/dev/null \
-  || ( alejandra . ; echo "formatting failed!" && exit 1)
+  || ( alejandra . ; echo "formatting failed!")
 
 # Display changes
 git diff -U0 -P '*.nix'
