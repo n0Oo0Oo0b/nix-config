@@ -1,4 +1,5 @@
 {
+  self,
   config,
   pkgs,
   inputs,
@@ -13,7 +14,6 @@
     ../../home/terminal.nix
     ../../home/vscode.nix
     ../../home/zed.nix
-    # ../../home/nvim
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
@@ -41,15 +41,14 @@
     slack
     zotero
     anki-bin
-    # FIXME: Don't hardcode system
-    inputs.zen-browser.packages.x86_64-linux.default
+    inputs.zen-browser.packages.${stdenv.system}.default
 
     # Commandline
     porsmo
     ripgrep
     du-dust
     mprocs
-    neovim
+    self.packages.${stdenv.system}.neovim
 
     # Misc
     ffmpeg
