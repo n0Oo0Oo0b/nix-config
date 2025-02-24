@@ -87,9 +87,11 @@
   chords.words = {
     "gih" = "github";
     "dco" = "discord";
-    "vim" = "nix run ~/nixos#neovim --";
+    "lst" = "last";
+    "rout" = "192.168.100.1";
+    "lhst" = "localhost";
   } // (genAttrs [
-    "of" "it" "is" "the" "this"
+    "an" "and" "of" "on" "it" "is" "in" "the" "this"
   ] (w: w));
 
   # Config building
