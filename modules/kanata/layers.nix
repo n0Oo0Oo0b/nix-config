@@ -1,4 +1,4 @@
-{util}: with util; {
+util: with util; {
   default = {
     ro = "(layer-while-held nav)";
     nlck = "(layer-switch chords)";
@@ -43,5 +43,5 @@
     nlck = "(layer-switch default)";
     caps = cap-ctrl;
     esc = "grv";
-  } // (genAttrs chordkeys (l: "(chord words ${escapeSpecial l})"));
+  } // (genAttrs chordkeys (l: "(chord chords ${escapeSpecial l})"));
 }

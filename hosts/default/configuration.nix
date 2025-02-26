@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
     # ../../modules/docker.nix
-    ../../modules/kanata.nix
+    ../../modules/kanata
   ];
 
   nix.settings = {

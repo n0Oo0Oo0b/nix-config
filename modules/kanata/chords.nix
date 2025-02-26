@@ -1,7 +1,7 @@
-{util}: let
+util: let
   lexical = [];
   alternative = {
-    "abt" = "about"
+    "abt" = "about";
     # Custom
     "dco" = "discord";
     "gih" = "github";

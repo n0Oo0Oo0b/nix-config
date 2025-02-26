@@ -4,34 +4,33 @@
   inherit (lib.strings) stringToCharacters concatStrings;
   inherit (builtins) concatStringsSep listToAttrs;
 
+  digits = stringToCharacters "1234567890";
+  letters = stringToCharacters "abcdefghijklmnopqrstuvwxyz";
+  specialChars = {
+    " " = "spc";
+    "!" = "S-1";
+    "@" = "S-2";
+    "#" = "S-3";
+    "$" = "S-4";
+    "%" = "S-5";
+    "^" = "S-6";
+    "&" = "S-7";
+    "*" = "S-8";
+    "(" = "S-9";
+    ")" = "S-0";
+    "~" = "S-grv";
+  } // (genAttrs digits (d: "Digit${d}"));
+  escapeSpecial = key: attrByPath [key] key specialChars;
+  interspaces = text: text |> stringToCharacters |> map escapeSpecial |> concatStringsSep " ";
+
   # Utils for imports
   util = rec {
-    inherit genAttrs;
+    inherit genAttrs escapeSpecial letters digits;
 
     # Vars
     mouse-speed = 1;
     scroll-rate = 50;
     chord-timeout = 35;
-    digits = stringToCharacters "1234567890";
-    letters = stringToCharacters "abcdefghijklmnopqrstuvwxyz";
-    specialChars = {
-      " " = "spc";
-      "!" = "S-1";
-      "@" = "S-2";
-      "#" = "S-3";
-      "$" = "S-4";
-      "%" = "S-5";
-      "^" = "S-6";
-      "&" = "S-7";
-      "*" = "S-8";
-      "(" = "S-9";
-      ")" = "S-0";
-      "~" = "S-grv";
-    } // (genAttrs digits (d: "Digit${d}"));
-
-    # Utility functions
-    escapeSpecial = key: attrByPath [key] key specialChars;
-    interspaces = text: text |> stringToCharacters |> map escapeSpecial |> concatStringsSep " ";
 
     # Kanata aliases
     movemouse = direction: "(movemouse-${direction} 1 ${toString mouse-speed})";
@@ -39,29 +38,24 @@
     macro = text: "(macro ${interspaces text})";
     cap-ctrl = "(multi f24 (tap-hold-press 0 200 esc lctl))";
 
-    chordkeys = digits ++ letters ++ [" "];
+    chordkeys = digits ++ letters ++ [" " ";"];
     defsrc = digits ++ letters ++ ["caps" "esc" "ro" "nlck" "bspc" "min" "eql"];
   };
 
-  chords = (chordkeys |> map escapeSpecial |> map (k: "(${k}) ${k}"))
-    ++ (import ./chords.nix util) |> mapAttrsToList (n: v: "(${util.interspaces n}) (${util.macro v})");
+  chords = (util.chordkeys |> map escapeSpecial |> map (k: "(${k}) ${k}"))
+    ++ ((import ./chords.nix util) |> mapAttrsToList (n: v: "(${interspaces n}) ${util.macro v}"));
 
   layers = (import ./layers.nix util) |> mapAttrs' (name: entries: nameValuePair
     "deflayermap (${name})"
-    (entries |> mapAttrsToList (n: v: "${escapeSpecial n} ${v}")))
+    (entries |> mapAttrsToList (n: v: "${escapeSpecial n} ${v}")));
 
   # Config building
   sections = {
     inherit (util) defsrc;
-    "defchords chords ${toString chord-timeout}" = chords;
+    "defchords chords ${toString util.chord-timeout}" = chords;
   } // layers;
 
 in {
-  imports = [
-    ./layers.nix
-    ./chords.nix
-  ];
-
   services.kanata = {
     enable = true;
     keyboards.drunkdeer = {
