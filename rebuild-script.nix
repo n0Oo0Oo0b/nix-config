@@ -5,7 +5,7 @@ let
     "aarch64-darwin" = "darwin-reubild switch --flake .#dQw4w9WgXcQ";
   }.${system};
 in pkgs.writeShellApplication {
-  name = "nixos-rebuild";
+  name = "nix-rebuild";
   runtimeInputs = [pkgs.git];
   text = ''
     set -e

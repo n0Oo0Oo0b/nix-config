@@ -49,6 +49,7 @@
     du-dust
     mprocs
     self.packages.${stdenv.system}.neovim
+    self.packages.${stdenv.system}.rebuild
 
     # Misc
     ffmpeg
