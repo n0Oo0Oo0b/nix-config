@@ -1,6 +1,5 @@
 util: let
-  lexical = [];
-  alternative = {
+  words = {
     # CharaChorder starter chords
     # https://docs.google.com/spreadsheets/u/0/d/1G_A77DsyoM2hod3by2BzM7Wcj3JGJsmNw7dAz98wS3U/htmlview
     "abt" = "about";
@@ -301,9 +300,12 @@ util: let
     "you" = "you";
     "yng" = "young";
     "your" = "your";
+  };
+  misc = {
     # Custom
+    "vim" = "nvim";
     "dco" = "discord";
     "gith" = "github";
     "lhst" = "localhost";
   };
-in alternative // util.genAttrs lexical (w: w)
+in builtins.mapAttrs (_: w: w + " ") words // misc
