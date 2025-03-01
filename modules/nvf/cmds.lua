@@ -4,3 +4,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorMoved", "CursorMovedI", "ModeCh
         require("lualine").refresh({ place = { "statusline" } });
     end,
 });
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight yanked text",
+    callback = function()
+        vim.highlight.on_yank();
+    end,
+})
+
+vim.api.nvim_create_user_command("Is", function(i)
+    vim.bo.expandtab = true;
+    vim.bo.tabstop = tonumber(i.args[0]);
+    vim.bo.shiftwidth = 0;
+end, { args = 1, desc = "Set indentation to <N> spaces" });
