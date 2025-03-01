@@ -1,8 +1,8 @@
-{system, ...}: {
-  imports = [./keymap.nix ./vim_opts.nix ./lsp];
+{...}: {
+  imports = [./config.nix ./keymap.nix ./vim_opts.nix ./extra_plugins.nix];
 
   vim = {
-    extraLuaFiles = [./autocmds.lua];
+    extraLuaFiles = [./cmds.lua];
 
     # Enable/disable
     autocomplete.nvim-cmp.enable = true;
@@ -22,48 +22,29 @@
     utility.surround.enable = true;
     visuals.indent-blankline.enable = true;
 
-    # Config
-    autopairs.nvim-autopairs.setupOpts = {
-      map_c_h = true;
-      map_c_w = true;
+    # Misc LSP
+    lsp.enable = true;
+    lsp.lspSignature.enable = true;
+    lsp.lsplines.enable = true;
+    lsp.otter-nvim.enable = true;
+    languages.enableLSP = true;
+    languages.enableTreesitter = true;
+
+    # Languages
+    languages = {
+      clang.enable = true;
+      clang.cHeader = true;
+      css.enable = true;
+      html.enable = true;
+      java.enable = true;
+      lua.enable = true;
+      markdown.enable = true;
+      nix.enable = true;
+      nu.enable = true;
+      python.enable = true;
+      rust.enable = true;
+      wgsl.enable = true;
     };
-    dashboard.startify.bookmarks =
-      if system == "x86_64-linux"
-      then [
-        {
-          n = "~/nixos";
-        }
-      ]
-      else [
-        {
-          n = "~/nix-config/";
-        }
-      ];
-    dashboard.startify.changeToVCRoot = true;
-    dashboard.startify.lists = [
-      {
-        type = "dir";
-        header = ["MRU"];
-      }
-      {
-        type = "sessions";
-        header = ["Sessions"];
-      }
-      {
-        type = "bookmarks";
-        header = ["Bookmarks"];
-      }
-      {
-        type = "commands";
-        header = ["Commands"];
-      }
-    ];
-    git.gitsigns.codeActions.enable = true;
-    theme = {
-      name = "catppuccin";
-      style = "mocha";
-    };
-    statusline.lualine.globalStatus = false;
-    statusline.lualine.refresh.statusline = 2000;
   };
+
 }

@@ -14,6 +14,7 @@
     ../../home/terminal.nix
     ../../home/vscode.nix
     ../../home/zed.nix
+    ../../home/nixpkgs.nix
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
@@ -25,7 +26,6 @@
   # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.cudaSupport = true;
   nixpkgs.overlays = [
     (final: prev: {
