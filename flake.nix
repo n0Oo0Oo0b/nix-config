@@ -8,7 +8,7 @@
 
     catppuccin.url = "github:catppuccin/nix";
     nvf.url = "github:notashelf/nvf";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

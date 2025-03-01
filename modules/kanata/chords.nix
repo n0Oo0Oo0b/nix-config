@@ -51,7 +51,7 @@ util: let
     "city" = "city";
     "close" = "close";
     "come" = "come";
-    "could" = "could";
+    "cld" = "could";
     "cnut" = "country";
     "cut" = "cut";
     "day" = "day";
@@ -203,6 +203,7 @@ util: let
     "qkly" = "quickly";
     "quite" = "quite";
     "rd" = "read";
+    "real" = "real";
     "realy" = "really";
     "right" = "right";
     "rive" = "rive";
