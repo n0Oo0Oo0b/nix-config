@@ -3,25 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    home-manager.url = "github:nix-community/home-manager";
 
     catppuccin.url = "github:catppuccin/nix";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    nvf.url = "github:notashelf/nvf";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
+    nix-darwin,
     nvf,
     zen-browser,
     ...
@@ -74,6 +73,14 @@
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.catppuccin.nixosModules.catppuccin
+      ];
+    };
+
+    darwinConfigurations."dQw4w9WgXcQ" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit self inputs;};
+      modules = [
+        ./hosts/macbook/configuration.nix
+        inputs.home-manager.darwinModules.default
       ];
     };
   };
