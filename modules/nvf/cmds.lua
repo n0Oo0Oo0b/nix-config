@@ -14,6 +14,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_user_command("Is", function(i)
     vim.bo.expandtab = true;
-    vim.bo.tabstop = tonumber(i.args[0]);
+    vim.bo.tabstop = tonumber(i.args[1]);
     vim.bo.shiftwidth = 0;
 end, { nargs = 1, desc = "Set indentation to <N> spaces" });

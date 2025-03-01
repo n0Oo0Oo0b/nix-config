@@ -291,7 +291,7 @@ util: let
     "why" = "why";
     "wil" = "will";
     "with" = "with";
-    "witho" = "without";
+    "wo" = "without";
     "wrd" = "word";
     "wrk" = "work";
     "wld" = "world";
@@ -300,7 +300,9 @@ util: let
     "you" = "you";
     "yng" = "young";
     "your" = "your";
+    # Other
   };
+
   misc = {
     # Custom
     "vim" = "nvim";

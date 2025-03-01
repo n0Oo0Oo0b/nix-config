@@ -33,5 +33,7 @@
     statusline.lualine.refresh.statusline = 2000;
 
     lsp.formatOnSave = true;
+    treesitter.highlight.enable = true;
+    treesitter.indent.enable = true;
   };
 }

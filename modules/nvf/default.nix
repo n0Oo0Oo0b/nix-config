@@ -46,5 +46,4 @@
       wgsl.enable = true;
     };
   };
-
 }
