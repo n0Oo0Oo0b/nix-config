@@ -16,4 +16,4 @@ vim.api.nvim_create_user_command("Is", function(i)
     vim.bo.expandtab = true;
     vim.bo.tabstop = tonumber(i.args[0]);
     vim.bo.shiftwidth = 0;
-end, { args = 1, desc = "Set indentation to <N> spaces" });
+end, { nargs = 1, desc = "Set indentation to <N> spaces" });
