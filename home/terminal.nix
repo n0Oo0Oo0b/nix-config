@@ -2,14 +2,7 @@
   pkgs,
   lib,
   ...
-}: let
-  withIntegration = other:
-    {
-      enable = true;
-      enableNushellIntegration = true;
-    }
-    // other;
-in rec {
+}: rec {
   # Base
   programs.kitty = {
     enable = true;
@@ -19,11 +12,12 @@ in rec {
     };
     settings = {
       disable_ligatures = "cursor";
-      shell = "nu -i -l";
+      shell = "${pkgs.nushell}/bin/nu -i -l";
     };
   };
 
   home.sessionVariables = {
+    SHELL = "nu";
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = 1;
     ZELLIJ_AUTO_EXIT = "true";
@@ -36,45 +30,41 @@ in rec {
   };
 
   # CLI programs
-  programs.bat.enable = true;
-  programs.btop.enable = true;
-  programs.carapace = withIntegration {};
-  programs.direnv = withIntegration {nix-direnv.enable = true;};
-  programs.eza.enable = true;
-  programs.fzf.enable = true;
-  programs.gitui.enable = true;
-  programs.keychain = withIntegration {keys = ["id_ed25519"];};
-  programs.nix-index.enable = true;
-  programs.ranger.enable = true;
-  programs.sioyek.enable = true;
-  programs.starship = withIntegration {
-    settings =
-      lib.recursiveUpdate
-      (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml)) {
-        continuation_prompt = "┆ ";
-      };
-  };
-  programs.watson.enable = true;
-  programs.zellij.enable = true;
-  programs.zoxide = withIntegration {};
+  home.shell.enableShellIntegration = true;
+  programs = {
+    bat.enable = true;
+    btop.enable = true;
+    carapace.enable = true;
+    direnv.enable = true;
+    eza.enable = true;
+    fzf.enable = true;
+    gitui.enable = true;
+    keychain.enable = true;
+    nix-index.enable = true;
+    ranger.enable = true;
+    sioyek.enable = true;
+    starship.enable = true;
+    watson.enable = true;
+    zellij.enable = true;
+    zoxide.enable = true;
 
-  programs.sioyek.bindings = {
-    "screen_down" = ["d" "<c-d>"];
-    "screen_up" = ["u" "<c-u>"];
+    # Config
+    sioyek.bindings = {
+      "screen_down" = ["d" "<c-d>"];
+      "screen_up" = ["u" "<c-u>"];
+    };
+    direnv.nix-direnv.enable = true;
+    keychain.keys = ["id_ed25519"];
+    starship.settings = lib.recursiveUpdate
+        (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml))
+        { continuation_prompt = "┆ "; };
   };
 
   # Nushell config
   programs.nushell = {
     enable = true;
     extraConfig = builtins.readFile ../extras/config.nu;
-    # Manual shell stuff
     shellAliases = home.shellAliases;
-    extraEnv = builtins.concatStringsSep "\n" (
-      lib.attrsets.mapAttrsToList
-      (name: value: "$env.${name} = \"${toString value}\"")
-      home.sessionVariables
-    );
-    loginFile.text = ''
-    '';
+    environmentVariables = home.sessionVariables;
   };
 }

@@ -21,6 +21,8 @@
     self,
     nixpkgs,
     nix-darwin,
+    home-manager,
+    catppuccin,
     nvf,
     zen-browser,
     ...
@@ -33,19 +35,28 @@
       neovim = nvf.lib.neovimConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit system;};
-        modules = [(import ./modules/nvf)];
+        modules = [ (import ./modules/nvf) ];
       };
     in {
       neovim = neovim.neovim;
       rebuild = import ./rebuild-script.nix { inherit system pkgs; };
+
+      homeConfigurations.danielgu = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./hosts/macbook/home.nix
+          catppuccin.homeManagerModules.catppuccin
+        ];
+        extraSpecialArgs = { inherit self inputs; };
+      };
     });
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
       modules = [
         ./hosts/default/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.catppuccin.nixosModules.catppuccin
+        home-manager.nixosModules.default
+        catppuccin.nixosModules.catppuccin
       ];
     };
 
@@ -53,7 +64,7 @@
       specialArgs = {inherit self inputs;};
       modules = [
         ./hosts/macbook/configuration.nix
-        inputs.home-manager.darwinModules.default
+        home-manager.darwinModules.default
       ];
     };
   };

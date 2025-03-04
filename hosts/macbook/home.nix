@@ -1,6 +1,6 @@
-{ self, pkgs, inputs, ... }: {
+{ self, pkgs, ... }: {
   imports = [
-    #../../home/discord.nix
+    # ../../home/discord.nix
     ../../home/git.nix
     ../../home/terminal.nix
     ../../home/vscode.nix
@@ -8,6 +8,10 @@
   ];
 
   home.username = "danielgu";
+  home.homeDirectory = /Users/danielgu;
+
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
 
   # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
@@ -18,8 +22,7 @@
     zotero
     anki-bin
 
-    # Commandline
-    porsmo
+    # # Commandline
     ripgrep
     du-dust
     mprocs
@@ -28,12 +31,17 @@
     # Misc
     ffmpeg
     alejandra
-    davinci-resolve
-    blender
+    # blender
     osu-lazer-bin
     prismlauncher
-    rquickshare
   ];
+
+  programs.nushell.extraLogin = ''
+    if not ("__ENV_INIT" in $env) {
+      $env.__ENV_INIT = 1
+      exec zsh -ilc "exec nu"
+    }
+  '';
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

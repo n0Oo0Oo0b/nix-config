@@ -20,4 +20,7 @@
   nix.optimise.automatic = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 }
