@@ -4,13 +4,13 @@
   ];
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  # fonts.packages = with pkgs; [
-  #   nerd-fonts.jetbrains-mono
-  #   inter
-  #   noto-fonts
-  #   noto-fonts-cjk-sans
-  #   noto-fonts-cjk-serif
-  # ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    inter
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+  ];
 
   users.users.danielgu = {
     description = "Daniel Gu";
@@ -33,6 +33,8 @@
   ];
 
   services.openssh.enable = true;
+
+  ids.gids.nixbld = 30000;
 
   system.stateVersion = 6;
 }

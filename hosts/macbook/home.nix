@@ -1,39 +1,28 @@
-{ self, pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     # ../../home/discord.nix
-    ../../home/git.nix
-    ../../home/terminal.nix
-    ../../home/vscode.nix
-    ../../home/nixpkgs.nix
+    ../../home/common
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
-
-  home.username = "danielgu";
-  home.homeDirectory = /Users/danielgu;
 
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
+
+  home.username = "danielgu";
+  home.homeDirectory = /Users/danielgu;
 
   # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    # General use
-    obsidian
-    zotero
-    anki-bin
-
-    # # Commandline
-    ripgrep
-    du-dust
-    mprocs
-    self.packages.${stdenv.system}.neovim
-
     # Misc
-    ffmpeg
-    alejandra
-    # blender
-    osu-lazer-bin
-    prismlauncher
+    google-chrome
+
+    # Darwin-specific
+    ice-bar
+    raycast
+    zoom-us
+    jetbrains.idea-ultimate
   ];
 
   programs.nushell.extraLogin = ''
@@ -42,7 +31,4 @@
       exec zsh -ilc "exec nu"
     }
   '';
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

@@ -138,6 +138,8 @@
     ];
   };
 
+  home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
+
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^zoom\s?$"] kill
     for_window [title="^join\?action=join.*$"] kill

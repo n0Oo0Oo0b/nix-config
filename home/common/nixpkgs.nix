@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true;
+{ lib, pkgs, ... }: {
+  # nixpkgs.config.allowUnfree = true;
 
   nix = {
-    package = pkgs.nix;
+    package = lib.mkDefault pkgs.nix;
     gc.automatic = true;
     gc.frequency = "weekly";
   };

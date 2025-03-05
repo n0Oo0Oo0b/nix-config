@@ -39,7 +39,7 @@
       };
     in {
       neovim = neovim.neovim;
-      rebuild = import ./rebuild-script.nix { inherit system pkgs; };
+      rebuild = import ./rebuild-script.nix { inherit system pkgs inputs; };
 
       homeConfigurations.danielgu = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -60,7 +60,7 @@
       ];
     };
 
-    darwinConfigurations."dQw4w9WgXcQ" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.dQw4w9WgXcQ = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit self inputs;};
       modules = [
         ./hosts/macbook/configuration.nix

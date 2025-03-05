@@ -1,21 +1,30 @@
-{system, pkgs, ...}:
+{system, pkgs, inputs, ...}:
 let
-  rebuildCommand = {
-    "x86_64-linux" = "nixos-rebuild switch --flake .#default";
-    "aarch64-darwin" = "darwin-reubild switch --flake .#dQw4w9WgXcQ";
-  }.${system};
+  darwin-rebuild = "${inputs.nix-darwin.packages.${system}.darwin-rebuild}/bin/darwin-rebuild";
+  args = {
+    "x86_64-linux" = {
+      rebuild = "sudo nixos-rebuild switch --flake .#default";
+      cfgDir = "~/nixos";
+      listGens = "nixos-rebuild list-generations";
+    };
+    "aarch64-darwin" = {
+      rebuild = "${darwin-rebuild} switch --flake .#dQw4w9WgXcQ";
+      cfgDir = "~/.config/home-manager";
+      listGens = "${darwin-rebuild} --list-generations";
+    };
+  };
 in pkgs.writeShellApplication {
   name = "nix-rebuild";
   runtimeInputs = [pkgs.git];
-  text = ''
+  text = with args.${system}; ''
     set -e
-    pushd ~/nixos
+    pushd ${cfgDir}
 
     echo "Rebuilding..."
-    sudo ${rebuildCommand} --show-trace
+    ${rebuild} --show-trace
     echo "Rebuild OK!"
 
-    current=$(nixos-rebuild list-generations | grep current)
+    current=$(${listGens} | grep current)
     msg=$(read -p "Commit message: " -r)
     git commit -am "$msg [$current]"
 
