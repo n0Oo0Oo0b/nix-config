@@ -1,18 +1,13 @@
-{system, ...}: {
+{ ... }: {
   vim = {
     autopairs.nvim-autopairs.setupOpts = {
       map_c_h = true;
       map_c_w = true;
     };
 
-    dashboard.startify.bookmarks = {
-      "x86_64-linux" = [
+    dashboard.startify.bookmarks = [
         { n = "~/nix-config"; }
-      ];
-      "aarch64-darwin" = [
-        { n = "~/nixos"; }
-      ];
-    }.${system};
+    ];
     dashboard.startify.changeToVCRoot = true;
     dashboard.startify.lists = let
       mkTypeHeader = type: header: { inherit type header; };

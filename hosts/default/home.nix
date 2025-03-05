@@ -15,15 +15,6 @@
   # NOTE: Check home-manager release notes before changing
   home.stateVersion = "23.11";
 
-  nixpkgs.config.cudaSupport = true;
-  nixpkgs.overlays = [
-    (final: prev: {
-      # Requires an old version of Nvidia something or something
-      opencv = prev.opencv.override {enableCuda = false;};
-      discord = prev.discord.override {withTTS = true;};
-    })
-  ];
-
   home.packages = with pkgs; [
     # Misc
     porsmo
