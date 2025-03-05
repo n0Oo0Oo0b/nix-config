@@ -1,15 +1,18 @@
-{system, pkgs, inputs, ...}:
+{ pkgs, system, inputs, ...}:
 let
-  darwin-rebuild = "${inputs.nix-darwin.packages.${system}.darwin-rebuild}/bin/darwin-rebuild";
   args = {
-    "x86_64-linux" = {
-      rebuild = "sudo nixos-rebuild switch --flake .#default";
-      cfgDir = "~/nixos";
-      listGens = "nixos-rebuild list-generations";
+    "x86_64-linux" = let
+      nixos-rebuild = pkgs.lib.getExe pkgs.nixos-rebuild;
+    in {
+      rebuild = "sudo ${nixos-rebuild} switch --flake .#default";
+      cfgDir = "~/nix-config";
+      listGens = "${nixos-rebuild} list-generations";
     };
-    "aarch64-darwin" = {
+    "aarch64-darwin" = let
+      darwin-rebuild = pkgs.lib.getExe inputs.nix-darwin.packages.${system}.darwin-rebuild;
+    in {
       rebuild = "${darwin-rebuild} switch --flake .#dQw4w9WgXcQ";
-      cfgDir = "~/.config/home-manager";
+      cfgDir = "~/nix-config";
       listGens = "${darwin-rebuild} --list-generations";
     };
   };
