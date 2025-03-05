@@ -8,7 +8,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
-    # ../../modules/docker.nix
     ../../modules/kanata
     ../common.nix
   ];
