@@ -23,7 +23,9 @@ in {
 
       launchd.agents.kanata = {
         command = ''
-          kanata --cfg ${configFile}
+          kanata \
+            --cfg ${configFile} \
+            --port 60001
         '';
         path = [pkgs.kanata];
       };
