@@ -23,7 +23,7 @@ in {
 
       launchd.agents.kanata = {
         command = ''
-          kanata \
+          sudo kanata \
             --cfg ${configFile} \
             --port 60001
         '';
