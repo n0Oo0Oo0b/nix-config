@@ -2,7 +2,6 @@
   imports = [
     # ../../home/discord.nix
     ../../home/common
-    ../../modules/kanata/darwin.nix
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
