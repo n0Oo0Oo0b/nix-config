@@ -41,14 +41,14 @@
       neovim = neovim.neovim;
       rebuild = import ./rebuild-script.nix { inherit system pkgs inputs; };
 
-      homeConfigurations.danielgu = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./hosts/macbook/home.nix
-          catppuccin.homeManagerModules.catppuccin
-        ];
-        extraSpecialArgs = { inherit self inputs; };
-      };
+      # homeConfigurations.danielgu = home-manager.lib.homeManagerConfiguration {
+      #   inherit pkgs;
+      #   modules = [
+      #     ./hosts/macbook/home.nix
+      #     catppuccin.homeManagerModules.catppuccin
+      #   ];
+      #   extraSpecialArgs = { inherit self inputs; };
+      # };
     });
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
