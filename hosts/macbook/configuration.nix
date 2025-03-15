@@ -1,6 +1,6 @@
 {self, inputs, pkgs, ...}: {
   imports = [
-    ../../modules/kanata
+    # ../../modules/kanata
     ../common.nix
   ];
 

@@ -2,6 +2,7 @@
   imports = [
     # ../../home/discord.nix
     ../../home/common
+    ../../home/discord.nix
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
@@ -25,6 +26,7 @@
     jetbrains.idea-ultimate
   ];
 
+  # Init env vars with zsh
   programs.nushell.extraLogin = ''
     if not ("__ENV_INIT" in $env) {
       $env.__ENV_INIT = 1
