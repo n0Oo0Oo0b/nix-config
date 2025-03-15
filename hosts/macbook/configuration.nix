@@ -23,6 +23,25 @@
     })
   ];
 
+  homebrew.enable = true;
+  homebrew.casks = [
+    "blackhole-2ch"
+    "linearmouse"
+
+    # MS office
+    "microsoft-word"
+    "microsoft-powerpoint"
+    "microsoft-excel"
+    "microsoft-onenote"
+    "microsoft-teams"
+    "onedrive"
+
+    # Misc
+    "wechat"
+    "steam"
+    "blender"
+  ];
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     inter
