@@ -25,6 +25,7 @@
   };
 
   home.shellAliases = {
+    gd = "git diff";
     glo = "git log --oneline";
     gs = "git status";
   };
@@ -49,12 +50,13 @@
     zoxide.enable = true;
 
     # Config
+    btop.settings.vim_keys = true;
+    direnv.nix-direnv.enable = true;
+    keychain.keys = ["id_ed25519"];
     sioyek.bindings = {
       "screen_down" = ["d" "<c-d>"];
       "screen_up" = ["u" "<c-u>"];
     };
-    direnv.nix-direnv.enable = true;
-    keychain.keys = ["id_ed25519"];
     starship.settings = lib.recursiveUpdate
         (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml))
         { continuation_prompt = "┆ "; };
