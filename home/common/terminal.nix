@@ -25,7 +25,6 @@
   };
 
   home.shellAliases = {
-    # gd = "git diff";
     glo = "git log --oneline";
     gs = "git status";
   };
@@ -50,7 +49,7 @@
     zoxide.enable = true;
 
     # Config
-    # btop.settings.vim_keys = true;
+    btop.settings.vim_keys = true;
     direnv.nix-direnv.enable = true;
     keychain.keys = ["id_ed25519"];
     sioyek.bindings = {
