@@ -181,7 +181,7 @@
   # };
 
   programs.steam.enable = true;
-  programs.steam.extraPackages = with pkgs; [ everest-mons ];
+  programs.steam.extraPackages = with pkgs; [ fuse ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
