@@ -30,8 +30,6 @@
 
   gtk = {
     enable = true;
-    catppuccin.enable = true;
-    catppuccin.icon.enable = true;
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
@@ -39,6 +37,8 @@
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
+  catppuccin.gtk.enable = true;
+  catppuccin.gtk.icon.enable = true;
 
   programs.obs-studio = {
     enable = true;

@@ -156,13 +156,13 @@
     enable = true;
     terminal = "kitty";
     plugins = [pkgs.rofi-calc];
-    catppuccin.flavor = "macchiato";
     theme = {
       "*".width = "600px";
       "*".font = "monospace 12";
       window.height = "720px";
     };
   };
+  catppuccin.rofi.flavor = "macchiato";
 
   services.picom = {
     enable = true;
