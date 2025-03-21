@@ -8,18 +8,18 @@
   nixpkgs.overlays = [
     (self: super: {
       # https://github.com/LnL7/nix-darwin/issues/1041
-      karabiner-elements = super.karabiner-elements.overrideAttrs (old: {
-        version = "14.13.0";
-        src = super.fetchurl { inherit (old.src) url; hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw="; };
-      });
+      # karabiner-elements = super.karabiner-elements.overrideAttrs (old: {
+      #   version = "14.13.0";
+      #   src = super.fetchurl { inherit (old.src) url; hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw="; };
+      # });
       # https://github.com/NixOS/nixpkgs/issues/388526
-      obsidian = super.obsidian.overrideAttrs (old: rec {
-        version = "1.8.7";
-        src = super.fetchurl {
-          url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/Obsidian-${version}.dmg";
-          hash = "sha256-odpuje7yiEztYG8Yt7oUhR7N7wkdXo8OlglTTMeCz4k=";
-        };
-      });
+      # obsidian = super.obsidian.overrideAttrs (old: rec {
+      #   version = "1.8.7";
+      #   src = super.fetchurl {
+      #     url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/Obsidian-${version}.dmg";
+      #     hash = "sha256-odpuje7yiEztYG8Yt7oUhR7N7wkdXo8OlglTTMeCz4k=";
+      #   };
+      # });
     })
   ];
 
