@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  self,
   ...
 }: rec {
   # Base
@@ -13,7 +14,7 @@
     settings = {
       disable_ligatures = "cursor";
       shell = "${pkgs.nushell}/bin/nu -i -l";
-      editor = "nvim";
+      editor = lib.getExe self.packages.${pkgs.stdenv.system}.neovim;
     };
   };
 
