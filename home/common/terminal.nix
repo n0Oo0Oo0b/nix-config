@@ -13,6 +13,7 @@
     settings = {
       disable_ligatures = "cursor";
       shell = "${pkgs.nushell}/bin/nu -i -l";
+      editor = "nvim";
     };
   };
 
