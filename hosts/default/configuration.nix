@@ -180,8 +180,12 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.steam.enable = true;
-  programs.steam.extraPackages = with pkgs; [ fuse ];
+  programs.steam = {
+    enable = true;
+    extraPackages = with pkgs; [ fuse ];
+    localNetworkGameTransfers.openFirewall = true;
+    remotePlay.openFirewall = true;
+  };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
