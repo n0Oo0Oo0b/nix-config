@@ -141,13 +141,10 @@
   home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
 
   xsession.windowManager.i3.extraConfig = ''
-    for_window [title="^zoom\s?$"] kill
-    for_window [title="^join\?action=join.*$"] kill
-    no_focus [title=".*[zZ]oom.*"]
-    no_focus [title="^join\?action=join.*$"]
-
-    for_window [title="^Minecraft .*$"] floating enable
+    for_window [title="^Minecraft "] floating enable
     for_window [title="^Mapadoodledoo$"] floating enable
+    for_window [class="discord"] border none
+    for_window [class="Zen"] border none
 
     no_focus [class="flameshot"]
   '';
