@@ -143,6 +143,8 @@
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^Minecraft "] floating enable
     for_window [title="^Mapadoodledoo$"] floating enable
+    for_window [title="^预览$"] floating enable
+
     for_window [class="discord"] border none
     for_window [class="Zen"] border none
 
