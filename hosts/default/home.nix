@@ -21,6 +21,7 @@
     godot_4
     libreoffice
     (blender.override {cudaSupport = true;})
+    wechat-uos
 
     # Linux-specific
     inputs.zen-browser.packages.${stdenv.system}.default
