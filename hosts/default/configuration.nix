@@ -134,6 +134,7 @@
   };
   programs.noisetorch.enable = true;
   programs.dconf.enable = true;
+  programs.ssh.forwardX11 = true;
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
