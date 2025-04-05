@@ -1,19 +1,12 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    ../../home/discord.nix
     ../../home/common
+    ../../home/gui
     ../../home/linux
-    inputs.catppuccin.homeManagerModules.catppuccin
   ];
-
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
 
   home.username = "danielgu";
   home.homeDirectory = "/home/danielgu";
-
-  # NOTE: Check home-manager release notes before changing
-  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
     # Misc
