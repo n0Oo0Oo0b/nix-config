@@ -16,6 +16,7 @@
     raycast
     zoom-us
     jetbrains.idea-ultimate
+    karabiner-elements
   ];
 
   # Init env vars with zsh
