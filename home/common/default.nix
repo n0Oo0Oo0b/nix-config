@@ -15,6 +15,7 @@
     alejandra
 
     ripgrep
+    hyperfine
     du-dust
     mprocs
     self.packages.${stdenv.system}.neovim

@@ -25,7 +25,6 @@
     # Misc LSP
     lsp.enable = true;
     lsp.lspSignature.enable = true;
-    lsp.lsplines.enable = true;
     lsp.otter-nvim.enable = true;
     languages.enableLSP = true;
     languages.enableTreesitter = true;
