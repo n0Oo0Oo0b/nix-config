@@ -15,6 +15,7 @@
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser.inputs.home-manager.follows = "home-manager";
   };
 
   outputs = {
