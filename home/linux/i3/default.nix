@@ -45,15 +45,15 @@
         "XF86AudioNext" = "exec ${playerctl} next";
         "XF86AudioPrev" = "exec ${playerctl} previous";
 
-        "${mod}+shift+f" = "exec firefox";
+        "${mod}+shift+z" = "exec zen";
         "${mod}+shift+o" = "exec obsidian";
         "${mod}+shift+d" = "exec discord";
-        "${mod}+F11" = "exec set-sink hdmi-stereo";
-        "${mod}+F12" = "exec set-sink Jabra_SPEAK_510";
+        "${mod}+underscore" = "exec set-sink hdmi-stereo";
+        "${mod}+plus" = "exec set-sink Jabra_SPEAK_510";
 
         "${mod}+v" = null;
-        "${mod}+bracketleft" = "split horizontal";
-        "${mod}+bracketright" = "split vertical";
+        "${mod}+bracketleft" = "split vertical";
+        "${mod}+bracketright" = "split horizontal";
 
         "${mod}+k" = "focus up";
         "${mod}+shift+k" = "move up";
@@ -123,15 +123,13 @@
       ws = workspace: output: { inherit workspace output; };
     in [
       (ws "1" right)
-      (ws "2" left)
+      (ws "2" right)
       (ws "3" right)
-      (ws "4" left)
-      (ws "5" right)
+      (ws "4" right)
+      (ws "5" left)
       (ws "6" left)
-      (ws "7" right)
+      (ws "7" left)
       (ws "8" left)
-      (ws "9" right)
-      (ws "10" left)
       (ws "S" right)
     ];
   };
@@ -139,15 +137,16 @@
   home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
 
   xsession.windowManager.i3.extraConfig = ''
-    for_window [title="^Mapadoodledoo$"] floating enable
     for_window [title="^预览$"] floating enable
+    for_window [class="^wechat$"] bindsym Escape nop
 
     assign [class="^steam$"] S
-    for_window [class="^steam$" title="(?!^Steam$)"] floating enable
+    for_window [class="^steam$" title="^(?!Steam).*"] floating enable
 
     for_window [class="^discord$"] border none
     for_window [class="^Zen$"] border none
 
+    for_window [title="^Mapadoodledoo$"] floating enable
     no_focus [class="flameshot"]
   '';
 
