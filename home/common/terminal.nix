@@ -59,8 +59,8 @@
       "screen_up" = ["u" "<c-u>"];
     };
     starship.settings = lib.recursiveUpdate
-        (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml))
-        { continuation_prompt = "┆ "; };
+      (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml))
+      { continuation_prompt = "┆ "; };
   };
 
   # Nushell config

@@ -3,7 +3,7 @@
     ./git.nix
     ./nixpkgs.nix
     ./terminal.nix
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   catppuccin.enable = true;

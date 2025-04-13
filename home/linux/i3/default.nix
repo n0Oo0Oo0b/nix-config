@@ -118,35 +118,35 @@
     ];
 
     workspaceOutputAssign = let
-      left = "DP-4";
-      right = "DP-2";
-      ws = n: output: {
-        workspace = n;
-        output = output;
-      };
+      left = "DP-2";
+      right = "DP-4";
+      ws = workspace: output: { inherit workspace output; };
     in [
-      (ws "1" left)
-      (ws "2" right)
-      (ws "3" left)
-      (ws "4" right)
-      (ws "5" left)
-      (ws "6" right)
-      (ws "7" left)
-      (ws "8" right)
-      (ws "9" left)
-      (ws "10" right)
+      (ws "1" right)
+      (ws "2" left)
+      (ws "3" right)
+      (ws "4" left)
+      (ws "5" right)
+      (ws "6" left)
+      (ws "7" right)
+      (ws "8" left)
+      (ws "9" right)
+      (ws "10" left)
+      (ws "S" right)
     ];
   };
 
   home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
 
   xsession.windowManager.i3.extraConfig = ''
-    for_window [title="^Minecraft "] floating enable
     for_window [title="^Mapadoodledoo$"] floating enable
     for_window [title="^预览$"] floating enable
 
-    for_window [class="discord"] border none
-    for_window [class="Zen"] border none
+    assign [class="^steam$"] S
+    for_window [class="^steam$" title="(?!^Steam$)"] floating enable
+
+    for_window [class="^discord$"] border none
+    for_window [class="^Zen$"] border none
 
     no_focus [class="flameshot"]
   '';
