@@ -45,9 +45,11 @@
         "XF86AudioNext" = "exec ${playerctl} next";
         "XF86AudioPrev" = "exec ${playerctl} previous";
 
-        "${mod}+shift+z" = "exec zen";
-        "${mod}+shift+o" = "exec obsidian";
+        "${mod}+shift+b" = "exec btop";
         "${mod}+shift+d" = "exec discord";
+        "${mod}+shift+n" = "exec noisetorch";
+        "${mod}+shift+o" = "exec obsidian";
+        "${mod}+shift+z" = "exec zen";
         "${mod}+underscore" = "exec set-sink hdmi-stereo";
         "${mod}+plus" = "exec set-sink Jabra_SPEAK_510";
 
@@ -130,7 +132,7 @@
       (ws "6" left)
       (ws "7" left)
       (ws "8" left)
-      (ws "9: S" right)
+      (ws "S" right)
     ];
   };
 
@@ -138,7 +140,6 @@
 
   xsession.windowManager.i3.extraConfig = ''
     for_window [title="^预览$"] floating enable
-    for_window [class="^wechat$"] bindsym Escape nop
 
     assign [class="^steam$"] S
     for_window [class="^steam$" title="^(?!Steam).*"] floating enable
