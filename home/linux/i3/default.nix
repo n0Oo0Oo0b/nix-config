@@ -130,7 +130,7 @@
       (ws "6" left)
       (ws "7" left)
       (ws "8" left)
-      (ws "S" right)
+      (ws "9: S" right)
     ];
   };
 
