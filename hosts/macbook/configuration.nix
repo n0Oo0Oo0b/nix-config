@@ -27,6 +27,7 @@
   homebrew.casks = [
     "blackhole-2ch"
     "linearmouse"
+    "android-platform-tools"
 
     # MS office
     "microsoft-word"
