@@ -65,6 +65,8 @@
         "${mod}+shift+j" = "move down";
         "${mod}+l" = "focus right";
         "${mod}+shift+l" = "move right";
+        "${mod}+9" = "workspace S";
+        # "${mod}+shift+9" = "move container to workspace S";
 
         "${mod}+shift+s" = "exec flameshot gui";
 
@@ -134,22 +136,27 @@
       (ws "8" left)
       (ws "S" right)
     ];
+
+    window.commands = let
+      mkCmd = command: criteria: {inherit command criteria;};
+      borderless = criteria: mkCmd "border none" criteria;
+    in [
+      (borderless {class="^discord$";})
+      (borderless {class="^Zen$";})
+    ];
+
+    floating.criteria = [
+      { title="^预览$"; }
+      { class="^steam$"; title="^(?!Steam).*"; }
+    ];
   };
 
-  home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
-
   xsession.windowManager.i3.extraConfig = ''
-    for_window [title="^预览$"] floating enable
-
     assign [class="^steam$"] S
-    for_window [class="^steam$" title="^(?!Steam).*"] floating enable
-
-    for_window [class="^discord$"] border none
-    for_window [class="^Zen$"] border none
-
-    for_window [title="^Mapadoodledoo$"] floating enable
     no_focus [class="flameshot"]
   '';
+
+  home.file.".background-image".source = ../../extras/wallpapers/nixos-nord.jpg;
 
   programs.rofi = {
     enable = true;

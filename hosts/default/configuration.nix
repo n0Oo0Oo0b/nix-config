@@ -141,7 +141,7 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    extraGroups = ["networkmanager" "wheel" "audio"];
+    extraGroups = ["networkmanager" "wheel" "audio" "adbusers"];
     shell = pkgs.nushell;
   };
 
@@ -189,6 +189,8 @@
     xorg.libXi
     xorg.libXrandr
   ];
+
+  programs.adb.enable = true;
 
   services.openssh.enable = true;
   services.openssh.settings.X11Forwarding = true;
