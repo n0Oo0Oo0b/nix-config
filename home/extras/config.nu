@@ -26,6 +26,10 @@ def --env zf [query: string] {
   try { cd $matches.0 } catch { print "Not found" }
 }
 
+def nr [name: string, ...args] {
+    nix run nixpkgs#($name) --impure -- ...args
+}
+
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
