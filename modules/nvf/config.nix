@@ -30,7 +30,5 @@
     lsp.formatOnSave = true;
     treesitter.highlight.enable = true;
     treesitter.indent.enable = true;
-
-    languages.rust.lsp.package = [ "rust-analyzer" ];
   };
 }
