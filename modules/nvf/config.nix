@@ -10,12 +10,12 @@
     ];
     dashboard.startify.changeToVCRoot = true;
     dashboard.startify.lists = let
-      mkTypeHeader = type: header: { inherit type header; };
+      mkEntry = type: header: { inherit type header; };
     in [
-      (mkTypeHeader "dir" ["MRU"])
-      (mkTypeHeader "sessions" ["Sessions"])
-      (mkTypeHeader "bookmarks" ["Bookmarks"])
-      (mkTypeHeader "commands" ["Commands"])
+      (mkEntry "dir" ["MRU"])
+      (mkEntry "sessions" ["Sessions"])
+      (mkEntry "bookmarks" ["Bookmarks"])
+      (mkEntry "commands" ["Commands"])
     ];
 
     git.gitsigns.codeActions.enable = true;
@@ -30,5 +30,14 @@
     lsp.formatOnSave = true;
     treesitter.highlight.enable = true;
     treesitter.indent.enable = true;
+
+    languages.rust.lsp.opts = ''
+      ['rust-analyzer'] = {
+        checkOnSave = true,
+        procMacro = {
+          enable = true,
+        },
+      },
+    '';
   };
 }
