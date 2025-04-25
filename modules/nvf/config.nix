@@ -32,12 +32,6 @@
     treesitter.indent.enable = true;
 
     languages.rust.lsp.opts = ''
-      ['rust-analyzer'] = {
-        checkOnSave = true,
-        procMacro = {
-          enable = true,
-        },
-      },
     '';
   };
 }
