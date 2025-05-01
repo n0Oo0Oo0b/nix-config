@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     ffmpeg
     alejandra
+    scrcpy
 
     ripgrep
     hyperfine

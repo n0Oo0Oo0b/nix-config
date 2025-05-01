@@ -15,6 +15,7 @@
     libreoffice
     (blender.override {cudaSupport = true;})
     wechat-uos
+    gimp
 
     # Linux-specific
     inputs.zen-browser.packages.${stdenv.system}.default
