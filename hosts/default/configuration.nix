@@ -175,9 +175,14 @@
 
   programs.steam = {
     enable = true;
-    extraPackages = with pkgs; [ fuse alvr ];
+    extraPackages = with pkgs; [ fuse ];
     localNetworkGameTransfers.openFirewall = true;
     remotePlay.openFirewall = true;
+  };
+
+  programs.alvr = {
+    enable = true;
+    openFirewall = true;
   };
 
   programs.nix-ld.enable = true;
