@@ -123,19 +123,19 @@
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
-    #enable = true;
+    enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
+    jack.enable = true;
   };
   programs.noisetorch.enable = true;
   programs.dconf.enable = true;
-  services.jack = {
-    jackd.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-  };
+  # services.jack = {
+  #   jackd.enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  # };
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
