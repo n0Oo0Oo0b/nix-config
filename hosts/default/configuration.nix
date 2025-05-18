@@ -123,18 +123,19 @@
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
-    enable = true;
+    #enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
   programs.noisetorch.enable = true;
   programs.dconf.enable = true;
+  services.jack = {
+    jackd.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+  };
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -142,7 +143,7 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    extraGroups = ["networkmanager" "wheel" "audio" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "jackaudio"];
     shell = pkgs.nushell;
   };
 
