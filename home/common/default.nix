@@ -15,10 +15,12 @@
     alejandra
     scrcpy
 
-    ripgrep
-    hyperfine
     du-dust
+    fd
+    hyperfine
     mprocs
+    ripgrep
+    tokei
     self.packages.${stdenv.system}.neovim
     self.packages.${stdenv.system}.rebuild
   ];

@@ -43,10 +43,10 @@
     gitui.enable = true;
     keychain.enable = true;
     nix-index.enable = true;
-    ranger.enable = true;
     sioyek.enable = true;
     starship.enable = true;
     watson.enable = true;
+    yazi.enable = true;
     zellij.enable = true;
     zoxide.enable = true;
 
