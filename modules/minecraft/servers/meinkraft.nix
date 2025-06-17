@@ -7,7 +7,7 @@
     difficulty = "hard";
     spawn-protection = 0;
     server-port = 25573;
-    view-distance = 16;
+    view-distance = 8;
     online-mode = true;
     motd = "meinkraft";
     white-list = true;
@@ -17,7 +17,7 @@
   symlinks = {
     mods = pkgs.linkFarmFromDrvs "mods-mein"
       (mods.modrinth-fabric "1.21.3" [
-        "appleskin" "servux" "distanthorizons"
+        "appleskin" "servux" # "distanthorizons"
         "lithium"
         "carpet"
         "fabric-api"

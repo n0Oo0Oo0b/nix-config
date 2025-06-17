@@ -55,6 +55,12 @@
 
   services.openssh.enable = true;
 
+  services.immich = {
+    enable = true;
+    openFirewall = true;
+    settings = null;
+  };
+
   environment.systemPackages = with pkgs; [
     wget
     unzip

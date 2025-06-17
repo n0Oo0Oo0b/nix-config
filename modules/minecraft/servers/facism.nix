@@ -1,6 +1,6 @@
 { servers, mods, pkgs, ... }:
 {
-  enable = true;
+  enable = false;
   package = servers.fabric-1_20_4;
   openFirewall = true;
   serverProperties = {

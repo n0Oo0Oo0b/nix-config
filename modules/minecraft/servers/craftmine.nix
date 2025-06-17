@@ -1,6 +1,6 @@
 { servers, ... }:
 {
-  enable = true;
+  enable = false;
   package = servers.vanilla-25w14craftmine;
   openFirewall = true;
   serverProperties = {
