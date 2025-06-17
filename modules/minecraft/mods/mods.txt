@@ -1,0 +1,15 @@
+appleskin
+c2me-fabric
+carpet
+carpet-extra
+carpet-tis-addition
+distanthorizons
+fabric-api
+ferrite-core
+krypton
+lithium
+plasmo-voice
+pv-addon-groups
+scalablelux
+servux
+wthit

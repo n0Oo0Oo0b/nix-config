@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    # ./mc-servers
     ../common.nix
   ];
 
@@ -49,6 +50,7 @@
     users = {
       "pansternoob" = import ./home.nix;
     };
+    backupFileExtension = "bak";
   };
 
   services.openssh.enable = true;
