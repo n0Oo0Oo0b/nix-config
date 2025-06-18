@@ -1,0 +1,326 @@
+{
+  "1.19.4": {
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/aIpOZwoo/appleskin-fabric-mc1.19.4-2.5.1.jar",
+      "sha512": "833cfec3a67c1a868037b3445d7c8b50406b50cec18be51026fb03885552f110579aafe9a6d9ce4297ae29fbe155eb9995760265e04ecd1fa2272e5c74a0cd1a"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/uZ1nQtIu/c2me-fabric-mc1.19.4-0.2.0%2Balpha.10.66.jar",
+      "sha512": "1cbb1fe9b3538d953e341b499c67001f9fb142bf24853a6133dbc091aa8757d47d9949a1bc04106676cfb0b3ac280409fe017c1e3d4194bf35bb606eaea6c79d"
+    },
+    "carpet": {
+      "url": "https://cdn.modrinth.com/data/TQTTVgYE/versions/p5SN7luf/fabric-carpet-1.19.4-1.4.101%2Bv230319.jar",
+      "sha512": "3327e5c27817e0c65429ae24ab89a2592d2d173257a61611643dff998ce0b229f983e57e2bf5cb413698a19d045ef22fcecca0c25dd877f085f015e17f3048b0"
+    },
+    "carpet-extra": {
+      "url": "https://cdn.modrinth.com/data/VX3TgwQh/versions/JCNo7QLB/carpet-extra-1.19.4-1.4.100.jar",
+      "sha512": "a6016874622236475b855b8afb1743b2ebe6458e58880e47c1c2c1a8a532575bafd1ba34bd798255f5ef417456918488bd331ce6c1e35c2b7f9819f65f723dee"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/WawlDEsM/carpet-tis-addition-v1.64.0-mc1.19.4.jar",
+      "sha512": "4b27b3d42772f7a7c3a434ca6e1affc08e62dc025b7f8d31a06ba3f756c8bb38da87ca7c61e84e45078941b8776d1d7e1ec42aaab5ae8c090ccc272ddd50a087"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/nyAmoHlr/fabric-api-0.87.2%2B1.19.4.jar",
+      "sha512": "d839c678699130db605ac580484b5193c302dfa1ed91014c138cb1354874cef0d16580c7c11bedece3cf8a027ddbb4755d4924f6045970a6af608ff0fed898eb"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/RbR7EG8T/ferritecore-5.2.0-fabric.jar",
+      "sha512": "56a4ac2ed002260ee451fa9d33169ddcd01473bf46eee97061666b13fa386cd23e15238a72729e55f32d81cce8ae049c80caabf1947ba998258282226289be0c"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Tncui9tU/krypton-0.2.2.jar",
+      "sha512": "556087c57bae6a06a9249b261d432939f9bdead8f22324f7ec38f6a30e3f7cc9da758c7178d470d6e05e9b4b5caed703547c5891e6a89b0d842c274e709667da"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/14hWYkog/lithium-fabric-mc1.19.4-0.11.1.jar",
+      "sha512": "f2bd271e30e5ed9f097d592db5e859208a1c6abe727dc51f83879b837c843b4f6453e99f1ca8d5225f896233ab8f7dbbb3300f10396d2a1cd2957937acfd1aa7"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/eY2Z6BhC/plasmovoice-fabric-1.19.4-2.1.1.jar",
+      "sha512": "894325bf1f31c247c524e1e956c12b3b7db9ec24e31eb5a60ca798884a02a015f515f77927148033ed57f7247becfcf5075c8ac77629e16fd0b956a40a09f0b6"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/7oH1lLrm/servux-fabric-1.19.0-0.1.0.jar",
+      "sha512": "29f05ca4666c92b43b21af2aa3f912d4c8a89f1da02b75497f4f7c41e61aa4aa46be7d4c54b83969cbadeee0bf3a47acc13c12b0f3697167a27af1d7105938a5"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/TL3cDlVy/wthit-fabric-7.6.1.jar",
+      "sha512": "c6bca0ca7bd069b120a2f8889caa20ed5cf2d97e4714e615d70c0de31556926f70f266772613cce960eee64b2777926f9819c059c8a541b9d6c19791bf307719"
+    }
+  },
+  "1.20.4": {
+    "pv-addon-groups": {
+      "url": "https://cdn.modrinth.com/data/g2HFPeCl/versions/UrbDrJ9B/pv-addon-groups-1.1.0.jar",
+      "sha512": "a7d1d7b5f4a67753b094b0e6129a3114538fd1fe28517da1c0ee0cf172ebdad06480d809433ad63ce2de0e57d1e0a23f73afbffc35b797fbee24f596e7e6feb2"
+    },
+    "sodium": {
+      "url": "https://cdn.modrinth.com/data/AANobbMI/versions/4GyXKCLd/sodium-fabric-0.5.8%2Bmc1.20.4.jar",
+      "sha512": "bd00b956bde1205171e744a6a3780e835fb6928eb667fb2b56467818c979fb1e8c82561380a71a7dbfa1516cd4b6cf9087ca99f1ae066da6d65af2c828b8d554"
+    },
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/pmFyu3Sz/appleskin-fabric-mc1.20.3-2.5.1.jar",
+      "sha512": "d121c5b760da0df1882f74bedfe84f2033d81a679cb0aa15e38eeae5fefefba8b23b1a87e43095c3cb9cbde5d0960b52d99856209111069923078c39c8750aa6"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/1AeveXNt/c2me-fabric-mc1.20.4-0.2.0%2Balpha.11.72.jar",
+      "sha512": "bcc67b816ed01d67b5230d66f408223eb5c6d72f9fd500dab7c007a627d338491e0f1af4ba2929d35089ac9e22c9bc3a8eac48770c7c9aa7c78d70e453892ed1"
+    },
+    "carpet": {
+      "url": "https://cdn.modrinth.com/data/TQTTVgYE/versions/yYzR60Xd/fabric-carpet-1.20.3-1.4.128%2Bv231205.jar",
+      "sha512": "6ca0bd328a76b7c3c10eb0253cb57eba8791087775467fbe2217c7f938c0064700bdca4cbf358e7f2f3427ae50a6d63f520f2b1a549cb36da1cc718812f86375"
+    },
+    "carpet-extra": {
+      "url": "https://cdn.modrinth.com/data/VX3TgwQh/versions/APnGg1O6/carpet-extra-1.20.3-1.4.128.jar",
+      "sha512": "68c14e3661faeb81d13129193372fbd9e3c1b3a0ff496a5fe93404c96d791d4c5cec53d030ad63d8e1112db4660ea65f5ffb1f7fb1c76f7935fcb800a34d10c3"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/b1xjCurc/carpet-tis-addition-v1.65.0-mc1.20.4.jar",
+      "sha512": "5bf7071e9a86fab7ea28baaef84c181f6e78350cad793bc20025323287dc9dbbdf5f5d4ac5b37fbdaad52f4c462eb61f2cf5bca9877879efe3d682822463cf1e"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/QVBohPm2/fabric-api-0.97.2%2B1.20.4.jar",
+      "sha512": "8f02bf562781a2f08294736eff784b7e7463be1595b1e3b4f53d4dcb57fc0643890078265141c3bce882dfec6e77553d2db252992fdfbd55cd7d32777adb9d78"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/pguEMpy9/ferritecore-6.0.3-fabric.jar",
+      "sha512": "709ab6362dd1dcc432edd1e6c33aafba6f2d12be701bc14911107340f8ac2466779c4e57d8a303f0350c46478f23008e6eeca78e4eadedd0bdee63d4ae72ed9a"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/bRcuOnao/krypton-0.2.6.jar",
+      "sha512": "a3e4eadcd8074a0a68a1378c90824b58199bedbab2f7eaa3961db9b10b99215805dde4eb73be5ec3118f38fbb0beaa8a1b6f9de6966a741d32dbf181a44ae11b"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/nMhjKWVE/lithium-fabric-mc1.20.4-0.12.1.jar",
+      "sha512": "70bea154eaafb2e4b5cb755cdb12c55d50f9296ab4c2855399da548f72d6d24c0a9f77e3da2b2ea5f47fa91d1258df4d08c6c6f24a25da887ed71cea93502508"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/jNFP3CWF/plasmovoice-fabric-1.20.4-2.1.2.jar",
+      "sha512": "d5424f8b7775ac2da0888b7128cc35e6f09702f7f34487243fc392556d750489d1ae4fe59b9d677aaaf66c3d81ee8644991fe6668a8525280bbc9e15b6b2d5da"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/y3YGV2rC/servux-fabric-1.20.2-0.1.0.jar",
+      "sha512": "c59e7ec87d0388d5d6b3b51b655616e78fb348bbaec7e9c9dc0bd4e20c6d2751b2035cf16ee051c03f349a001c6136352921f0375fff4ca51ec4cb7e31cf350d"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/R1cVaBoW/wthit-fabric-10.9.4.jar",
+      "sha512": "dd3e917281ece63f21af8d74410884cc62ba9c67ec15034fe791f1180fec3d3bcdb957c98073c2e2f4e6a0505d7a57d384b0ac7fc34231b6397a6e0b606dac2b"
+    }
+  },
+  "1.21.1": {
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/b5ZiCjAr/appleskin-fabric-mc1.21-3.0.6.jar",
+      "sha512": "accbb36b863bdeaaeb001f7552534f3bdf0f27556795cf8e813f9b32e7732450ec5133da5e0ec9b92dc22588c48ffb61577c375f596dc351f15c15ce6a6f4228"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/gBHj4pcP/c2me-fabric-mc1.21.1-0.3.0%2Balpha.0.308.jar",
+      "sha512": "538e0ddebd04d28a2a6b19a9a1e2f461a80518a738dbc94ff58280101526d9a37868311b2684512429a6f8e84668d8cccc94c3503b302a5108c35978fa712cef"
+    },
+    "carpet": {
+      "url": "https://cdn.modrinth.com/data/TQTTVgYE/versions/f2mvlGrg/fabric-carpet-1.21-1.4.147%2Bv240613.jar",
+      "sha512": "e6f33d13406796a34e7598d997113f25f7bea3e55f9d334b73842adda52b2c5d0a86b7b12ac812d7e758861e3f468bf201c6c710c40162bb79d6818938204151"
+    },
+    "carpet-extra": {
+      "url": "https://cdn.modrinth.com/data/VX3TgwQh/versions/8gEVsK18/carpet-extra-1.21-1.4.148.jar",
+      "sha512": "64150e3d83f76e04d1e33dfc2f66117fdb364f777245ffe586eae8c370cb9e1bb7f396bbe338d29a572b0ac3c3335f390785717e86eb8b4a17ecb1e3ec9689fe"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/WBDN02HF/carpet-tis-addition-v1.65.0-mc1.21.1.jar",
+      "sha512": "525a446c80a9ce8ced1fb8689c2a20ba5cab500712541e4862470169fec1550375ff2c3dc6f7797646a86fe159d41fc6df182d566a0293de4f2e4af91cf966d7"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Zp9iAZdZ/fabric-api-0.110.0%2B1.21.1.jar",
+      "sha512": "db43c35873b0a0b073cf8c19d825a1db27d5c579c885091ddc462de783582c5c162d556b831915d1df46fbec781f0a9fe6c60a20ffa050915d80c5d99b9cb211"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/bwKMSBhn/ferritecore-7.0.2-hotfix-fabric.jar",
+      "sha512": "ca975bd3708cd96d30cf1447ac8883572113562eb2dd697e60c1cf382d6b70d0b1a511fcbfd042c51b2cf5d5ffc718b847f845e4c8a3e421e8c9ee741119a421"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar",
+      "sha512": "5f8cf96c79bfd4d893f1d70da582e62026bed36af49a7fa7b1e00fb6efb28d9ad6a1eec147020496b4fe38693d33fe6bfcd1eebbd93475612ee44290c2483784"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/9xfJi96s/lithium-fabric-0.14.3-snapshot%2Bmc1.21.1-build.92.jar",
+      "sha512": "d46a47c4ac7372b5bae629e5910a20eff5b3064053d2441760aa8c42095d8173a85d6fbb624ffc10c68fc954579630c56f55dbcf392fb0253b5c3ffd096ee0a0"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/wRTfGnAv/plasmovoice-fabric-1.21-2.1.2.jar",
+      "sha512": "9ffc9de52bfe4a54bfb5e34a961b2b1885452956341df15b303e388cb777d6abb1e02f1b936edb597e3bf5a83d9665dc49854232a8ade952f68a349bb9943830"
+    },
+    "scalablelux": {
+      "url": "https://cdn.modrinth.com/data/Ps1zyz6x/versions/Oh80nTJ5/ScalableLux-0.1.0%2Bfabric.26c6e72-all.jar",
+      "sha512": "586b45d542827f65b08d9ecae2c2367133b7a204da064b6d578dcf0119629e0b595343035e84dc4a86254c1e21cd64c5ed393fd746b28d5472f1e119b3d08923"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/dSlNtEgG/servux-fabric-1.21-0.3.11.jar",
+      "sha512": "1f4e6c8de8cdb2e1007d9023eaecf83924066d4c433abdce10c3549f83dcff4736891907fddd3660f77e42a6e3eeeed1b95bd6dbd5e7eec76c1117ac74738051"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/HU7IF2bY/wthit-fabric-12.4.5.jar",
+      "sha512": "0182d175bb187f31d75642d57c836a0ff61f4fa535aa749ea77f3518d6c0cff44537e91744a3c963dbc43a024d74c3cd9485df6f61e9206d7c0f782347136377"
+    }
+  },
+  "1.21.4": {
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/cHQjeYVS/appleskin-fabric-mc1.21.3-3.0.6.jar",
+      "sha512": "b572a3eea43e0084819c88dd7fac6a0a5d5555d9b73df927b97f29764f281cadbfc8cc5f8f6b6920f1677bcec87b411e5a582d305a191735ad8d60fc90900900"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/wJkrDhX5/c2me-fabric-mc1.21.4-0.3.2%2Balpha.0.22.jar",
+      "sha512": "7c62afa856991a81c1da72e65bef341061d487e7451978cf217a407641879f61c585cca73ef6e0ddff030dbe3dade41348720d5f8181a48a7f380d0a12b793b5"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/V0Y0FgyT/carpet-tis-addition-v1.65.1-mc1.21.4.jar",
+      "sha512": "faac72608dcb5a3e3b73bdfa2581b9d2ecc9db26532c7c46734168c90fd8c251355fba5d1fefb8139aa94d6329ca4bb862e81cb72320c55657b4895112d9a3b8"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/8FAH9fuR/fabric-api-0.114.2%2B1.21.4.jar",
+      "sha512": "24ed904096a17f65ef2ee4b04e076df2df076bd7748c838573cf97f5b38d2353bf62fe202779fb0c8372a82fb1133e16ce1fba585e2ec5aa5a5164203e785072"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/IPM0JlHd/ferritecore-7.1.1-fabric.jar",
+      "sha512": "f41dc9e8b28327a1e29b14667cb42ae5e7e17bcfa4495260f6f851a80d4b08d98a30d5c52b110007ee325f02dac7431e3fad4560c6840af0bf347afad48c5aac"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar",
+      "sha512": "5f8cf96c79bfd4d893f1d70da582e62026bed36af49a7fa7b1e00fb6efb28d9ad6a1eec147020496b4fe38693d33fe6bfcd1eebbd93475612ee44290c2483784"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/t1FlWYl9/lithium-fabric-0.14.3%2Bmc1.21.4.jar",
+      "sha512": "1a4eafbdcee3886d33c04aa462d13a8c1e345ff492001add262476585b78327a2d016e56385bced869615bc97161a34a0a716f5f579c8c1d7080b278f4f11183"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/c1KEbu22/plasmovoice-fabric-1.21.4-2.1.2.jar",
+      "sha512": "fe90666c6fcd6be45dafef7ae4b1cd0ea75acf8f517db05e6cb7a032936e1079ce5621673156ce3533331759304d8eb6e8d29bb14f065e4307a372f41c4bf962"
+    },
+    "scalablelux": {
+      "url": "https://cdn.modrinth.com/data/Ps1zyz6x/versions/otxwJ9w3/ScalableLux-0.1.2%2Bbeta.1%2Bfabric.6d46f24-all.jar",
+      "sha512": "c830a166205b5238bf9409fe4e7c975a33077401d125bfbf5b5b966a2345c456f858142db12b8c85bb20f298a7970a3a82a9d15bd2b83990179fb6ba0f014aa2"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/fKoMLUos/servux-fabric-1.21.4-0.5.1.jar",
+      "sha512": "49510a9e8d6894567f5d3461fb4b6e87e4d8ecb0664f337fe38f3a79b47887dbe1ac6a233aa0cc4e115b67c4d15ca895fd88a4ee941cdc6f86237a2bbd0c36f1"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/iUZaVlZk/wthit-fabric-14.0.1.jar",
+      "sha512": "995746ed743c3e68d91a3ab9daa131c7d7d6d75a5c5db108d780f9024c6370110dacd4966b957506596bb823d8664939a150103d132cc8efe78fd18d15d345c6"
+    }
+  },
+  "1.21.3": {
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/cHQjeYVS/appleskin-fabric-mc1.21.3-3.0.6.jar",
+      "sha512": "b572a3eea43e0084819c88dd7fac6a0a5d5555d9b73df927b97f29764f281cadbfc8cc5f8f6b6920f1677bcec87b411e5a582d305a191735ad8d60fc90900900"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/tbi5EOUm/c2me-fabric-mc1.21.3-0.3.1%2Balpha.0.44.jar",
+      "sha512": "d749fa18da89a79e2ca8d50393750d0ce219ac1c619b894ff0940450f4bdb60d2b075bf3d06f920cef43e6020e5d2454859f4309b21ee1749aee2903ab0e9b5e"
+    },
+    "carpet": {
+      "url": "https://cdn.modrinth.com/data/TQTTVgYE/versions/ZF8ufR9V/fabric-carpet-1.21.2-1.4.158%2Bv241022.jar",
+      "sha512": "5face4e6a6db80910f19badbdb35fde4ce25f06fcd4e2dece7005ced4ca06a106053a02fd58ea6a40ab281eb8d15ef47b5fa9487b3aba35f31748ddc3728d235"
+    },
+    "carpet-extra": {
+      "url": "https://cdn.modrinth.com/data/VX3TgwQh/versions/WDB4578I/carpet-extra-1.21.2-1.4.158.jar",
+      "sha512": "b520c9ca9a186645117bc83026964e513c8bdbdf8abfb9f4429340b96fbc8d1df0652936562a3c966690c6806c603151bf5c3a7e84d38c80c91a75725cdd4810"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/L1d7InxU/carpet-tis-addition-v1.66.0-mc1.21.3.jar",
+      "sha512": "0148f6f25c853524321a2749d5fa1fff10230affeec7af8b98b2414de6bf6814c81c9b65ec1875b7c514d6a697a77ba2bbb78b8ee0bdb73b71abd63b65840546"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/wLq4rGsB/fabric-api-0.114.1%2B1.21.3.jar",
+      "sha512": "962e64e8418b074ce68809cd38835e99fea3da8dc1b2979a69f10fee047cd3404b2157a8106fa650795d17e0eebfa41a0d21af7ea5a4b9ee3992c57bc3c5d113"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/a3QXXGz2/ferritecore-7.1.0-hotfix-fabric.jar",
+      "sha512": "ae1ab30beb5938643cf2ae7b8220769f2c917e3f5441e46e9bc900295348c0a541a325c30b8dfc38039205620d872c27809acdc6741351f08e4c8edc36ae2bcc"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar",
+      "sha512": "5f8cf96c79bfd4d893f1d70da582e62026bed36af49a7fa7b1e00fb6efb28d9ad6a1eec147020496b4fe38693d33fe6bfcd1eebbd93475612ee44290c2483784"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/W0Cc7ZVd/lithium-fabric-0.14.6%2Bmc1.21.3.jar",
+      "sha512": "412f9fb94931b0fde8ef03facde319518f19425be17c1dedba568d400d90dcc3cadcb69cd53dc8d8bfc3178aad480e2b5aac21cd81475aead93d9c9e640518bb"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/Ju6WYjI8/plasmovoice-fabric-1.21.4-2.1.4.jar",
+      "sha512": "e4eff058115063aca82b80dace6c5ca1cbf7dd73b3c695d083a39de62c9e09f6d261e7b45361f8971ea2a60bab90a6ff4f4e509c545b161aa338a95fbe2f4825"
+    },
+    "scalablelux": {
+      "url": "https://cdn.modrinth.com/data/Ps1zyz6x/versions/otxwJ9w3/ScalableLux-0.1.2%2Bbeta.1%2Bfabric.6d46f24-all.jar",
+      "sha512": "c830a166205b5238bf9409fe4e7c975a33077401d125bfbf5b5b966a2345c456f858142db12b8c85bb20f298a7970a3a82a9d15bd2b83990179fb6ba0f014aa2"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/u85kwLvC/servux-fabric-1.21.3-0.4.4.jar",
+      "sha512": "08c54782dbe8d704f83d821e533b6b7984639c0349d4bc7210a5c24fdb3c66f508c7ca8cdbaaf44a7a347d929f2496e9d6010d382bd3f2ab85194f7a07427585"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/3NucmjV6/wthit-fabric-13.1.1.jar",
+      "sha512": "1cf3ca61511517708d23f7845e0e0169419d55682ee401564dad4848d1c25cc6232ccdb98516bd609c4236a890cd0924f8ae9d986bccc37a67efe39bcc61ee12"
+    },
+    "distanthorizons": {
+      "url": "https://cdn.modrinth.com/data/uCdwusMi/versions/Hg8WxbND/DistantHorizons-neoforge-fabric-2.3.2-b-1.21.3.jar",
+      "sha512": "ae61809f005a09a8fd0f5076881e723f09c1efff677b836a8fda69342fc2af02a80f66aca9e186e242f7f9d4d37e52368f5c58c6f2f4038c1fc7c358998090d8"
+    },
+    "pv-addon-groups": {
+      "url": "https://cdn.modrinth.com/data/g2HFPeCl/versions/UrbDrJ9B/pv-addon-groups-1.1.0.jar",
+      "sha512": "a7d1d7b5f4a67753b094b0e6129a3114538fd1fe28517da1c0ee0cf172ebdad06480d809433ad63ce2de0e57d1e0a23f73afbffc35b797fbee24f596e7e6feb2"
+    }
+  },
+  "1.21.5": {
+    "distanthorizons": {
+      "url": "https://cdn.modrinth.com/data/uCdwusMi/versions/Mt9bDAs6/DistantHorizons-neoforge-fabric-2.3.2-b-1.21.5.jar",
+      "sha512": "e17d845f5ddb71a9ca644875a02b845e045bb5c7e72429e120271636936a816b416bb4ba13789de18c3af6a1a5f5b7ed5dbe07326c60d5c49534a382310dab1f"
+    },
+    "appleskin": {
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/VfjnbBAT/appleskin-fabric-mc1.21.5-3.0.6.jar",
+      "sha512": "36a0849b0483066abd74fc504eb0b7bded24ed7a2713ac8b005dd90b2c3c8c062101737aa9dd0173f692e16e504787fbd48214dbc94a2572969c33d4fa3cf3df"
+    },
+    "c2me-fabric": {
+      "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/vAHpotHa/c2me-fabric-mc1.21.5-0.3.4%2Balpha.0.19.jar",
+      "sha512": "c142712b4f0841558fa1e54f956d21e9bd102a71ff421c4877cf82315675a7bc9fc012f15372509b8f405addc913fb3c2da412dddb939e876cad054c6489f6f9"
+    },
+    "carpet-tis-addition": {
+      "url": "https://cdn.modrinth.com/data/jE0SjGuf/versions/EOSfYePQ/carpet-tis-addition-v1.66.1-mc1.21.5.jar",
+      "sha512": "19b6365dd6621090fe80062328bff248c8dbfc7ce7a0c3ca1eeac329e6211e66dcc43e416b4e82497436e21bbb487ffdbc6544116842fb6878d7d89f7d11b89c"
+    },
+    "fabric-api": {
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/w6P5mySo/fabric-api-0.125.0%2B1.21.5.jar",
+      "sha512": "159cf97b0869c923e3b7f477db8eefe70e4a4906f3663ac4e9c23e4237bbd0e07d79405de6b323a7a9989c76d33959770ba499abba12c90d64ca710c079b2bc7"
+    },
+    "ferrite-core": {
+      "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/CtMpt7Jr/ferritecore-8.0.0-fabric.jar",
+      "sha512": "131b82d1d366f0966435bfcb38c362d604d68ecf30c106d31a6261bfc868ca3a82425bb3faebaa2e5ea17d8eed5c92843810eb2df4790f2f8b1e6c1bdc9b7745"
+    },
+    "krypton": {
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/neW85eWt/krypton-0.2.9.jar",
+      "sha512": "2e2304b1b17ecf95783aee92e26e54c9bfad325c7dfcd14deebf9891266eb2933db00ff77885caa083faa96f09c551eb56f93cf73b357789cb31edad4939ffeb"
+    },
+    "lithium": {
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/VWYoZjBF/lithium-fabric-0.16.2%2Bmc1.21.5.jar",
+      "sha512": "09a68051504bb16069dd6af8901f2bbeadfd08ad5353d8bcc0c4784e814fb293d9197b4fb0a8393be1f2db003cd987a9e4b98391bbe18c50ae181dace20c2fa4"
+    },
+    "plasmo-voice": {
+      "url": "https://cdn.modrinth.com/data/1bZhdhsH/versions/y8UG1VMM/plasmovoice-fabric-1.21.5-2.1.4.jar",
+      "sha512": "15067159ef50895593ad9fb596841554ce7532104a7ec273a405fe1ce555d5d21aaae8110d4c0cbf03c6553e67a6e42b230a3151f1abe61310784d4a662f421f"
+    },
+    "pv-addon-groups": {
+      "url": "https://cdn.modrinth.com/data/g2HFPeCl/versions/UrbDrJ9B/pv-addon-groups-1.1.0.jar",
+      "sha512": "a7d1d7b5f4a67753b094b0e6129a3114538fd1fe28517da1c0ee0cf172ebdad06480d809433ad63ce2de0e57d1e0a23f73afbffc35b797fbee24f596e7e6feb2"
+    },
+    "scalablelux": {
+      "url": "https://cdn.modrinth.com/data/Ps1zyz6x/versions/UueJNiJn/ScalableLux-0.1.3%2Bbeta.1%2Bfabric.4039a8d-all.jar",
+      "sha512": "144dd32f5f7b9c015ae2ff2efc8ba58c561d0fae7a22aba071f0d45f8b3154ae8d23783e9a0308c80eee51857a0ef68191c444830e5da3b44021f03b55a26da2"
+    },
+    "servux": {
+      "url": "https://cdn.modrinth.com/data/zQhsx8KF/versions/GGj3rNei/servux-fabric-1.21.5-0.6.0.jar",
+      "sha512": "cb2dddf4a3ca959c9e9507b9b3f3cb1242b616d4c7c81c33680032207b863c61268efa14f3e978ba9ccf0dbb0902623d6ce7194a52f55d906a0e62c4e08c6d3f"
+    },
+    "wthit": {
+      "url": "https://cdn.modrinth.com/data/6AQIaxuO/versions/hInfP38v/wthit-fabric-15.0.1.jar",
+      "sha512": "0e9848892ee5d07047e3cf06149aaaf95846d5c9a92583370f891ff3bb094a9a4fd3c12ef7a76bbe3f6d56c7710c20571845e1670fce25b14c7ac0d54903d042"
+    }
+  }
+}

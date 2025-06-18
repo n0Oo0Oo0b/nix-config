@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    # ./mc-servers
     ../common.nix
   ];
 
@@ -49,9 +50,17 @@
     users = {
       "pansternoob" = import ./home.nix;
     };
+    backupFileExtension = "bak";
   };
 
   services.openssh.enable = true;
+
+  services.immich = {
+    enable = true;
+    host = "0.0.0.0";
+    openFirewall = true;
+    settings = null;
+  };
 
   environment.systemPackages = with pkgs; [
     wget
