@@ -57,6 +57,7 @@
 
   services.immich = {
     enable = true;
+    host = "192.168.100.200";
     openFirewall = true;
     settings = null;
   };
