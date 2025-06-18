@@ -20,6 +20,7 @@
     theme.enable = true;
     treesitter.enable = true;
     utility.surround.enable = true;
+    utility.vim-wakatime.enable = true;
     visuals.indent-blankline.enable = true;
 
     # Misc LSP
