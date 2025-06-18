@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     ../../home/common
     ../../home/gui
@@ -13,9 +19,13 @@
     porsmo
     godot_4
     libreoffice
-    (blender.override {cudaSupport = true;})
+    (blender.override { cudaSupport = true; })
     wechat-uos
     gimp
+    (callPackage ../../home/common/rebuild-script.nix {
+      hostname = "nixos";
+      system = "x86_64-linux";
+    })
 
     # Linux-specific
     inputs.zen-browser.packages.${stdenv.system}.default

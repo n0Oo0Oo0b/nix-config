@@ -17,25 +17,3 @@ vim.api.nvim_create_user_command("Is", function(cmd)
     vim.bo.tabstop = tonumber(cmd.args);
     vim.bo.shiftwidth = 0;
 end, { nargs = 1, desc = "Set indentation to <N> spaces" });
-
-
--- Monkeypatch nushell + wakatime
-vim.api.nvim_create_augroup("WakaTimeNushellFix", { clear = true })
-vim.api.nvim_create_autocmd("VimEnter", {
-    group = "WakaTimeNushellFix",
-    callback = function()
-        if ! vim.o.shell:match("nu") then return end
-        vim.cmd([[
-            " Replace the plugin's shellescape-based sanitizer
-            function! s:SanitizeArg(arg) abort
-              " only escape spaces, leave everything else alone
-              return substitute(a:arg, ' ', '\\ ', 'g')
-            endfunction
-
-            " Replace its JoinArgs to use our new sanitizer
-            function! s:JoinArgs(args) abort
-              return join(map(a:args, 's:SanitizeArg(v:val)'), ' ')
-            endfunction
-        ]])
-    end,
-})
