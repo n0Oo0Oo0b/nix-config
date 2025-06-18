@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   vim = {
     autopairs.nvim-autopairs.setupOpts = {
       map_c_h = true;
@@ -6,17 +7,19 @@
     };
 
     dashboard.startify.bookmarks = [
-        { n = "~/nix-config"; }
+      { n = "~/nix-config"; }
     ];
     dashboard.startify.changeToVCRoot = true;
-    dashboard.startify.lists = let
-      mkEntry = type: header: { inherit type header; };
-    in [
-      (mkEntry "dir" ["MRU"])
-      (mkEntry "sessions" ["Sessions"])
-      (mkEntry "bookmarks" ["Bookmarks"])
-      (mkEntry "commands" ["Commands"])
-    ];
+    dashboard.startify.lists =
+      let
+        mkEntry = type: header: { inherit type header; };
+      in
+      [
+        (mkEntry "dir" [ "MRU" ])
+        (mkEntry "sessions" [ "Sessions" ])
+        (mkEntry "bookmarks" [ "Bookmarks" ])
+        (mkEntry "commands" [ "Commands" ])
+      ];
 
     git.gitsigns.codeActions.enable = true;
     theme = {
@@ -31,7 +34,6 @@
     treesitter.highlight.enable = true;
     treesitter.indent.enable = true;
 
-    languages.rust.lsp.opts = ''
-    '';
+    languages.rust.lsp.opts = '''';
   };
 }
