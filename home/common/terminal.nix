@@ -42,7 +42,7 @@ rec {
     eza.enable = true;
     fzf.enable = true;
     gitui.enable = true;
-    # keychain.enable = true;
+    keychain.enable = true;
     nix-index.enable = true;
     sioyek.enable = true;
     starship.enable = true;

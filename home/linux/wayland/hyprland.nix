@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -78,20 +78,31 @@
           preserve_split = true;
         };
 
+        input = {
+          accel_profile = "flat";
+          sensitivity = -0.3;
+        };
+
         master.new_status = "master";
 
         monitor = [
           "DP-3, 2560x1440@144, 0x0, 1"
-          "DP-2, 1920x1280@75, auto-left, 1, transform, 1"
+          "DP-2, 1920x1080@75, auto-right, 1, transform, 1"
         ];
 
-        "exec-once" = [ ];
+        "exec-once" = [
+          "fcitx5"
+          "flameshot"
+          "noisetorch -i"
+          "openrgb -p default"
+        ];
 
         bind = [
           "$mod, return, exec, $terminal"
           "$mod, space, exec, ${rofi} -show drun"
           "$mod, C, exec, ${rofi} -modi calc -show calc -no-show-match -no-sort"
           "$mod, E, exec, yazi"
+          "$mod, F, fullscreen"
 
           "$mod SHIFT, Q, killactive"
           "$mod SHIFT, S, exec, flameshot gui"
@@ -101,6 +112,7 @@
           "$mod, J, movefocus, d"
           "$mod, K, movefocus, u"
           "$mod, L, movefocus, r"
+          "$mod, tab, cyclenext,"
 
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
@@ -133,7 +145,14 @@
 
         windowrule = [
           "suppressevent maximize, class:.*"
-          # "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+
+          "move 0 0, class:(flameshot)"
+          "pin, class:(flameshot)"
+          "noborder, class:(flameshot)"
+          "stayfocused, class:(flameshot)"
+          "float, class:(flameshot)"
+          "opaque, class:(flameshot)"
         ];
       };
   };

@@ -30,7 +30,6 @@
     # Linux-specific
     inputs.zen-browser.packages.${stdenv.system}.default
     davinci-resolve
-    pulseaudio
   ];
 
   gtk = {
