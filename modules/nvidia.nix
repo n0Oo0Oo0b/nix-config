@@ -1,21 +1,12 @@
 {
   config,
-  pkgs,
   ...
 }:
 {
   hardware.graphics.enable = true;
   services.xserver = {
     enable = true;
-    videoDrivers = [
-      "nvidia"
-      "amdgpu"
-    ];
-  };
-
-  hardware.amdgpu = {
-    initrd.enable = true;
-    amdvlk.enable = true;
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware.nvidia = {

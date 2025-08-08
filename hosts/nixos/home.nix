@@ -21,7 +21,7 @@
     libreoffice
     (blender.override { cudaSupport = true; })
     wechat-uos
-    gimp
+    # gimp
     (callPackage ../../home/common/rebuild-script.nix {
       hostname = "nixos";
       system = "x86_64-linux";

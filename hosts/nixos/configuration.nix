@@ -8,7 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nvidia.nix
+    ../../modules/amdgpu.nix
     ../../modules/kanata
     ../common.nix
   ];
@@ -36,6 +36,7 @@
   security.polkit.enable = true;
 
   networking.hostName = "nixos";
+  networking.interfaces.enp6s0.useDHCP = true;
   networking.networkmanager.enable = true;
   networking.hosts = {
     "192.168.100.200" = [ "pzn.local" ];
