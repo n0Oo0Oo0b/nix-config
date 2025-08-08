@@ -10,12 +10,13 @@ let
     listGens = "nixos-rebuild list-generations";
   };
   args."aarch64-darwin" = {
-    rebuild = "darwin-rebuild switch --flake .#${hostname}";
-    listGens = "darwin-rebuild --list-generations";
+    rebuild = "sudo darwin-rebuild switch --flake .#${hostname}";
+    listGens = "sudo darwin-rebuild --list-generations";
   };
-in writeShellApplication {
+in
+writeShellApplication {
   name = "nix-rebuild";
-  runtimeInputs = [git];
+  runtimeInputs = [ git ];
   text = with args.${system}; ''
     set -e
     pushd ~/nix-config

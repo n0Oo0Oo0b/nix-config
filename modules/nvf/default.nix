@@ -1,8 +1,14 @@
-{...}: {
-  imports = [./config.nix ./keymap.nix ./vim_opts.nix ./extra_plugins.nix];
+{ ... }:
+{
+  imports = [
+    ./config.nix
+    ./keymap.nix
+    ./vim_opts.nix
+    ./extra_plugins.nix
+  ];
 
   vim = {
-    extraLuaFiles = [./cmds.lua];
+    extraLuaFiles = [ ./cmds.lua ];
 
     # Enable/disable
     autocomplete.nvim-cmp.enable = true;
@@ -20,7 +26,7 @@
     theme.enable = true;
     treesitter.enable = true;
     utility.surround.enable = true;
-    utility.vim-wakatime.enable = true;
+    # utility.vim-wakatime.enable = true;
     visuals.indent-blankline.enable = true;
 
     # Misc LSP

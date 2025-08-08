@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../../home/common
     ../../home/gui
@@ -17,6 +18,8 @@
     zoom-us
     jetbrains.idea-ultimate
     karabiner-elements
+
+    ollama
   ];
 
   # Init env vars with zsh
