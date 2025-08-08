@@ -45,13 +45,9 @@
   catppuccin.gtk.enable = true;
   catppuccin.gtk.icon.enable = true;
 
-  programs.obs-studio = {
+  qt = {
     enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      input-overlay
-    ];
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
 }
