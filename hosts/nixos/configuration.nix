@@ -1,13 +1,14 @@
 {
   self,
-  config,
   pkgs,
   inputs,
+  config,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nvidia.nix
+    ../../modules/amdgpu.nix
     ../../modules/kanata
     ../common.nix
   ];
@@ -16,34 +17,35 @@
   nixpkgs.overlays = [
     (final: prev: {
       # Requires an old version of Nvidia something or something
-      opencv = prev.opencv.override {enableCuda = false;};
-      discord = prev.discord.override {withTTS = true;};
+      opencv = prev.opencv.override { enableCuda = false; };
+      discord = prev.discord.override { withTTS = true; };
     })
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
-  boot.kernelModules = [
-    "v4l2loopback"
-    "snd-aloop"
+
+  # OBS virtual cam
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
   ];
+  boot.kernelModules = [ "v4l2loopback" ];
   boot.extraModprobeConfig = ''
     options v4l2loopback devices=1 video_nr=1 card_label="OBS VCam" exclusive_caps=1
   '';
   security.polkit.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   networking.hostName = "nixos";
+  networking.interfaces.enp6s0.useDHCP = true;
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "192.168.100.200" = ["pzn.local"];
-    "192.168.100.1" = ["ddwrt.local"];
-    "223.166.245.202" = ["home"];
+    "192.168.100.200" = [ "pzn.local" ];
+    "192.168.100.1" = [ "ddwrt.local" ];
+    "223.166.245.202" = [ "home" ];
   };
+
+  networking.firewall.allowedTCPPorts = [ ];
+  networking.firewall.allowedUDPPorts = [ ];
 
   time.timeZone = "Asia/Shanghai";
   time.hardwareClockInLocalTime = true;
@@ -72,19 +74,19 @@
   };
 
   # X11/GNOME
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-    #wacom.enable = true;
-
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-  };
-
-  services.displayManager.defaultSession = "gnome-xorg";
+  # services.xserver = {
+  #   enable = true;
+  #   xkb = {
+  #     layout = "us";
+  #     variant = "";
+  #   };
+  #   #wacom.enable = true;
+  #
+  #   desktopManager.gnome.enable = true;
+  #   displayManager.gdm.enable = true;
+  # };
+  #
+  # services.displayManager.defaultSession = "gnome-xorg";
 
   services.libinput.mouse = {
     accelProfile = "flat";
@@ -101,9 +103,19 @@
       noto-fonts-cjk-serif
     ];
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono NFM"];
-      sansSerif = ["Inter" "Noto Sans CJK SC" "Noto Sans CJK KR" "Noto Sans CJK JP"];
-      serif = ["DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK KR" "Noto Serif CJK JP"];
+      monospace = [ "JetBrainsMono NFM" ];
+      sansSerif = [
+        "Inter"
+        "Noto Sans CJK SC"
+        "Noto Sans CJK KR"
+        "Noto Sans CJK JP"
+      ];
+      serif = [
+        "DejaVu Serif"
+        "Noto Serif CJK SC"
+        "Noto Serif CJK KR"
+        "Noto Serif CJK JP"
+      ];
     };
     fontDir.enable = true;
   };
@@ -111,7 +123,7 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [epson-escpr];
+    drivers = with pkgs; [ epson-escpr ];
   };
   services.avahi = {
     enable = true;
@@ -143,12 +155,18 @@
   users.users.danielgu = {
     isNormalUser = true;
     description = "Daniel Gu";
-    extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "jackaudio"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "adbusers"
+      "jackaudio"
+    ];
     shell = pkgs.nushell;
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit self inputs;};
+    extraSpecialArgs = { inherit self inputs; };
     users = {
       "danielgu" = import ./home.nix;
     };
@@ -165,7 +183,7 @@
     nushell
   ];
   environment.variables = {
-    MOZ_ENABLE_WAYLAND = 0;
+    MOZ_ENABLE_WAYLAND = 1;
     # https://github.com/Martichou/rquickshare/issues/158
     WEBKIT_DISABLE_COMPOSITING_MODE = 1;
   };
@@ -174,12 +192,7 @@
     "${pkgs.nushell}/bin/nu"
   ];
 
-  programs.steam = {
-    enable = true;
-    extraPackages = with pkgs; [ fuse ];
-    localNetworkGameTransfers.openFirewall = true;
-    remotePlay.openFirewall = true;
-  };
+  programs.adb.enable = true;
 
   programs.alvr = {
     enable = true;
@@ -197,15 +210,22 @@
     xorg.libXrandr
   ];
 
-  programs.adb.enable = true;
+  programs.steam = {
+    enable = true;
+    extraPackages = with pkgs; [ fuse ];
+    localNetworkGameTransfers.openFirewall = true;
+    remotePlay.openFirewall = true;
+  };
+
+  programs.hyprland.enable = true;
+  # programs.wayland.miracle-wm.enable = true;
+  programs.waybar.enable = true;
+  services.displayManager.sddm.enable = true;
 
   services.openssh.enable = true;
   services.openssh.settings.X11Forwarding = true;
 
   services.hardware.openrgb.enable = true;
-
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [];
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "daily";

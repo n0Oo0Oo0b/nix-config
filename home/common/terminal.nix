@@ -3,7 +3,8 @@
   lib,
   self,
   ...
-}: rec {
+}:
+rec {
   # Base
   programs.kitty = {
     enable = true;
@@ -53,14 +54,20 @@
     # Config
     btop.settings.vim_keys = true;
     direnv.nix-direnv.enable = true;
-    keychain.keys = ["id_ed25519"];
+    keychain.keys = [ "id_ed25519" ];
     sioyek.bindings = {
-      "screen_down" = ["d" "<c-d>"];
-      "screen_up" = ["u" "<c-u>"];
+      "screen_down" = [
+        "d"
+        "<c-d>"
+      ];
+      "screen_up" = [
+        "u"
+        "<c-u>"
+      ];
     };
-    starship.settings = lib.recursiveUpdate
-      (builtins.fromTOML (builtins.readFile ../extras/starship-nerdfont.toml))
-      { continuation_prompt = "┆ "; };
+    starship.settings = lib.recursiveUpdate (builtins.fromTOML (
+      builtins.readFile ../extras/starship-nerdfont.toml
+    )) { continuation_prompt = "┆ "; };
   };
 
   # Nushell config

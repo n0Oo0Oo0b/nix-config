@@ -1,7 +1,14 @@
-{ self, pkgs, inputs, ... }: {
+{
+  self,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     ./git.nix
     ./nixpkgs.nix
+    ./obs.nix
     ./terminal.nix
     inputs.catppuccin.homeModules.catppuccin
   ];
@@ -14,6 +21,7 @@
     ffmpeg
     alejandra
     scrcpy
+    gemini-cli
 
     du-dust
     fd
@@ -26,7 +34,7 @@
   ];
 
   # Dotfiles
-  home.file = {};
+  home.file = { };
 
   xdg.configFile = {
     "zellij/config.kdl".source = ../extras/zellij.kdl;
