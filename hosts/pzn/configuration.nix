@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     # ./mc-servers
@@ -19,12 +20,11 @@
   networking.hostName = "pzn";
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "192.168.100.200" = ["pzn.local"];
-    "192.168.100.1" = ["ddwrt.local"];
-    "223.166.245.202" = ["home"];
+    "192.168.100.200" = [ "pzn.local" ];
+    "192.168.100.1" = [ "ddwrt.local" ];
+    "223.166.245.202" = [ "home" ];
   };
 
-  time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -41,12 +41,16 @@
   users.users.pansternoob = {
     isNormalUser = true;
     description = "Panster Noob";
-    extraGroups = [ "networkmanager" "wheel" "minecraft" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "minecraft"
+    ];
     shell = pkgs.nushell;
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit self inputs;};
+    extraSpecialArgs = { inherit self inputs; };
     users = {
       "pansternoob" = import ./home.nix;
     };
@@ -74,8 +78,8 @@
     "${pkgs.nushell}/bin/nu"
   ];
 
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [];
+  networking.firewall.allowedTCPPorts = [ ];
+  networking.firewall.allowedUDPPorts = [ ];
 
   system.stateVersion = "23.11";
 }

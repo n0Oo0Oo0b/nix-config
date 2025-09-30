@@ -13,7 +13,6 @@
     ../common.nix
   ];
 
-  nixpkgs.config.cudaSupport = true;
   nixpkgs.overlays = [
     (final: prev: {
       # Requires an old version of Nvidia something or something
@@ -24,7 +23,6 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   # OBS virtual cam
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback
@@ -35,19 +33,18 @@
   '';
   security.polkit.enable = true;
 
-  networking.hostName = "nixos";
-  networking.interfaces.enp6s0.useDHCP = true;
+  networking.hostName = "fwd-nixos";
+  # networking.interfaces.enp6s0.useDHCP = true;
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "192.168.100.200" = [ "pzn.local" ];
-    "192.168.100.1" = [ "ddwrt.local" ];
-    "223.166.245.202" = [ "home" ];
+    # "192.168.100.200" = [ "pzn.local" ];
+    # "192.168.100.1" = [ "ddwrt.local" ];
+    # "223.166.245.202" = [ "home" ];
   };
 
   networking.firewall.allowedTCPPorts = [ ];
   networking.firewall.allowedUDPPorts = [ ];
 
-  time.timeZone = "Asia/Shanghai";
   time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";

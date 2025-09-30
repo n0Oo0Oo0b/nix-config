@@ -1,5 +1,6 @@
-{...}: {
-  time.timeZone = "Asia/Shanghai";
+{ ... }:
+{
+  time.timeZone = "America/Chicago";
 
   nix.settings = {
     substituters = [
@@ -17,7 +18,11 @@
     ];
     builders-use-substitutes = true;
 
-    experimental-features = ["nix-command" "flakes" "pipe-operators"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+      "pipe-operators"
+    ];
   };
 
   nix.optimise.automatic = true;

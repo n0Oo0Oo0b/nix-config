@@ -34,6 +34,23 @@
     treesitter.highlight.enable = true;
     treesitter.indent.enable = true;
 
-    languages.rust.lsp.opts = '''';
+    languages.rust.lsp.package = [ "rust-analyzer" ];
+    languages.rust.lsp.opts = ''
+      ['rust-analyzer'] = {
+        cargo = {allFeature = true},
+        check = {
+          command = "clippy",
+        },
+        checkOnSave = true,
+        procMacro = {
+          enable = true,
+        },
+        files = {
+          watcher = "client",
+        },
+      },
+    '';
+
+    lsp.servers.null-ls.capabilities.positionEncodings = "utf-8";
   };
 }

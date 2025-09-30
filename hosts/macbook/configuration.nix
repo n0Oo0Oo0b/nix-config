@@ -13,16 +13,6 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.overlays = [
     (self: super: {
-      ollama = super.ollama.overrideAttrs (old: rec {
-        version = "0.11.3";
-        src = pkgs.fetchFromGitHub {
-          owner = "ollama";
-          repo = "ollama";
-          tag = "v${version}";
-          hash = "sha256-FghgCtVQIxc9qB5vZZlblugk6HLnxoT8xanZK+N8qEc=";
-        };
-      });
-
       # https://github.com/LnL7/nix-darwin/issues/1041
       # karabiner-elements = super.karabiner-elements.overrideAttrs (old: {
       #   version = "14.13.0";
@@ -44,6 +34,8 @@
     "blackhole-2ch"
     "linearmouse"
     "android-platform-tools"
+    "caffeine"
+    "arduino-ide"
 
     # MS office
     "microsoft-word"

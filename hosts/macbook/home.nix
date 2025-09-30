@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     # Misc
     google-chrome
+    slack
 
     # Darwin-specific
     ice-bar
@@ -18,8 +19,6 @@
     zoom-us
     jetbrains.idea-ultimate
     karabiner-elements
-
-    ollama
   ];
 
   # Init env vars with zsh
