@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ../../modules/amdgpu.nix
     ../../modules/kanata
+    ../../modules/minecraft
     ../common.nix
   ];
 

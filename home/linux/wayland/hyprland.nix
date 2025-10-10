@@ -86,8 +86,7 @@
         master.new_status = "master";
 
         monitor = [
-          "DP-3, 2560x1440@144, 0x0, 1"
-          "DP-2, 1920x1080@75, auto-right, 1, transform, 1"
+          "DP-4, 2560x1440@240, 0x0, 1"
         ];
 
         "exec-once" = [

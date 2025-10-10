@@ -28,7 +28,7 @@ def main [mc_version: string, ...mods: string] {
         | each {|ver|
             print $"Updating entries for ($ver)"
             let new = $mod_data | filter-versions $ver;
-            {version: $ver, mods: ($data | get -i $ver | default {} | merge $new)}
+            {version: $ver, mods: ($data | get -o $ver | default {} | merge $new)}
         }
         | transpose -rd;
 

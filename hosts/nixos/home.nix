@@ -20,7 +20,6 @@
     godot_4
     libreoffice
     (blender.override { cudaSupport = true; })
-    wechat-uos
     # gimp
     (callPackage ../../home/common/rebuild-script.nix {
       hostname = "nixos";
@@ -41,8 +40,6 @@
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
-  catppuccin.gtk.enable = true;
-  catppuccin.gtk.icon.enable = true;
 
   qt = {
     enable = true;

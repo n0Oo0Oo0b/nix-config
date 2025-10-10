@@ -5,8 +5,8 @@
   openFirewall = true;
   serverProperties = {
     server-port = 25565;
-    online-mode = false;
-    view-distance = 2;
+    online-mode = true;
+    view-distance = 8;
     motd = "hi";
   };
 }
