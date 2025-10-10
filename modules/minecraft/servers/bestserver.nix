@@ -1,6 +1,11 @@
-{ servers, mods, pkgs, ... }:
 {
-  enable = false;
+  servers,
+  mods,
+  pkgs,
+  ...
+}:
+{
+  enable = true;
   package = servers.fabric-1_21_5;
   openFirewall = true;
   serverProperties = {
@@ -14,12 +19,18 @@
   jvmOpts = "-Xms1024M -Xmx16384M";
 
   symlinks = {
-    mods = pkgs.linkFarmFromDrvs "mods-bestserver"
-      (mods.modrinth-fabric "1.21.5" [
-        "appleskin" "servux" "distanthorizons"
-        "c2me-fabric" "ferrite-core" "krypton" "lithium"
+    mods = pkgs.linkFarmFromDrvs "mods-bestserver" (
+      mods.modrinth-fabric "1.21.5" [
+        "appleskin"
+        "servux"
+        "distanthorizons"
+        "c2me-fabric"
+        "ferrite-core"
+        "krypton"
+        "lithium"
         # "carpet" "carpet-extra" "carpet-tis-addition"
         "fabric-api"
-      ]);
+      ]
+    );
   };
 }

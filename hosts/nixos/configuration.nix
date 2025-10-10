@@ -159,6 +159,7 @@
       "audio"
       "adbusers"
       "jackaudio"
+      "minecraft"
     ];
     shell = pkgs.nushell;
   };

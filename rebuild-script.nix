@@ -38,8 +38,8 @@ pkgs.writeShellApplication {
     echo "Rebuild OK!"
 
     current=$(${listGens} | grep current)
-    msg=$(read -p "Commit message: " -r)
-    git commit -am "$msg [$current]"
+    git add .
+    git commit -m "[$current]"
 
     git push
 
