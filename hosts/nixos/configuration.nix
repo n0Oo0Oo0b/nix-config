@@ -9,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/amdgpu.nix
+    ../../modules/copyparty.nix
     ../../modules/kanata
     ../../modules/minecraft
     ../common.nix
@@ -123,11 +124,14 @@
     enable = true;
     drivers = with pkgs; [ epson-escpr ];
   };
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  services.ollama.enable = true;
 
   # Pipewire sound
   security.rtkit.enable = true;
@@ -158,6 +162,7 @@
       "wheel"
       "audio"
       "adbusers"
+      "copyparty"
       "jackaudio"
       "minecraft"
     ];

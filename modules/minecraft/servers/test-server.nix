@@ -1,7 +1,7 @@
 { servers, ... }:
 {
   enable = true;
-  package = servers.fabric-1_21_5;
+  package = servers.fabric-1_21_10;
   openFirewall = true;
   serverProperties = {
     server-port = 25565;

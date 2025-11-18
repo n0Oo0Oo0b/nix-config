@@ -6,6 +6,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     home-manager.url = "github:nix-community/home-manager";
 
+    copyparty.url = "github:9001/copyparty";
     catppuccin.url = "github:catppuccin/nix";
     nvf.url = "github:notashelf/nvf/v0.8";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -14,6 +15,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
+    copyparty.inputs.nixpkgs.follows = "nixpkgs";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.home-manager.follows = "home-manager";
@@ -27,6 +29,7 @@
       nix-darwin,
       home-manager,
       catppuccin,
+      copyparty,
       nvf,
       zen-browser,
       ...
@@ -69,6 +72,7 @@
         modules = [
           ./hosts/nixos/configuration.nix
           home-manager.nixosModules.default
+          copyparty.nixosModules.default
           catppuccin.nixosModules.catppuccin
         ];
       };
