@@ -8,7 +8,7 @@
   imports = [
     ./git.nix
     ./nixpkgs.nix
-    ./obs.nix
+    # ./obs.nix
     ./terminal.nix
     inputs.catppuccin.homeModules.catppuccin
   ];
@@ -21,9 +21,8 @@
     ffmpeg
     alejandra
     scrcpy
-    gemini-cli
 
-    du-dust
+    dust
     fd
     hyperfine
     mprocs

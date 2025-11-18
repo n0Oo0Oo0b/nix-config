@@ -33,7 +33,6 @@
     lsp.enable = true;
     lsp.lspSignature.enable = true;
     lsp.otter-nvim.enable = true;
-    languages.enableLSP = true;
     languages.enableTreesitter = true;
 
     # Languages

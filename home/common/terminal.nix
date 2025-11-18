@@ -41,7 +41,7 @@ rec {
     direnv.enable = true;
     eza.enable = true;
     fzf.enable = true;
-    gitui.enable = true;
+    gitui.enable = !pkgs.hostPlatform.isDarwin;
     keychain.enable = true;
     nix-index.enable = true;
     sioyek.enable = true;

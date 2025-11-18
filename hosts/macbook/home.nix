@@ -16,7 +16,6 @@
     # Darwin-specific
     ice-bar
     raycast
-    zoom-us
     jetbrains.idea-ultimate
     karabiner-elements
   ];

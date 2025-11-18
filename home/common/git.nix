@@ -1,9 +1,11 @@
-{...}: {
+{ ... }:
+{
   programs.git = {
     enable = true;
-    userName = "Daniel Gu";
-    userEmail = "bobthebuilder10492@gmail.com";
-    extraConfig = {
+
+    settings = {
+      user.name = "Daniel Gu";
+      user.email = "bobthebuilder10492@gmail.com";
       init.defaultBranch = "main";
     };
   };

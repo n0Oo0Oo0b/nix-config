@@ -7,6 +7,7 @@
 {
   imports = [
     ../../home/common
+    ../../home/common/obs.nix
     ../../home/gui
     ../../home/linux
   ];
