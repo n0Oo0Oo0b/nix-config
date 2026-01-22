@@ -4,7 +4,7 @@ let
 in
 {
   services.kanata = {
-    enable = true;
+    enable = false;
     keyboards.drunkdeer = {
       devices = [
         "/dev/input/by-id/usb-Drunkdeer_Drunkdeer_G60_ANSI_RYMicro-event-kbd"

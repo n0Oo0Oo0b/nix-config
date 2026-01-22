@@ -12,18 +12,8 @@ def start-zellij [] {
 }
 
 def set-sink [name?: string] {
-  let search = $name
-    | default (if "Jabra" in (pactl get-default-sink) {"hdmi"} else {"Jabra"})
-  pactl list short sinks
-    | lines
-    | split column -r \s+ id desc
-    | where desc =~ $search
-    | try { pactl set-default-sink $in.0.desc } catch { print "Sink not found" }
-}
-
-def --env zf [query: string] {
-  let matches = zoxide query --list | fzf -f $query | lines
-  try { cd $matches.0 } catch { print "Not found" }
+  let sink = pactl list short sinks | fzf -0 -1 -q ($name | default "")
+  #| try { pactl set-default-sink $in.0.desc } catch { print "Sink not found" }
 }
 
 def nr [name: string, ...args] {

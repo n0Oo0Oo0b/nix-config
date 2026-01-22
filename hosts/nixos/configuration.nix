@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ../../modules/amdgpu.nix
     ../../modules/copyparty.nix
+    ../../modules/docker.nix
     ../../modules/kanata
     ../../modules/minecraft
     ../common.nix
@@ -66,7 +67,7 @@
     enable = true;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
+      qt6Packages.fcitx5-chinese-addons
       fcitx5-rime
       fcitx5-hangul
     ];
@@ -133,6 +134,8 @@
 
   services.ollama.enable = true;
 
+  services.udev.packages = with pkgs; [ wooting-udev-rules ];
+
   # Pipewire sound
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
@@ -180,6 +183,20 @@
   hardware.opentabletdriver.daemon.enable = true;
   #services.udev.extraRules = "";
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     wget
     unzip
@@ -199,7 +216,7 @@
   programs.adb.enable = true;
 
   programs.alvr = {
-    enable = true;
+    enable = false;
     openFirewall = true;
   };
 
@@ -225,6 +242,8 @@
   # programs.wayland.miracle-wm.enable = true;
   programs.waybar.enable = true;
   services.displayManager.sddm.enable = true;
+
+  services.blueman.enable = true;
 
   services.openssh.enable = true;
   services.openssh.settings.X11Forwarding = true;

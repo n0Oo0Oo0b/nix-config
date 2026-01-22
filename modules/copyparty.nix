@@ -44,9 +44,21 @@
 
       flags = {
         fk = 4;
-        sz = "0b-50m";
+        sz = "0b-100m";
         d2t = true;
-        lifetime = 60 * 10;
+        lifetime = 60 * 60;
+      };
+    };
+
+    volumes."/share" = {
+      path = "/srv/copyparty/share";
+
+      access.rg = "*";
+      access.A = [ "noob" ];
+
+      flags = {
+        d2t = true;
+        lifetime = 60 * 60;
       };
     };
 

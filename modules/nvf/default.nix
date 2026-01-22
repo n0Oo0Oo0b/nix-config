@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ./config.nix
@@ -34,6 +34,8 @@
     lsp.lspSignature.enable = true;
     lsp.otter-nvim.enable = true;
     languages.enableTreesitter = true;
+
+    lsp.servers.clangd.cmd = lib.mkForce [ "clangd" ];
 
     # Languages
     languages = {
