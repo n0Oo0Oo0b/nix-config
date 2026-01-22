@@ -46,14 +46,19 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          neovim = nvf.lib.neovimConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = { inherit system; };
-            modules = [ (import ./modules/nvf) ];
-          };
+          neovim =
+            full:
+            nvf.lib.neovimConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = {
+                inherit system full;
+              };
+              modules = [ (import ./modules/nvf) ];
+            };
         in
         {
-          neovim = neovim.neovim;
+          neovim = (neovim true).neovim;
+          neovim-min = (neovim false).neovim;
           rebuild = import ./rebuild-script.nix { inherit system pkgs inputs; };
 
           # homeConfigurations.danielgu = home-manager.lib.homeManagerConfiguration {

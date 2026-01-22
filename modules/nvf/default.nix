@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, full, ... }:
 {
   imports = [
     ./config.nix
@@ -41,16 +41,16 @@
     languages = {
       clang.enable = true;
       clang.cHeader = true;
-      css.enable = true;
-      html.enable = true;
-      java.enable = true;
-      lua.enable = true;
-      markdown.enable = true;
-      nix.enable = true;
-      nu.enable = true;
-      python.enable = true;
-      rust.enable = true;
-      wgsl.enable = true;
+      css.enable = full;
+      html.enable = full;
+      java.enable = full;
+      lua.enable = full;
+      markdown.enable = full;
+      nix.enable = full;
+      nu.enable = full;
+      python.enable = full;
+      rust.enable = full;
+      wgsl.enable = full;
     };
   };
 }
