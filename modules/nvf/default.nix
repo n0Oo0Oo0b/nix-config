@@ -35,7 +35,7 @@
     lsp.otter-nvim.enable = true;
     languages.enableTreesitter = true;
 
-    lsp.servers.clangd.cmd = lib.mkForce [ "clangd" ];
+    # lsp.servers.clangd.cmd = lib.mkForce [ "clangd" ];
 
     # Languages
     languages = {
