@@ -21,6 +21,7 @@
     ffmpeg
     alejandra
     scrcpy
+    android-tools
 
     dust
     fd

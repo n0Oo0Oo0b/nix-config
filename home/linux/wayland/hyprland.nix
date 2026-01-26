@@ -144,15 +144,8 @@
         ];
 
         windowrule = [
-          "suppressevent maximize, class:.*"
-          "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-          "move 0 0, class:(flameshot)"
-          "pin, class:(flameshot)"
-          "noborder, class:(flameshot)"
-          "stayfocused, class:(flameshot)"
-          "float, class:(flameshot)"
-          "opaque, class:(flameshot)"
+          "match:class .*, suppress_event fullscreen maximize fullscreenoutput"
+          "match:class flameshot, float move 0 0 pin noborder stayfocused opaque fullscreen"
         ];
       };
   };

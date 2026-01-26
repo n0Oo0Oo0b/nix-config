@@ -24,7 +24,10 @@
     })
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 20;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   # OBS virtual cam
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -213,8 +216,6 @@
     "${pkgs.nushell}/bin/nu"
   ];
 
-  programs.adb.enable = true;
-
   programs.alvr = {
     enable = false;
     openFirewall = true;
@@ -242,6 +243,7 @@
   # programs.wayland.miracle-wm.enable = true;
   programs.waybar.enable = true;
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   services.blueman.enable = true;
 

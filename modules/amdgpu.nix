@@ -4,9 +4,13 @@
 {
   nixpkgs.config.rocmSupport = true;
 
-  hardware.graphics.enable = true;
-  services.xserver = {
+  hardware.graphics = {
     enable = true;
-    videoDrivers = [ "amdgpu" ];
+    enable32Bit = true;
   };
+
+  # services.xserver = {
+  #   enable = true;
+  #   videoDrivers = [ "amdgpu" ];
+  # };
 }

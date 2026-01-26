@@ -8,7 +8,7 @@
 
     copyparty.url = "github:9001/copyparty";
     catppuccin.url = "github:catppuccin/nix";
-    nvf.url = "github:notashelf/nvf/v0.8";
+    nvf.url = "github:notashelf/nvf";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
