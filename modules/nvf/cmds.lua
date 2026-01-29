@@ -19,7 +19,7 @@ vim.api.nvim_create_user_command("Is", function(cmd)
 end, { nargs = 1, desc = "Set indentation to <N> spaces" });
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "nix", "c", "h", "cc", "cpp", "hpp" },
+    pattern = { "nix", "html" },
     callback = function()
         vim.opt_local.expandtab = true
         vim.opt_local.tabstop = 2
