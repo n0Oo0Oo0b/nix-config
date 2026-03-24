@@ -22,18 +22,11 @@
         };
 
         decoration = {
-          rounding = 10;
+          rounding = 5;
           rounding_power = 2;
           active_opacity = 1.0;
           inactive_opacity = 0.9;
           fullscreen_opacity = 1.0;
-
-          shadow = {
-            enabled = true;
-            range = 4;
-            render_power = 3;
-            color = "rgba(1a1a1aee)";
-          };
 
           blur = {
             enabled = true;
@@ -90,18 +83,17 @@
           "DP-4, 2560x1440@240, 0x0, 1"
         ];
 
-        "exec-once" = [
+        exec-once = [
           "fcitx5"
-          "flameshot"
           "noisetorch -i"
-          "openrgb -p default"
+          "hyprctl setcursor HollowKnight 32"
         ];
 
         bind = [
           "$mod, return, exec, $terminal"
           "$mod, space, exec, ${rofi} -show drun"
           "$mod, C, exec, ${rofi} -modi calc -show calc -no-show-match -no-sort"
-          "$mod, E, exec, yazi"
+          "$mod, E, exec, kitty yazi"
           "$mod, F, fullscreen"
 
           "$mod SHIFT, Q, killactive"
@@ -144,7 +136,7 @@
         ];
 
         windowrule = [
-          "match:class .*, suppress_event fullscreen maximize fullscreenoutput"
+          # "match:class .*, suppress_event fullscreen maximize fullscreenoutput"
           "match:class flameshot, float move 0 0 pin noborder stayfocused opaque fullscreen"
         ];
       };

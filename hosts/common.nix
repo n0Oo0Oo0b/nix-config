@@ -1,5 +1,9 @@
-{ ... }:
+{ lib, ... }:
 {
+  imports = [
+    (lib.modules.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "danielgu" ])
+  ];
+
   time.timeZone = "America/Chicago";
 
   nix.settings = {
