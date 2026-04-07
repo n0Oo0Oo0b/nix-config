@@ -68,6 +68,15 @@ rec {
     starship.settings = lib.recursiveUpdate (builtins.fromTOML (
       builtins.readFile ../extras/starship-nerdfont.toml
     )) { continuation_prompt = "┆ "; };
+    yazi.keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = [ "<C-y>" ];
+          run = ''shell 'xclip -selection clipboard -t image/png -i "$@"' --confirm'';
+          desc = "Copy to system clipboard";
+        }
+      ];
+    };
   };
 
   # Nushell config

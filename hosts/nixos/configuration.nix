@@ -11,8 +11,10 @@
     ../../modules/amdgpu.nix
     ../../modules/copyparty.nix
     ../../modules/docker.nix
+    ../../modules/xdg.nix
     ../../modules/kanata
     ../../modules/minecraft
+    ../../modules/reverse_tunnel.nix
     ../common.nix
   ];
 
@@ -97,6 +99,16 @@
     scrollButton = 3;
   };
 
+  services.minecraft-tunnel = {
+    enable = true;
+    vpsIp = "64.23.232.63";
+    vpsUser = "ssh_tunnel";
+    vpsPort = 25566;
+    localPort = 25573;
+    user = "danielgu";
+    identityFile = "/home/danielgu/.ssh/vps_tunnel_key";
+  };
+
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
@@ -104,6 +116,7 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+      corefonts
     ];
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono NFM" ];
@@ -133,6 +146,10 @@
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
+  };
+
+  services.cloudflared = {
+    enable = true;
   };
 
   services.ollama.enable = true;
@@ -171,6 +188,7 @@
       "copyparty"
       "jackaudio"
       "minecraft"
+      "vboxusers"
     ];
     shell = pkgs.nushell;
   };
@@ -239,6 +257,11 @@
     remotePlay.openFirewall = true;
   };
 
+  virtualisation.virtualbox = {
+    host.enable = true;
+    host.enableExtensionPack = true;
+  };
+
   programs.hyprland.enable = true;
   # programs.wayland.miracle-wm.enable = true;
   programs.waybar.enable = true;
@@ -250,7 +273,7 @@
   services.openssh.enable = true;
   services.openssh.settings.X11Forwarding = true;
 
-  services.hardware.openrgb.enable = true;
+  # services.hardware.openrgb.enable = true;
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "daily";
