@@ -12,6 +12,7 @@
     # Misc
     google-chrome
     slack
+    cloudflared
 
     # Darwin-specific
     ice-bar
