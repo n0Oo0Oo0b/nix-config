@@ -12,11 +12,12 @@
     # Misc
     google-chrome
     slack
+    cloudflared
 
     # Darwin-specific
     ice-bar
     raycast
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
     karabiner-elements
   ];
 

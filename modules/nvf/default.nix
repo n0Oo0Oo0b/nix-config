@@ -26,7 +26,6 @@
     theme.enable = true;
     treesitter.enable = true;
     utility.surround.enable = true;
-    # utility.vim-wakatime.enable = true;
     visuals.indent-blankline.enable = true;
 
     # Misc LSP
@@ -41,6 +40,7 @@
     languages = {
       clang.enable = true;
       clang.cHeader = true;
+      ts.enable = full;
       css.enable = full;
       html.enable = full;
       java.enable = full;
