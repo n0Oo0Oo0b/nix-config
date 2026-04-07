@@ -104,7 +104,7 @@
     vpsIp = "64.23.232.63";
     vpsUser = "ssh_tunnel";
     vpsPort = 25566;
-    localPort = 25565;
+    localPort = 25573;
     user = "danielgu";
     identityFile = "/home/danielgu/.ssh/vps_tunnel_key";
   };
@@ -116,6 +116,7 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+      corefonts
     ];
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono NFM" ];
@@ -187,6 +188,7 @@
       "copyparty"
       "jackaudio"
       "minecraft"
+      "vboxusers"
     ];
     shell = pkgs.nushell;
   };
@@ -253,6 +255,11 @@
     extraPackages = with pkgs; [ fuse ];
     localNetworkGameTransfers.openFirewall = true;
     remotePlay.openFirewall = true;
+  };
+
+  virtualisation.virtualbox = {
+    host.enable = true;
+    host.enableExtensionPack = true;
   };
 
   programs.hyprland.enable = true;

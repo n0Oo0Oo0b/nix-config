@@ -26,14 +26,19 @@
 
       access.A = [ "noob" ];
 
-      flags.scan = 60 * 5;
+      flags = {
+        scan = 60 * 5;
+        norobots = true;
+      };
     };
 
-    volumes."/adx-converts" = {
-      path = "/srv/copyparty/adx-converts";
+    volumes."/maicharts" = {
+      path = "/srv/copyparty/maicharts";
 
       access.r = "*";
       access.A = [ "noob" ];
+
+      flags.dlni = true;
     };
 
     volumes."/tmp" = {
