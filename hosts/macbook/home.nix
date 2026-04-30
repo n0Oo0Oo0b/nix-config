@@ -19,6 +19,7 @@
     raycast
     #jetbrains.idea-ultimate
     karabiner-elements
+    whisky
   ];
 
   # Init env vars with zsh
