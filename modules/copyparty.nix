@@ -19,6 +19,8 @@
 
     accounts = {
       noob.passwordFile = "/home/danielgu/.config/copyparty/.pw_noob";
+      maimai.passwordFile = "/home/danielgu/.config/copyparty/.pw_maimai";
+      upload.passwordFile = "/home/danielgu/.config/copyparty/.pw_upload";
     };
 
     volumes."/" = {
@@ -35,7 +37,7 @@
     volumes."/maicharts" = {
       path = "/srv/copyparty/maicharts";
 
-      access.r = "*";
+      access.r = "maimai";
       access.A = [ "noob" ];
 
       flags.dlni = true;
@@ -49,9 +51,9 @@
 
       flags = {
         fk = 4;
-        sz = "0b-100m";
+        sz = "0b-1g";
         d2t = true;
-        lifetime = 60 * 60;
+        lifetime = 24 * 60 * 60;
       };
     };
 
@@ -63,7 +65,7 @@
 
       flags = {
         d2t = true;
-        lifetime = 60 * 60;
+        lifetime = 24 * 60 * 60;
       };
     };
 

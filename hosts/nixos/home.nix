@@ -33,6 +33,8 @@
     inputs.zen-browser.packages.${stdenv.system}.default
     davinci-resolve
     wootility
+    wineWowPackages.stable
+    winetricks
   ];
 
   gtk = {

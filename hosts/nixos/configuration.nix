@@ -255,6 +255,7 @@
     extraPackages = with pkgs; [ fuse ];
     localNetworkGameTransfers.openFirewall = true;
     remotePlay.openFirewall = true;
+    protontricks.enable = true;
   };
 
   virtualisation.virtualbox = {
